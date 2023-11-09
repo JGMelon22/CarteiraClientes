@@ -10,5 +10,5 @@ public class Client
     public required string Document { get; set; } // Nesse caso seria o RG
     public Gender Gender { get; set; }
     public bool IsOverdue { get; set; }
-    public List<Company> Companies { get; set; } = new List<Company>();
+    public List<ClientCompany> ClientsCompanies { get; set; } = new List<ClientCompany>();
 }
