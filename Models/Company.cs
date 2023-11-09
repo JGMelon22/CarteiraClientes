@@ -6,4 +6,5 @@ public class Company
     public required string CompanyName { get; set; }
     public DateTime FoundedDate { get; set; }
     public Decimal Revenue { get; set; }
+    public List<Client> Clients { get; set; } = new List<Client>();
 }
