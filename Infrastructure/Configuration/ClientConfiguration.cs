@@ -13,7 +13,8 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         builder.HasKey(c => c.ClientId);
 
         builder.HasIndex(c => c.ClientId)
-            .HasDatabaseName("client_id_idx");
+            .HasDatabaseName("client_id_idx")
+            .IsUnique();
 
         builder.Property(c => c.ClientId)
             .HasColumnName("client_id")
