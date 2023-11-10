@@ -12,6 +12,7 @@
 - Microsoft.EntityFrameworkCore <br/>
 - Microsoft.EntityFrameworkCore.Design <br/>
 - Microsoft.EntityFrameworkCore.Tools <br/>
+- Dapper<br/>
 - Npgsql <br/>
 - Npgsql.EntityFrameworkCore.PostgreSQL <br/>
 -  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/>
