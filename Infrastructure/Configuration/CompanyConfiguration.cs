@@ -35,7 +35,5 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
             .HasPrecision(20, 2)
             .HasColumnName("revenue")
             .IsRequired();
-        
-        // TODO Many-to-Many ClientsCompanies
     }
 }
