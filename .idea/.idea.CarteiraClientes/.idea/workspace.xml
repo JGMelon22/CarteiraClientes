@@ -14,6 +14,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -83,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699562443825</updated>
       <workItem from="1699562445763" duration="4990000" />
-      <workItem from="1699647585296" duration="866000" />
+      <workItem from="1699647585296" duration="1198000" />
     </task>
     <servers />
   </component>
