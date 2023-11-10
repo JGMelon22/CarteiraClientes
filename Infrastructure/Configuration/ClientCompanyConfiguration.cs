@@ -27,6 +27,10 @@ public class ClientCompanyConfiguration : IEntityTypeConfiguration<ClientCompany
             .WithMany(c => c.ClientsCompanies)
             .HasForeignKey(cc => cc.ClientId);
 
+        builder.HasOne(cc => cc.Company)
+            .WithMany(c => c.ClientsCompanies)
+            .HasForeignKey(cc => cc.CompanyId);
+
         builder.Property(cc => cc.ClientId)
             .HasColumnName("client_id")
             .ValueGeneratedOnAdd()

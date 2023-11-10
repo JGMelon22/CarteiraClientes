@@ -1,3 +1,4 @@
+using System.Reflection;
 using CarteiraClientes.Infrastructure.Configuration;
 using CarteiraClientes.Models;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ public class AppDbContext : DbContext
 
     public DbSet<Client> Clients => Set<Client>();
     public DbSet<Company> Companies => Set<Company>();
+    public DbSet<ClientCompany> ClientsCompanies => Set<ClientCompany>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
