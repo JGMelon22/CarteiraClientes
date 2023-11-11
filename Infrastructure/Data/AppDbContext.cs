@@ -1,4 +1,5 @@
 using CarteiraClientes.Infrastructure.Configuration;
+using CarteiraClientes.Infrastructure.Configuration.Seeding;
 using CarteiraClientes.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,5 +20,8 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ClientConfiguration());
         modelBuilder.ApplyConfiguration(new CompanyConfiguration());
         modelBuilder.ApplyConfiguration(new ClientCompanyConfiguration());
+
+        // Chama o initial seeding
+        InitialSeeding.Seed(modelBuilder);
     }
 }
