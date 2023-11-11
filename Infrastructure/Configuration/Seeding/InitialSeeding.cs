@@ -1,0 +1,460 @@
+using CarteiraClientes.Models;
+using CarteiraClientes.Models.Enums;
+using Microsoft.EntityFrameworkCore;
+
+namespace CarteiraClientes.Infrastructure.Configuration.Seeding;
+
+public class InitialSeeding
+{
+    public static void Seed(ModelBuilder modelBuilder)
+    {
+        // Clients
+        Client client1 = new Client()
+        {
+            ClientId = 1,
+            FullName = "Allissa Victória da Silva",
+            Age = 18,
+            Gender = Gender.Female,
+            Document = "123456789",
+            IsOverdue = false
+        };
+
+        Client client2 = new Client()
+        {
+            ClientId = 2,
+            FullName = "João Oliveira",
+            Age = 25,
+            Gender = Gender.Male,
+            Document = "987654321",
+            IsOverdue = true
+        };
+
+        Client client3 = new Client()
+        {
+            ClientId = 3,
+            FullName = "Maria Santos",
+            Age = 30,
+            Gender = Gender.Female,
+            Document = "456789123",
+            IsOverdue = false
+        };
+        Client client4 = new Client()
+        {
+            ClientId = 4,
+            FullName = "Carlos Pereira",
+            Age = 22,
+            Gender = Gender.Male,
+            Document = "234567890",
+            IsOverdue = true
+        };
+
+        Client client5 = new Client()
+        {
+            ClientId = 5,
+            FullName = "Ana Oliveira",
+            Age = 28,
+            Gender = Gender.Female,
+            Document = "345678901",
+            IsOverdue = false
+        };
+
+        Client client6 = new Client()
+        {
+            ClientId = 6,
+            FullName = "Pedro Silva",
+            Age = 35,
+            Gender = Gender.Male,
+            Document = "456789012",
+            IsOverdue = true
+        };
+
+        Client client7 = new Client()
+        {
+            ClientId = 7,
+            FullName = "Camila Santos",
+            Age = 40,
+            Gender = Gender.Female,
+            Document = "567890123",
+            IsOverdue = false
+        };
+
+        Client client8 = new Client()
+        {
+            ClientId = 8,
+            FullName = "Felipe Oliveira",
+            Age = 32,
+            Gender = Gender.Male,
+            Document = "678901234",
+            IsOverdue = true
+        };
+
+        Client client9 = new Client()
+        {
+            ClientId = 9,
+            FullName = "Juliana Silva",
+            Age = 27,
+            Gender = Gender.Female,
+            Document = "789012345",
+            IsOverdue = false
+        };
+
+        Client client10 = new Client()
+        {
+            ClientId = 10,
+            FullName = "Lucas Pereira",
+            Age = 24,
+            Gender = Gender.Male,
+            Document = "890123456",
+            IsOverdue = true
+        };
+
+        // Company
+        Company company1 = new Company()
+        {
+            CompanyId = 1,
+            CompanyName = "Banco do Brasil",
+            FoundedDate = new DateTime(1922, 01, 01),
+            Revenue = 28_820_000_000.00M,
+        };
+
+        Company company2 = new Company()
+        {
+            CompanyId = 2,
+            CompanyName = "Tech Solutions Inc.",
+            FoundedDate = new DateTime(2000, 05, 15),
+            Revenue = 15_500_000_000.00M,
+        };
+
+        Company company3 = new Company()
+        {
+            CompanyId = 3,
+            CompanyName = "Global Motors",
+            FoundedDate = new DateTime(1985, 10, 30),
+            Revenue = 10_200_000_000.00M,
+        };
+
+        Company company4 = new Company()
+        {
+            CompanyId = 4,
+            CompanyName = "Food Delights Co.",
+            FoundedDate = new DateTime(2010, 03, 12),
+            Revenue = 5_750_000_000.00M,
+        };
+
+        Company company5 = new Company()
+        {
+            CompanyId = 5,
+            CompanyName = "Fashion Trends Ltd.",
+            FoundedDate = new DateTime(1995, 07, 22),
+            Revenue = 8_300_000_000.00M,
+        };
+
+        Company company6 = new Company()
+        {
+            CompanyId = 6,
+            CompanyName = "Green Energy Solutions",
+            FoundedDate = new DateTime(2008, 12, 05),
+            Revenue = 3_600_000_000.00M,
+        };
+
+        // Many-to-many seed
+        // Client Company
+        ClientCompany bancoDoBrasil1 = new ClientCompany()
+        {
+            ClientId = client1.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil2 = new ClientCompany()
+        {
+            ClientId = client2.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil3 = new ClientCompany()
+        {
+            ClientId = client3.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil4 = new ClientCompany()
+        {
+            ClientId = client4.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil5 = new ClientCompany()
+        {
+            ClientId = client5.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil6 = new ClientCompany()
+        {
+            ClientId = client6.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil7 = new ClientCompany()
+        {
+            ClientId = client7.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil8 = new ClientCompany()
+        {
+            ClientId = client8.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil9 = new ClientCompany()
+        {
+            ClientId = client9.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        ClientCompany bancoDoBrasil10 = new ClientCompany()
+        {
+            ClientId = client10.ClientId,
+            CompanyId = company1.CompanyId
+        };
+
+        // Tech Solutions Inc.
+        ClientCompany techSolutionsInc1 = new ClientCompany()
+        {
+            ClientId = client1.ClientId,
+            CompanyId = company2.CompanyId
+        };
+
+        ClientCompany techSolutionsInc2 = new ClientCompany()
+        {
+            ClientId = client2.ClientId,
+            CompanyId = company2.CompanyId
+        };
+
+        ClientCompany techSolutionsInc3 = new ClientCompany()
+        {
+            ClientId = client3.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany techSolutionsInc4 = new ClientCompany()
+        {
+            ClientId = client4.ClientId,
+            CompanyId = company2.CompanyId
+        };
+
+        ClientCompany techSolutionsInc5 = new ClientCompany()
+        {
+            ClientId = client5.ClientId,
+            CompanyId = company2.CompanyId
+        };
+
+        ClientCompany techSolutionsInc6 = new ClientCompany()
+        {
+            ClientId = client6.ClientId,
+            CompanyId = company2.CompanyId
+        };
+        ClientCompany techSolutionsInc7 = new ClientCompany()
+        {
+            ClientId = client7.ClientId,
+            CompanyId = company2.CompanyId
+        };
+        ClientCompany techSolutionsInc8 = new ClientCompany()
+        {
+            ClientId = client8.ClientId,
+            CompanyId = company2.CompanyId
+        };
+
+        // Global Motors
+        ClientCompany globalMotors1 = new ClientCompany()
+        {
+            ClientId = client1.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany globalMotors2 = new ClientCompany()
+        {
+            ClientId = client2.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany globalMotors3 = new ClientCompany()
+        {
+            ClientId = client3.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany globalMotors4 = new ClientCompany()
+        {
+            ClientId = client4.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany globalMotors5 = new ClientCompany()
+        {
+            ClientId = client5.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany globalMotors6 = new ClientCompany()
+        {
+            ClientId = client6.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany globalMotors7 = new ClientCompany()
+        {
+            ClientId = client7.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        ClientCompany globalMotors8 = new ClientCompany()
+        {
+            ClientId = client8.ClientId,
+            CompanyId = company3.CompanyId
+        };
+
+        // Food Delights Co.
+        ClientCompany foodDelights1 = new ClientCompany()
+        {
+            ClientId = client1.ClientId,
+            CompanyId = company4.CompanyId
+        };
+
+        ClientCompany foodDelights2 = new ClientCompany()
+        {
+            ClientId = client2.ClientId,
+            CompanyId = company4.CompanyId
+        };
+
+        ClientCompany foodDelights3 = new ClientCompany()
+        {
+            ClientId = client3.ClientId,
+            CompanyId = company4.CompanyId
+        };
+
+        ClientCompany foodDelights4 = new ClientCompany()
+        {
+            ClientId = client4.ClientId,
+            CompanyId = company4.CompanyId
+        };
+
+        ClientCompany foodDelights5 = new ClientCompany()
+        {
+            ClientId = client5.ClientId,
+            CompanyId = company4.CompanyId
+        };
+
+        ClientCompany foodDelights6 = new ClientCompany()
+        {
+            ClientId = client6.ClientId,
+            CompanyId = company4.CompanyId
+        };
+
+        ClientCompany foodDelights7 = new ClientCompany()
+        {
+            ClientId = client7.ClientId,
+            CompanyId = company4.CompanyId
+        };
+
+        // Fashion Trends Ltd.
+        ClientCompany fashionTrends1 = new ClientCompany()
+        {
+            ClientId = client10.ClientId,
+            CompanyId = company5.CompanyId
+        };
+
+        ClientCompany fashionTrends2 = new ClientCompany()
+        {
+            ClientId = client9.ClientId,
+            CompanyId = company5.CompanyId
+        };
+
+        ClientCompany fashionTrends3 = new ClientCompany()
+        {
+            ClientId = client8.ClientId,
+            CompanyId = company5.CompanyId
+        };
+
+        ClientCompany fashionTrends4 = new ClientCompany()
+        {
+            ClientId = client7.ClientId,
+            CompanyId = company5.CompanyId
+        };
+
+        ClientCompany fashionTrends5 = new ClientCompany()
+        {
+            ClientId = client6.ClientId,
+            CompanyId = company5.CompanyId
+        };
+
+        ClientCompany fashionTrends6 = new ClientCompany()
+        {
+            ClientId = client5.ClientId,
+            CompanyId = company5.CompanyId
+        };
+
+        ClientCompany fashionTrends7 = new ClientCompany()
+        {
+            ClientId = client4.ClientId,
+            CompanyId = company5.CompanyId
+        };
+
+        // Green Energy Solutions
+        ClientCompany energySolutions1 = new ClientCompany()
+        {
+            ClientId = client4.ClientId,
+            CompanyId = company6.CompanyId
+        };
+
+        ClientCompany energySolutions2 = new ClientCompany()
+        {
+            ClientId = client5.ClientId,
+            CompanyId = company6.CompanyId
+        };
+
+        ClientCompany energySolutions3 = new ClientCompany()
+        {
+            ClientId = client6.ClientId,
+            CompanyId = company6.CompanyId
+        };
+
+        ClientCompany energySolutions4 = new ClientCompany()
+        {
+            ClientId = client4.ClientId,
+            CompanyId = company6.CompanyId
+        };
+
+        ClientCompany energySolutions5 = new ClientCompany()
+        {
+            ClientId = client7.ClientId,
+            CompanyId = company6.CompanyId
+        };
+
+        // Popular!
+        modelBuilder.Entity<Client>().HasData(
+            client1, client2, client3, client4, client5,
+            client6, client7, client8, client9, client10);
+
+        modelBuilder.Entity<Company>().HasData(
+            company1, company2, company3,
+            company4, company5, company6
+        );
+
+        modelBuilder.Entity<ClientCompany>().HasData(
+            bancoDoBrasil1, bancoDoBrasil2, bancoDoBrasil3, bancoDoBrasil4, bancoDoBrasil5,
+            bancoDoBrasil6, bancoDoBrasil7, bancoDoBrasil8, bancoDoBrasil9, bancoDoBrasil10,
+            techSolutionsInc1, techSolutionsInc2, techSolutionsInc3, techSolutionsInc4,
+            techSolutionsInc5, techSolutionsInc6, techSolutionsInc7, techSolutionsInc8,
+            globalMotors1, globalMotors2, globalMotors3, globalMotors4,
+            globalMotors5, globalMotors6, globalMotors7, globalMotors8,
+            foodDelights1, foodDelights2, foodDelights3, foodDelights4,
+            foodDelights5, foodDelights6, foodDelights7,
+            fashionTrends1, fashionTrends2, fashionTrends3, fashionTrends4,
+            fashionTrends5, fashionTrends6, fashionTrends7,
+            energySolutions1, energySolutions2, energySolutions3,
+            energySolutions4, energySolutions5
+        );
+    }
+}

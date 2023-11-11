@@ -25,27 +25,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/joaog/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
-      &quot;/home/joaog/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
-      &quot;/home/joaog/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/home/joaog/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
+      "/home/joaog/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache",
+      "/home/joaog/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CarteiraClientes: http">
     <configuration name="CarteiraClientes: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CarteiraClientes.csproj" />
@@ -89,7 +90,7 @@
       <workItem from="1699562445763" duration="4990000" />
       <workItem from="1699647585296" duration="4463000" />
       <workItem from="1699710140332" duration="1769000" />
-      <workItem from="1699712242041" duration="9681000" />
+      <workItem from="1699712242041" duration="13457000" />
     </task>
     <servers />
   </component>
