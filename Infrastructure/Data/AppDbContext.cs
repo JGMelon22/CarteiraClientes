@@ -19,5 +19,6 @@ public class AppDbContext : DbContext
     {
         modelBuilder.ApplyConfiguration(new ClientConfiguration());
         modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+        modelBuilder.ApplyConfiguration(new ClientCompanyConfiguration());
     }
 }

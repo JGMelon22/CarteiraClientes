@@ -30,7 +30,7 @@ public class ClientCompanyConfiguration : IEntityTypeConfiguration<ClientCompany
         builder.HasOne(cc => cc.Company)
             .WithMany(c => c.ClientsCompanies)
             .HasForeignKey(cc => cc.CompanyId);
-
+        
         builder.Property(cc => cc.ClientId)
             .HasColumnName("client_id")
             .ValueGeneratedOnAdd()
@@ -39,18 +39,6 @@ public class ClientCompanyConfiguration : IEntityTypeConfiguration<ClientCompany
         builder.Property(cc => cc.CompanyId)
             .HasColumnName("company_id")
             .ValueGeneratedOnAdd()
-            .IsRequired();
-
-        builder.Property(cc => cc.Client)
-            .HasColumnType("varchar")
-            .HasMaxLength(100)
-            .HasColumnName("client_name")
-            .IsRequired();
-
-        builder.Property(cc => cc.Company)
-            .HasColumnType("varchar")
-            .HasMaxLength(100)
-            .HasColumnName("company_name")
             .IsRequired();
     }
 }
