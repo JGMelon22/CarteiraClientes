@@ -1,5 +1,6 @@
 using System.Data;
 using CarteiraClientes.Infrastructure.Data;
+using CarteiraClientes.Infrastructure.Repository;
 using CarteiraClientes.Infrastructure.Validators.Client;
 using CarteiraClientes.Infrastructure.Validators.Company;
 using CarteiraClientes.Interfaces;
@@ -31,8 +32,8 @@ builder.Services.AddScoped<IValidator<AddCompanyViewModel>, AddCompanyValidator>
 builder.Services.AddScoped<IValidator<UpdateCompanyViewModel>, UpdateCompanyValidator>();
 
 // Interface & Repository register
-builder.Services.AddScoped<IClientRepository, IClientRepository>();
-builder.Services.AddScoped<ICompanyRepository, ICompanyRepository>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 var app = builder.Build();
 

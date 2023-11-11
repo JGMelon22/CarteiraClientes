@@ -32,9 +32,11 @@ public class ClientRepository : IClientRepository
 
         _dbConnection.Open();
 
+        // var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
         var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
-
-        serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList(); // Mapeando Model para ViewModel
+        
+        // serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList(); // Mapeando Model para ViewModel
+        serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList();
 
         _dbConnection.Close();
 
