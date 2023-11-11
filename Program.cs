@@ -1,3 +1,4 @@
+using System.Data;
 using CarteiraClientes.Infrastructure.Data;
 using CarteiraClientes.Infrastructure.Validators.Client;
 using CarteiraClientes.Infrastructure.Validators.Company;
@@ -6,11 +7,17 @@ using CarteiraClientes.ViewModels.Company;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// IDBConnection to help with Dapper
+builder.Services.AddScoped<IDbConnection>(x =>
+    new NpgsqlConnection(builder.Configuration.GetConnectionString("Default"))
+);
 
 // DbContext - EFCore
 builder.Services.AddDbContext<AppDbContext>(options =>
