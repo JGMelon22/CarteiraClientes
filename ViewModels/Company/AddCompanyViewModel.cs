@@ -1,7 +1,8 @@
 namespace CarteiraClientes.ViewModels.Company;
 
-public record AddCompanyViewModel(
-    string CompanyName,
-    DateTime FoundedDate,
-    decimal Revenue
-);
+public record AddCompanyViewModel
+{
+    public required string CompanyName { get; init; }
+    public DateTime FoundedDate { get; init; }
+    public decimal Revenue { get; init; }
+}
