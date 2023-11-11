@@ -1,4 +1,3 @@
-using System.Reflection;
 using CarteiraClientes.Infrastructure.Configuration;
 using CarteiraClientes.Models;
 using Microsoft.EntityFrameworkCore;

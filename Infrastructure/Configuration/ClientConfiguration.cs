@@ -30,9 +30,10 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
             .HasColumnType("smallint")
             .HasColumnName("age")
             .IsRequired();
-        
+
         builder.Property(c => c.Document)
             .HasColumnType("varchar")
+            .HasColumnName("document")
             .HasMaxLength(9)
             .IsRequired();
 
@@ -46,7 +47,5 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
             .HasColumnType("boolean")
             .HasColumnName("is_overdue")
             .IsRequired();
-        
-        // TODO Many-to-Many ClientsCompanies
     }
 }

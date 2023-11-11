@@ -22,6 +22,7 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
 
         builder.Property(c => c.CompanyName)
             .HasColumnType("varchar")
+            .HasColumnName("company_name")
             .HasMaxLength(100)
             .IsRequired();
 

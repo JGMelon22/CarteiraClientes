@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using CarteiraClientes.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Controllers;
 
