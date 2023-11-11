@@ -100,7 +100,7 @@
       <workItem from="1699562445763" duration="4990000" />
       <workItem from="1699647585296" duration="4463000" />
       <workItem from="1699710140332" duration="1769000" />
-      <workItem from="1699712242041" duration="20124000" />
+      <workItem from="1699712242041" duration="21314000" />
     </task>
     <servers />
   </component>
@@ -109,5 +109,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/Repository/ClientRepository.cs</url>
+          <line>95</line>
+          <properties documentPath="$PROJECT_DIR$/Infrastructure/Repository/ClientRepository.cs" initialLine="95" containingFunctionPresentation="Method 'UpdateClient'">
+            <startOffsets>
+              <option value="3265" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3301" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/ClientsController.cs</url>
+          <line>54</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/ClientsController.cs" initialLine="54" containingFunctionPresentation="Method 'Edit'">
+            <startOffsets>
+              <option value="1334" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1393" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
