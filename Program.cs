@@ -23,6 +23,9 @@ builder.Services.AddScoped<IValidator<UpdateClientViewModel>, UpdateClientValida
 builder.Services.AddScoped<IValidator<AddCompanyViewModel>, AddCompanyValidator>();
 builder.Services.AddScoped<IValidator<UpdateCompanyViewModel>, UpdateCompanyValidator>();
 
+// Interface & Repository register
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
