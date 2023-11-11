@@ -1,41 +1,131 @@
+using System.Data;
 using CarteiraClientes.Infrastructure.Data;
 using CarteiraClientes.Interfaces;
 using CarteiraClientes.Models;
 using CarteiraClientes.ViewModels.Client;
+using Dapper;
+using Mapster;
 
 namespace CarteiraClientes.Infrastructure.Repository;
 
 public class ClientRepository : IClientRepository
 {
     private readonly AppDbContext _dbContext;
+    private readonly IDbConnection _dbConnection;
 
-    public ClientRepository(AppDbContext dbContext)
+    public ClientRepository(AppDbContext dbContext, IDbConnection dbConnection)
     {
         _dbContext = dbContext;
-    }
-    
-    public Task<ServiceResponse<List<GetClientViewModel>>> GetAllClients()
-    {
-        throw new NotImplementedException();
+        _dbConnection = dbConnection;
     }
 
-    public Task<ServiceResponse<GetClientViewModel>> GetClientById(int id)
+    //  Busca com Dapper para evitar memory overhead 
+    public async Task<ServiceResponse<List<GetClientViewModel>>> GetAllClients()
     {
-        throw new NotImplementedException();
+        var serviceResponse = new ServiceResponse<List<GetClientViewModel>>();
+        var getAllClientsQuery = @"select client_id as ClientId,
+                                          full_name as FullName,
+                                          age as Age,
+                                          document as Document,
+                                          gender as Gender,
+                                          is_overdue as IsOverdue
+                                   from clients;";
+
+        _dbConnection.Open();
+
+        var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
+
+        serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList(); // Mapeando Model para ViewModel
+
+        _dbConnection.Close();
+
+        return serviceResponse;
     }
 
-    public Task AddClient(AddClientViewModel newClient)
+    public async Task<ServiceResponse<GetClientViewModel>> GetClientById(int id)
     {
-        throw new NotImplementedException();
+        var serviceResponse = new ServiceResponse<GetClientViewModel>();
+
+        try
+        {
+            var client = await _dbContext.Clients.FindAsync(id);
+
+            if (client == null)
+                throw new Exception("Cliente not found!");
+
+            else
+                serviceResponse.Data = client.Adapt<GetClientViewModel>();
+        }
+        catch (Exception ex) // Por isso criamos uma service response. Facilita lidar com exceptions
+        {
+            serviceResponse.Success = false;
+            serviceResponse.Message = ex.Message;
+        }
+
+        return serviceResponse;
     }
 
-    public Task<ServiceResponse<GetClientViewModel>> UpdateClient(UpdateClientViewModel updatedClient)
+    public async Task AddClient(AddClientViewModel newClient)
     {
-        throw new NotImplementedException();
+        var client = newClient.Adapt<Client>();
+
+        await _dbContext.Clients.AddAsync(client);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task RemoveClient(int id)
+    public async Task<ServiceResponse<GetClientViewModel>> UpdateClient(UpdateClientViewModel updatedClient)
     {
-        throw new NotImplementedException();
+        var serviceResponse = new ServiceResponse<GetClientViewModel>();
+
+        try
+        {
+            var client = await _dbContext.Clients.FindAsync(updatedClient.ClientId);
+
+            if (client == null)
+                throw new Exception("Client not found!");
+
+            else
+            {
+                client.Adapt<UpdateClientViewModel>();
+
+                client.FullName = updatedClient.FullName;
+                client.Age = updatedClient.Age;
+                client.Document = updatedClient.Document;
+                client.Gender = updatedClient.Gender;
+
+                await _dbContext.SaveChangesAsync();
+
+                serviceResponse.Data = client.Adapt<GetClientViewModel>();
+            }
+        }
+        catch (Exception ex)
+        {
+            serviceResponse.Success = false;
+            serviceResponse.Message = ex.Message;
+        }
+
+        return serviceResponse;
+    }
+
+    public async Task RemoveClient(int id)
+    {
+        var serviceResponse = new ServiceResponse<GetClientViewModel>();
+
+        try
+        {
+            var client = await _dbContext.Clients.FindAsync(id);
+
+            if (client == null)
+                throw new Exception("Client not found!");
+
+            _dbContext.Clients.Remove(client);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        catch (Exception ex)
+        {
+            serviceResponse.Success = false;
+            serviceResponse.Message = ex.Message;
+        }
     }
 }
