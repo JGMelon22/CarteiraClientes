@@ -1,4 +1,3 @@
-using CarteiraClientes.Models.Enums;
 using CarteiraClientes.ViewModels.Client;
 using FluentValidation;
 

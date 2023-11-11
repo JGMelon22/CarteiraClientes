@@ -8,10 +8,10 @@ public class UpdateCompanyValidator : AbstractValidator<UpdateCompanyViewModel>
     public UpdateCompanyValidator()
     {
         // Validar data 
-        DateTime dataValida = DateTime.Now;
+        var dataValida = DateTime.Now;
 
         // Minimum gross revenue
-        decimal minimunGrossRevenue = 100.00M;
+        var minimunGrossRevenue = 100.00M;
 
         RuleFor(c => c.CompanyId)
             .NotEmpty()

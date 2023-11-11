@@ -1,5 +1,3 @@
-using CarteiraClientes.Models.Enums;
-
 namespace CarteiraClientes.Models;
 
 public class Client

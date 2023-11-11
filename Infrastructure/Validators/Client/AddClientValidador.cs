@@ -1,4 +1,3 @@
-using CarteiraClientes.Models.Enums;
 using CarteiraClientes.ViewModels.Client;
 using FluentValidation;
 
@@ -39,7 +38,7 @@ public class AddClientValidador : AbstractValidator<AddClientViewModel>
             .WithMessage("Sexo do Cliente deve ser informado")
             .Must(gender => gender == Gender.Female || gender == Gender.Male)
             .WithMessage("Sexo do Cliente deve ser \"Female\" ou \"Male\"");
-        
+
         // Não precisamos validar a situação de inadimplencia
         // Pois um cliente pode ser registrado no sistema (RN) assim mesmo
     }

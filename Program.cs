@@ -6,7 +6,6 @@ using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);

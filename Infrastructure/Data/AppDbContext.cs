@@ -1,7 +1,5 @@
 using CarteiraClientes.Infrastructure.Configuration;
 using CarteiraClientes.Infrastructure.Configuration.Seeding;
-using CarteiraClientes.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace CarteiraClientes.Infrastructure.Data;
 

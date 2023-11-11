@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using CarteiraClientes.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Controllers;

@@ -1,7 +1,3 @@
-using CarteiraClientes.Models;
-using CarteiraClientes.Models.Enums;
-using Microsoft.EntityFrameworkCore;
-
 namespace CarteiraClientes.Infrastructure.Configuration.Seeding;
 
 public class InitialSeeding
@@ -9,7 +5,7 @@ public class InitialSeeding
     public static void Seed(ModelBuilder modelBuilder)
     {
         // Clients
-        Client client1 = new Client()
+        var client1 = new Client
         {
             ClientId = 1,
             FullName = "Allissa Victória da Silva",
@@ -19,7 +15,7 @@ public class InitialSeeding
             IsOverdue = false
         };
 
-        Client client2 = new Client()
+        var client2 = new Client
         {
             ClientId = 2,
             FullName = "João Oliveira",
@@ -29,7 +25,7 @@ public class InitialSeeding
             IsOverdue = true
         };
 
-        Client client3 = new Client()
+        var client3 = new Client
         {
             ClientId = 3,
             FullName = "Maria Santos",
@@ -38,7 +34,7 @@ public class InitialSeeding
             Document = "456789123",
             IsOverdue = false
         };
-        Client client4 = new Client()
+        var client4 = new Client
         {
             ClientId = 4,
             FullName = "Carlos Pereira",
@@ -48,7 +44,7 @@ public class InitialSeeding
             IsOverdue = true
         };
 
-        Client client5 = new Client()
+        var client5 = new Client
         {
             ClientId = 5,
             FullName = "Ana Oliveira",
@@ -58,7 +54,7 @@ public class InitialSeeding
             IsOverdue = false
         };
 
-        Client client6 = new Client()
+        var client6 = new Client
         {
             ClientId = 6,
             FullName = "Pedro Silva",
@@ -68,7 +64,7 @@ public class InitialSeeding
             IsOverdue = true
         };
 
-        Client client7 = new Client()
+        var client7 = new Client
         {
             ClientId = 7,
             FullName = "Camila Santos",
@@ -78,7 +74,7 @@ public class InitialSeeding
             IsOverdue = false
         };
 
-        Client client8 = new Client()
+        var client8 = new Client
         {
             ClientId = 8,
             FullName = "Felipe Oliveira",
@@ -88,7 +84,7 @@ public class InitialSeeding
             IsOverdue = true
         };
 
-        Client client9 = new Client()
+        var client9 = new Client
         {
             ClientId = 9,
             FullName = "Juliana Silva",
@@ -98,7 +94,7 @@ public class InitialSeeding
             IsOverdue = false
         };
 
-        Client client10 = new Client()
+        var client10 = new Client
         {
             ClientId = 10,
             FullName = "Lucas Pereira",
@@ -109,324 +105,324 @@ public class InitialSeeding
         };
 
         // Company
-        Company company1 = new Company()
+        var company1 = new Company
         {
             CompanyId = 1,
             CompanyName = "Banco do Brasil",
             FoundedDate = new DateTime(1922, 01, 01),
-            Revenue = 28_820_000_000.00M,
+            Revenue = 28_820_000_000.00M
         };
 
-        Company company2 = new Company()
+        var company2 = new Company
         {
             CompanyId = 2,
             CompanyName = "Tech Solutions Inc.",
             FoundedDate = new DateTime(2000, 05, 15),
-            Revenue = 15_500_000_000.00M,
+            Revenue = 15_500_000_000.00M
         };
 
-        Company company3 = new Company()
+        var company3 = new Company
         {
             CompanyId = 3,
             CompanyName = "Global Motors",
             FoundedDate = new DateTime(1985, 10, 30),
-            Revenue = 10_200_000_000.00M,
+            Revenue = 10_200_000_000.00M
         };
 
-        Company company4 = new Company()
+        var company4 = new Company
         {
             CompanyId = 4,
             CompanyName = "Food Delights Co.",
             FoundedDate = new DateTime(2010, 03, 12),
-            Revenue = 5_750_000_000.00M,
+            Revenue = 5_750_000_000.00M
         };
 
-        Company company5 = new Company()
+        var company5 = new Company
         {
             CompanyId = 5,
             CompanyName = "Fashion Trends Ltd.",
             FoundedDate = new DateTime(1995, 07, 22),
-            Revenue = 8_300_000_000.00M,
+            Revenue = 8_300_000_000.00M
         };
 
-        Company company6 = new Company()
+        var company6 = new Company
         {
             CompanyId = 6,
             CompanyName = "Green Energy Solutions",
             FoundedDate = new DateTime(2008, 12, 05),
-            Revenue = 3_600_000_000.00M,
+            Revenue = 3_600_000_000.00M
         };
 
         // Many-to-many seed
         // Client Company
-        ClientCompany bancoDoBrasil1 = new ClientCompany()
+        var bancoDoBrasil1 = new ClientCompany
         {
             ClientId = client1.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil2 = new ClientCompany()
+        var bancoDoBrasil2 = new ClientCompany
         {
             ClientId = client2.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil3 = new ClientCompany()
+        var bancoDoBrasil3 = new ClientCompany
         {
             ClientId = client3.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil4 = new ClientCompany()
+        var bancoDoBrasil4 = new ClientCompany
         {
             ClientId = client4.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil5 = new ClientCompany()
+        var bancoDoBrasil5 = new ClientCompany
         {
             ClientId = client5.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil6 = new ClientCompany()
+        var bancoDoBrasil6 = new ClientCompany
         {
             ClientId = client6.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil7 = new ClientCompany()
+        var bancoDoBrasil7 = new ClientCompany
         {
             ClientId = client7.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil8 = new ClientCompany()
+        var bancoDoBrasil8 = new ClientCompany
         {
             ClientId = client8.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil9 = new ClientCompany()
+        var bancoDoBrasil9 = new ClientCompany
         {
             ClientId = client9.ClientId,
             CompanyId = company1.CompanyId
         };
 
-        ClientCompany bancoDoBrasil10 = new ClientCompany()
+        var bancoDoBrasil10 = new ClientCompany
         {
             ClientId = client10.ClientId,
             CompanyId = company1.CompanyId
         };
 
         // Tech Solutions Inc.
-        ClientCompany techSolutionsInc1 = new ClientCompany()
+        var techSolutionsInc1 = new ClientCompany
         {
             ClientId = client1.ClientId,
             CompanyId = company2.CompanyId
         };
 
-        ClientCompany techSolutionsInc2 = new ClientCompany()
+        var techSolutionsInc2 = new ClientCompany
         {
             ClientId = client2.ClientId,
             CompanyId = company2.CompanyId
         };
 
-        ClientCompany techSolutionsInc3 = new ClientCompany()
+        var techSolutionsInc3 = new ClientCompany
         {
             ClientId = client3.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany techSolutionsInc4 = new ClientCompany()
+        var techSolutionsInc4 = new ClientCompany
         {
             ClientId = client4.ClientId,
             CompanyId = company2.CompanyId
         };
 
-        ClientCompany techSolutionsInc5 = new ClientCompany()
+        var techSolutionsInc5 = new ClientCompany
         {
             ClientId = client5.ClientId,
             CompanyId = company2.CompanyId
         };
 
-        ClientCompany techSolutionsInc6 = new ClientCompany()
+        var techSolutionsInc6 = new ClientCompany
         {
             ClientId = client6.ClientId,
             CompanyId = company2.CompanyId
         };
-        ClientCompany techSolutionsInc7 = new ClientCompany()
+        var techSolutionsInc7 = new ClientCompany
         {
             ClientId = client7.ClientId,
             CompanyId = company2.CompanyId
         };
-        ClientCompany techSolutionsInc8 = new ClientCompany()
+        var techSolutionsInc8 = new ClientCompany
         {
             ClientId = client8.ClientId,
             CompanyId = company2.CompanyId
         };
 
         // Global Motors
-        ClientCompany globalMotors1 = new ClientCompany()
+        var globalMotors1 = new ClientCompany
         {
             ClientId = client1.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany globalMotors2 = new ClientCompany()
+        var globalMotors2 = new ClientCompany
         {
             ClientId = client2.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany globalMotors3 = new ClientCompany()
+        var globalMotors3 = new ClientCompany
         {
             ClientId = client3.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany globalMotors4 = new ClientCompany()
+        var globalMotors4 = new ClientCompany
         {
             ClientId = client4.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany globalMotors5 = new ClientCompany()
+        var globalMotors5 = new ClientCompany
         {
             ClientId = client5.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany globalMotors6 = new ClientCompany()
+        var globalMotors6 = new ClientCompany
         {
             ClientId = client6.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany globalMotors7 = new ClientCompany()
+        var globalMotors7 = new ClientCompany
         {
             ClientId = client7.ClientId,
             CompanyId = company3.CompanyId
         };
 
-        ClientCompany globalMotors8 = new ClientCompany()
+        var globalMotors8 = new ClientCompany
         {
             ClientId = client8.ClientId,
             CompanyId = company3.CompanyId
         };
 
         // Food Delights Co.
-        ClientCompany foodDelights1 = new ClientCompany()
+        var foodDelights1 = new ClientCompany
         {
             ClientId = client1.ClientId,
             CompanyId = company4.CompanyId
         };
 
-        ClientCompany foodDelights2 = new ClientCompany()
+        var foodDelights2 = new ClientCompany
         {
             ClientId = client2.ClientId,
             CompanyId = company4.CompanyId
         };
 
-        ClientCompany foodDelights3 = new ClientCompany()
+        var foodDelights3 = new ClientCompany
         {
             ClientId = client3.ClientId,
             CompanyId = company4.CompanyId
         };
 
-        ClientCompany foodDelights4 = new ClientCompany()
+        var foodDelights4 = new ClientCompany
         {
             ClientId = client4.ClientId,
             CompanyId = company4.CompanyId
         };
 
-        ClientCompany foodDelights5 = new ClientCompany()
+        var foodDelights5 = new ClientCompany
         {
             ClientId = client5.ClientId,
             CompanyId = company4.CompanyId
         };
 
-        ClientCompany foodDelights6 = new ClientCompany()
+        var foodDelights6 = new ClientCompany
         {
             ClientId = client6.ClientId,
             CompanyId = company4.CompanyId
         };
 
-        ClientCompany foodDelights7 = new ClientCompany()
+        var foodDelights7 = new ClientCompany
         {
             ClientId = client7.ClientId,
             CompanyId = company4.CompanyId
         };
 
         // Fashion Trends Ltd.
-        ClientCompany fashionTrends1 = new ClientCompany()
+        var fashionTrends1 = new ClientCompany
         {
             ClientId = client10.ClientId,
             CompanyId = company5.CompanyId
         };
 
-        ClientCompany fashionTrends2 = new ClientCompany()
+        var fashionTrends2 = new ClientCompany
         {
             ClientId = client9.ClientId,
             CompanyId = company5.CompanyId
         };
 
-        ClientCompany fashionTrends3 = new ClientCompany()
+        var fashionTrends3 = new ClientCompany
         {
             ClientId = client8.ClientId,
             CompanyId = company5.CompanyId
         };
 
-        ClientCompany fashionTrends4 = new ClientCompany()
+        var fashionTrends4 = new ClientCompany
         {
             ClientId = client7.ClientId,
             CompanyId = company5.CompanyId
         };
 
-        ClientCompany fashionTrends5 = new ClientCompany()
+        var fashionTrends5 = new ClientCompany
         {
             ClientId = client6.ClientId,
             CompanyId = company5.CompanyId
         };
 
-        ClientCompany fashionTrends6 = new ClientCompany()
+        var fashionTrends6 = new ClientCompany
         {
             ClientId = client5.ClientId,
             CompanyId = company5.CompanyId
         };
 
-        ClientCompany fashionTrends7 = new ClientCompany()
+        var fashionTrends7 = new ClientCompany
         {
             ClientId = client4.ClientId,
             CompanyId = company5.CompanyId
         };
 
         // Green Energy Solutions
-        ClientCompany energySolutions1 = new ClientCompany()
+        var energySolutions1 = new ClientCompany
         {
             ClientId = client4.ClientId,
             CompanyId = company6.CompanyId
         };
 
-        ClientCompany energySolutions2 = new ClientCompany()
+        var energySolutions2 = new ClientCompany
         {
             ClientId = client5.ClientId,
             CompanyId = company6.CompanyId
         };
 
-        ClientCompany energySolutions3 = new ClientCompany()
+        var energySolutions3 = new ClientCompany
         {
             ClientId = client6.ClientId,
             CompanyId = company6.CompanyId
         };
 
-        ClientCompany energySolutions4 = new ClientCompany()
+        var energySolutions4 = new ClientCompany
         {
             ClientId = client4.ClientId,
             CompanyId = company6.CompanyId
         };
 
-        ClientCompany energySolutions5 = new ClientCompany()
+        var energySolutions5 = new ClientCompany
         {
             ClientId = client7.ClientId,
             CompanyId = company6.CompanyId

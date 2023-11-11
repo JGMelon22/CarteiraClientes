@@ -1,7 +1,6 @@
 using System.Data;
 using CarteiraClientes.Infrastructure.Data;
 using CarteiraClientes.Interfaces;
-using CarteiraClientes.Models;
 using CarteiraClientes.ViewModels.Client;
 using Dapper;
 using Mapster;
@@ -10,8 +9,8 @@ namespace CarteiraClientes.Infrastructure.Repository;
 
 public class ClientRepository : IClientRepository
 {
-    private readonly AppDbContext _dbContext;
     private readonly IDbConnection _dbConnection;
+    private readonly AppDbContext _dbContext;
 
     public ClientRepository(AppDbContext dbContext, IDbConnection dbConnection)
     {
@@ -53,8 +52,7 @@ public class ClientRepository : IClientRepository
             if (client == null)
                 throw new Exception("Cliente not found!");
 
-            else
-                serviceResponse.Data = client.Adapt<GetClientViewModel>();
+            serviceResponse.Data = client.Adapt<GetClientViewModel>();
         }
         catch (Exception ex) // Por isso criamos uma service response. Facilita lidar com exceptions
         {
@@ -82,21 +80,20 @@ public class ClientRepository : IClientRepository
             var client = await _dbContext.Clients.FindAsync(updatedClient.ClientId);
 
             if (client == null)
-                throw new Exception("Client not found!");
-
-            else
             {
-                client.Adapt<UpdateClientViewModel>();
-
-                client.FullName = updatedClient.FullName;
-                client.Age = updatedClient.Age;
-                client.Document = updatedClient.Document;
-                client.Gender = updatedClient.Gender;
-
-                await _dbContext.SaveChangesAsync();
-
-                serviceResponse.Data = client.Adapt<GetClientViewModel>();
+                throw new Exception("Client not found!");
             }
+
+            client.Adapt<UpdateClientViewModel>();
+
+            client.FullName = updatedClient.FullName;
+            client.Age = updatedClient.Age;
+            client.Document = updatedClient.Document;
+            client.Gender = updatedClient.Gender;
+
+            await _dbContext.SaveChangesAsync();
+
+            serviceResponse.Data = client.Adapt<GetClientViewModel>();
         }
         catch (Exception ex)
         {
