@@ -231,7 +231,7 @@ public class InitialSeeding
         var techSolutionsInc3 = new ClientCompany
         {
             ClientId = client3.ClientId,
-            CompanyId = company3.CompanyId
+            CompanyId = company2.CompanyId
         };
 
         var techSolutionsInc4 = new ClientCompany
@@ -418,13 +418,13 @@ public class InitialSeeding
 
         var energySolutions4 = new ClientCompany
         {
-            ClientId = client4.ClientId,
+            ClientId = client7.ClientId,
             CompanyId = company6.CompanyId
         };
 
         var energySolutions5 = new ClientCompany
         {
-            ClientId = client7.ClientId,
+            ClientId = client8.ClientId,
             CompanyId = company6.CompanyId
         };
 
