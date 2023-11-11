@@ -45,7 +45,6 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
 
         builder.Property(c => c.IsOverdue)
             .HasColumnType("boolean")
-            .HasColumnName("is_overdue")
-            .IsRequired();
+            .HasColumnName("is_overdue");
     }
 }
