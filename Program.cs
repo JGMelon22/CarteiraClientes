@@ -1,4 +1,10 @@
 using CarteiraClientes.Infrastructure.Data;
+using CarteiraClientes.Infrastructure.Validators.Client;
+using CarteiraClientes.Infrastructure.Validators.Company;
+using CarteiraClientes.ViewModels.Client;
+using CarteiraClientes.ViewModels.Company;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +15,13 @@ builder.Services.AddControllersWithViews();
 // DbContext - EFCore
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+
+// Fluent Validator Service 
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddScoped<IValidator<AddClientViewModel>, AddClientValidador>();
+builder.Services.AddScoped<IValidator<UpdateClientViewModel>, UpdateClientValidator>();
+builder.Services.AddScoped<IValidator<AddCompanyViewModel>, AddCompanyValidator>();
+builder.Services.AddScoped<IValidator<UpdateCompanyViewModel>, UpdateCompanyValidator>();
 
 var app = builder.Build();
 
