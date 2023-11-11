@@ -2,7 +2,7 @@ using CarteiraClientes.Models.Enums;
 using CarteiraClientes.ViewModels.Client;
 using FluentValidation;
 
-namespace CarteiraClientes.Infrastructure.Validators;
+namespace CarteiraClientes.Infrastructure.Validators.Client;
 
 public class AddClientValidador : AbstractValidator<AddClientViewModel>
 {
