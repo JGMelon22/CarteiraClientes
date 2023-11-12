@@ -64,7 +64,7 @@ public class ClientsController : Controller
 
         var client = await _repository.GetClientById(id);
         return client != null
-            ? View(client)
+            ? View(client.Data)
             : NotFound(client);
     }
 

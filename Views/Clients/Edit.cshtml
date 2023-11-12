@@ -1,0 +1,44 @@
+@model CarteiraClientes.ViewModels.Client.GetClientViewModel
+
+<h3 class="text-warning">Editar dados do Cliente</h3>
+<hr/>
+<div class="row">
+    <div class="row-md-4"></div>
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="ClientId"/>
+        <div class="form-group">
+            <label class="text-white fs-4" asp-for="FullName">Nome Completo</label>
+            <input asp-for="FullName" class="border-light-subtle form-control w-100"/>
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="text-white fs-4" asp-for="Age">Idade</label>
+            <input asp-for="Age" type="number" min="0" max="255" class="border-light-subtle form-control w-25"/>
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="text-white fs-4" asp-for="Document">Registro Geral</label>
+            <input asp-for="Document" type="text" class="border-light-subtle form-control w-50"/>
+            <span asp-validation-for="Document" class="text-danger"></span>
+        </div>
+        @* Sexo *@
+        <div class="form-group ">
+            <label asp-for="Gender" class="control-label">Sexo</label>
+            <select asp-for="Gender" class="dropdown-item bg-light-subtle border-light-subtle rounded-1" asp-items="Html.GetEnumSelectList<Gender>()"></select>
+        </div>
+        <div class="form-group">
+            <label class="text-white fs-4" asp-for="IsOverdue">Inadimplente?</label>
+            <input class="form-check-input" asp-for="IsOverdue"/>
+            <span asp-validation-for="IsOverdue" class="text-danger"></span>
+        </div>
+        <h4></h4>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary rounded-1 md-1" value="Editar"/>
+            <a class="btn btn-secondary rounded-1 md-1" asp-action="Index">Retornar a Lista</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
