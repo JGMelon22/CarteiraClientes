@@ -1,0 +1,47 @@
+@model IEnumerable<CarteiraClientes.ViewModels.Company.GetCompanyViewModel>
+
+<div class="text-primary fs-4">Lista de Companhias</div>
+<br/>
+
+<form asp-action="Index" method="get">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <td>
+            @Html.DisplayNameFor(model => model.CompanyId)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.FoundedDate)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Revenue)
+        </td>
+        </thead>
+        <tbody>
+        @foreach (var company in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => company.CompanyId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => company.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => company.FoundedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => company.Revenue)
+                </td>
+                <td>
+                    <a class="btn btn-info border-1 m-1" asp-action="Details" asp-route-id="@company.CompanyId">Detalhes</a>
+                    <a class="btn btn-warning border-1 m-1" asp-action="Edit" asp-route-id="@company.CompanyId">Editar</a>
+                    <a class="btn btn-danger border-1 m-1" asp-action="Delete" asp-route-id="@company.CompanyId">Remover</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</form>
