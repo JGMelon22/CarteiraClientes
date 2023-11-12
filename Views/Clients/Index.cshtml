@@ -1,4 +1,3 @@
-@using System.Globalization
 @model IEnumerable<CarteiraClientes.ViewModels.Client.GetClientViewModel>
 
 <div class="text-primary fs-4">Lista de Clientes</div>
@@ -43,7 +42,7 @@
                     @Html.DisplayFor(modelItem => client.Age)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => client.Document)
+                    @($"{client.Document.Substring(0, 2)}.{client.Document.Substring(2, 3)}.{client.Document.Substring(5, 3)}-{client.Document.Substring(8)}")
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => client.Gender)

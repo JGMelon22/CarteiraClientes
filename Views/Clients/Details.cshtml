@@ -1,0 +1,33 @@
+@model CarteiraClientes.ViewModels.Client.GetClientViewModel
+
+<h3 class="text-info border-1 box-shadow">Detalhes do Cliente</h3>
+<br/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details">
+            <div class="form-group">
+                <label asp-for="ClientId" class="text-white fs-4">Código</label>
+                <input class="form-control w-50" type="text" placeholder="@Html.DisplayFor(model => model.ClientId)" disabled/>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="text-white fs-4">Nome Completo</label>
+                <input class="form-control w-75" type="text" placeholder="@Html.DisplayFor(model => model.FullName)" disabled/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="text-white fs-4">Idade</label>
+                <input class="form-control w-25" type="number" placeholder="@Html.DisplayFor(model => model.Age)" disabled/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Document" class="text-white fs-4"></label>
+                @* Formata RG *@
+                <input class="form-control w-75" type="text" placeholder="@($"{Model.Document.Substring(0, 2)}.{Model.Document.Substring(2, 3)}.{Model.Document.Substring(5, 3)}-{Model.Document.Substring(8)}")" disabled/>
+            </div>
+        </form>
+    </div>
+</div>
+<h4></h4>
+<di>
+    <a class="btn btn-secondary rounded-1 mb-1" asp-action="Index">Retornar a Lista</a>
+    <a class="btn btn-warning rounded-1 mb-1" asp-action="Edit" asp-route-id="@Model.ClientId">Editar</a>
+</di>
