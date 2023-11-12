@@ -4,9 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Controllers;
 
-[ApiController]
-[Route("/api/[controller]")]
-public class ClientsController : ControllerBase
+public class ClientsController : Controller
 {
     private readonly IClientRepository _repository;
 
@@ -20,7 +18,7 @@ public class ClientsController : ControllerBase
     {
         var clients = await _repository.GetAllClients();
         return clients.Data != null
-            ? Ok(clients)
+            ? View(clients.Data)
             : NoContent();
     }
 

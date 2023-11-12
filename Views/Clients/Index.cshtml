@@ -1,0 +1,63 @@
+@using System.Globalization
+@model IEnumerable<CarteiraClientes.ViewModels.Client.GetClientViewModel>
+
+<div class="text-primary fs-4">Lista de Clientes</div>
+<br/>
+
+<form asp-action="Index" method="get">
+    <table class="table border-light-subtle table-hover table-bordered">
+        <thead class="text-center">
+        <td>
+            @Html.DisplayName("Código")
+        </td>
+        <td>
+            @Html.DisplayName("Nome Completo")
+        </td>
+        <td class="text-center">
+            @Html.DisplayName("Idade")
+        </td>
+        <td class="text-center">
+            @Html.DisplayName("RG")
+        </td>
+        <td class="text-center">
+            @Html.DisplayName("Sexo")
+        </td>
+        <td class="text-center">
+            @Html.DisplayName("Inadimplente?")
+        </td>
+        <td class="text-center">
+            @Html.DisplayName("Opções?")
+        </td>
+        </thead>
+        <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => client.ClientId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => client.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => client.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => client.Document)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => client.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => client.IsOverdue)
+                </td>
+                <td class="d-flex justify-content-center">
+                    <a class="btn btn-info border-1 m-1" asp-action="Details" asp-route-id="@client.ClientId">Detalhes</a>
+                    <a class="btn btn-warning border-1 m-1" asp-action="Edit" asp-route-id="@client.ClientId">Editar</a>
+                    <a class="btn btn-danger border-1 m-1" asp-action="Delete" asp-route-id="@client.ClientId">Remover</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</form>
