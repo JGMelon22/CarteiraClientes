@@ -4,9 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Controllers;
 
-[ApiController]
-[Route("/api/[controller]")]
-public class CompaniesController : ControllerBase
+public class CompaniesController : Controller
 {
     private readonly ICompanyRepository _repository;
 
@@ -20,7 +18,7 @@ public class CompaniesController : ControllerBase
     {
         var companies = await _repository.GetAllCompanies();
         return companies.Data != null
-            ? Ok(companies)
+            ? View(companies.Data)
             : NoContent();
     }
 
