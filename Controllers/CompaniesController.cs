@@ -22,7 +22,7 @@ public class CompaniesController : Controller
             : NoContent();
     }
 
-    [HttpGet("{id}")]
+    [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
         if (!ModelState.IsValid)

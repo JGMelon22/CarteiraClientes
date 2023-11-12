@@ -15,7 +15,7 @@ public class ClientsController : ControllerBase
         _repository = repository;
     }
 
-    [HttpGet]
+    // [HttpGet]
     public async Task<IActionResult> Index()
     {
         var clients = await _repository.GetAllClients();

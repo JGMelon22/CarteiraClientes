@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/CarteiraClientes.styles.css" asp-append-version="true"/>
 </head>
-<body>
+<body data-bs-theme="dark">
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
         <div class="container-fluid">
@@ -25,6 +25,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="text-white nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empresas</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-area="" asp-controller="Companies" asp-action="Index">Listar Empresas</a>
+                        </div>
                     </li>
                 </ul>
             </div>
