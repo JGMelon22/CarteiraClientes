@@ -75,10 +75,7 @@ public class CompanyRepository : ICompanyRepository
         {
             var company = await _dbContext.Companies.FindAsync(updatedCompany.CompanyId);
 
-            if (company == null)
-            {
-                throw new Exception("Company not found!");
-            }
+            if (company == null) throw new Exception("Company not found!");
 
             company.Adapt<UpdateCompanyViewModel>();
 
@@ -107,10 +104,7 @@ public class CompanyRepository : ICompanyRepository
         {
             var company = await _dbContext.Companies.FindAsync(id);
 
-            if (company == null)
-            {
-                throw new Exception("Company not found!");
-            }
+            if (company == null) throw new Exception("Company not found!");
 
             _dbContext.Companies.Remove(company);
             await _dbContext.SaveChangesAsync();
