@@ -35,7 +35,7 @@ public class UpdateCompanyValidator : AbstractValidator<UpdateCompanyViewModel>
             .WithMessage("Data de criação da empresa deve ser informada!")
             .NotNull()
             .WithMessage("Data de criação da empresa deve ser informada!")
-            .Must(foundedDate => foundedDate > dataValida);
+            .Must(foundedDate => foundedDate < dataValida);
 
         RuleFor(c => c.Revenue)
             .NotEmpty()

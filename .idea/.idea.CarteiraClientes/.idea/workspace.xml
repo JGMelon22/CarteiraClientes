@@ -101,7 +101,7 @@
       <workItem from="1699647585296" duration="4463000" />
       <workItem from="1699710140332" duration="1769000" />
       <workItem from="1699712242041" duration="21520000" />
-      <workItem from="1699796725989" duration="12880000" />
+      <workItem from="1699796725989" duration="13228000" />
     </task>
     <servers />
   </component>
@@ -110,5 +110,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/Validators/Company/UpdateCompanyValidator.cs</url>
+          <line>32</line>
+          <properties documentPath="$PROJECT_DIR$/Infrastructure/Validators/Company/UpdateCompanyValidator.cs" initialLine="32" containingFunctionPresentation="Constructor 'UpdateCompanyValidator'">
+            <startOffsets>
+              <option value="1089" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1373" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
