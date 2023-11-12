@@ -1,0 +1,33 @@
+@using System.Globalization
+@model CarteiraClientes.ViewModels.Company.GetCompanyViewModel
+
+<h3 class="text-info border-1 box-shadow">Detalhes da Empresa</h3>
+<br/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details">
+            <div class="form-group">
+                <label asp-for="CompanyId" class="text-black fs-4">Código</label>
+                <input class="form-control w-50" type="text" placeholder="@Html.DisplayFor(model => model.CompanyId)" readonly/>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="text-black fs-4">Nome Empresa</label>
+                <input class="form-control w-75" type="text" placeholder="@Html.DisplayFor(model => model.CompanyName)" readonly/>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoundedDate" class="text-black fs-4">Data Fundação</label>
+                <input class="form-control w-75" type="date" placeholder="@($"{Model.FoundedDate.ToString("dd/MM/yyyy")}")" readonly/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Revenue" class="text-black fs-4"></label>
+                <input class="form-control w-75" type="date" placeholder=" @($"{Model.Revenue.ToString("c", CultureInfo.CreateSpecificCulture("pt-BR"))}")" readonly/>
+            </div>
+        </form>
+    </div>
+</div>
+<h4></h4>
+<di>
+    <a class="btn btn-secondary rounded-1 mb-1" asp-action="Index">Retornar a Lista</a>
+    <a class="btn btn-warning rounded-1 mb-1" asp-action="Edit" asp-route-id="@Model.CompanyId">Editar</a>
+</di>
