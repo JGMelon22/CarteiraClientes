@@ -30,7 +30,7 @@ public class CompaniesController : Controller
 
         var company = await _repository.GetCompanyById(id);
         return company.Data != null
-            ? Ok(company)
+            ? View(company.Data)
             : NotFound(company);
     }
 
