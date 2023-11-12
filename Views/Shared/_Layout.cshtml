@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">CarteiraClientes</a>
+            <a class="navbar-brand text-light border border-primary border-2 rounded-2" asp-area="" asp-controller="Home" asp-action="Index">CarteiraClientes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,8 +28,10 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="text-white nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empresas</a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu border-info-subtle">
                             <a class="dropdown-item" asp-area="" asp-controller="Companies" asp-action="Index">Listar Empresas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-area="" asp-controller="Companies" asp-action="Create">Adicionar Empresa</a>
                         </div>
                     </li>
                 </ul>
