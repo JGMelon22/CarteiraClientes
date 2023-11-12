@@ -13,6 +13,7 @@ public class CompaniesController : Controller
         _repository = repository;
     }
 
+    // View Listar todas empresas
     [HttpGet]
     public async Task<IActionResult> Index()
     {
@@ -22,6 +23,7 @@ public class CompaniesController : Controller
             : NoContent();
     }
 
+    // View Detalhes empresa selecionada
     [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
@@ -34,14 +36,23 @@ public class CompaniesController : Controller
             : NotFound(company);
     }
 
+    // View Adicionar nova empresa
+    [HttpGet]
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    // Ação criar nova empresa
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AddCompanyViewModel newCompany)
     {
         if (!ModelState.IsValid)
-            return BadRequest();
+            return View(nameof(Create));
 
         await _repository.AddCompany(newCompany);
-        return Ok();
+        return RedirectToAction(nameof(Index));
     }
 
     // Chamar View Editar
@@ -71,13 +82,24 @@ public class CompaniesController : Controller
             : View(nameof(Edit));
     }
 
-    [HttpDelete("{id}")]
+    [HttpGet]
     public async Task<IActionResult> Delete(int id)
+    {
+        var company = await _repository.GetCompanyById(id);
+        return company.Data != null
+            ? View(company.Data)
+            : NotFound(company);
+    }
+
+    [HttpPost]
+    [ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
     {
         if (!ModelState.IsValid)
             return BadRequest();
 
         await _repository.RemoveCompany(id);
-        return NoContent();
+        return RedirectToAction(nameof(Index));
     }
 }
