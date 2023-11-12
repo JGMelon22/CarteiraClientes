@@ -6,18 +6,18 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="CompanyName" class="control-label"></label>
+                <label asp-for="CompanyName" class="control-label">Nome Companhia</label>
                 <input asp-for="CompanyName" type="text" class="border-light-subtle form-control w-50 p-1"/>
                 <span asp-validation-for="CompanyName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FoundedDate" class="control-label"></label>
+                <label asp-for="FoundedDate" class="control-label">Data de Fundação</label>
                 <input asp-for="FoundedDate" type="date" class="border-light-subtle form-control w-50 p-1"/>
                 <span asp-validation-for="FoundedDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Revenue" class="control-label">Lucro Anual</label>
-                <input asp-for="Revenue" type="number" class="border-light-subtle form-control w-50 p-1"/>
+                <input asp-for="Revenue" type="number" min="0" class="border-light-subtle form-control w-50 p-1"/>
                 <span asp-validation-for="Revenue" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -1,0 +1,39 @@
+@model CarteiraClientes.ViewModels.Client.GetClientViewModel
+
+<div class="alert alert-danger w-50">
+    <strong class="fs-4">Cuidado!</strong>
+    <p class="text-white fs-6">Você realmente deseja deletar este cliente?</p>
+</div>
+<br/>
+<div class="col-md-4">
+    <form asp-action="Details">
+        <div class="form-group">
+            <label asp-for="ClientId" class="text-white fs-4">Código</label>
+            <input class="border-light-subtle form-control w-25" type="text" placeholder="@Html.DisplayFor(model => model.ClientId)" disable/>
+        </div>
+        <div class="form-group">
+            <label asp-for="FullName" class="text-white fs-4">Nome Completo</label>
+            <input class="border-light-subtle form-control w-50" type="text" placeholder="@Html.DisplayFor(model => model.FullName)" disable/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age" class="text-white fs-4">Idade</label>
+            <input class="border-light-subtle form-control w-25" type="numeric" placeholder="@Html.DisplayFor(model => model.Age)" disable/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Document" class="text-white fs-4">Registro Geral</label>
+            <input class="form-control w-75" type="text" placeholder="@($"{Model.Document.Substring(0, 2)}.{Model.Document.Substring(2, 3)}.{Model.Document.Substring(5, 3)}-{Model.Document.Substring(8)}")" disabled/>
+        </div>
+        <div class="form-group ">
+            <label asp-for="Gender" class="control-label">Sexo</label>
+            <select asp-for="Gender" class="dropdown-item bg-light-subtle border-light-subtle rounded-1" asp-items="Html.GetEnumSelectList<Gender>()" disabled></select>
+        </div>
+    </form>
+</div>
+<h4></h4>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ClientId"/>
+    <button class="btn btn-danger rounded-1 md-1" onclick="return confirm('Deseja realmente deletar esta empresa?')">
+        Deletar
+    </button>
+    <a class="btn btn-secondary rounded-1 m-1" asp-action="Index">Retornar a Lista</a>
+</form>
