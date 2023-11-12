@@ -34,7 +34,7 @@ public class ClientRepository : IClientRepository
 
         // var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
         var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
-        
+
         // serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList(); // Mapeando Model para ViewModel
         serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList();
 
@@ -81,10 +81,7 @@ public class ClientRepository : IClientRepository
         {
             var client = await _dbContext.Clients.FindAsync(updatedClient.ClientId);
 
-            if (client == null)
-            {
-                throw new Exception("Client not found!");
-            }
+            if (client == null) throw new Exception("Client not found!");
 
             client.Adapt<UpdateClientViewModel>();
 

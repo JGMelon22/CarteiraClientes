@@ -15,6 +15,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Swagger
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // IDBConnection to help with Dapper
 builder.Services.AddScoped<IDbConnection>(x =>
     new NpgsqlConnection(builder.Configuration.GetConnectionString("Default"))
@@ -36,6 +41,10 @@ builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 var app = builder.Build();
+
+// Swagger
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

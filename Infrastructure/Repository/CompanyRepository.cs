@@ -1,8 +1,6 @@
-using System.ComponentModel;
 using System.Data;
 using CarteiraClientes.Infrastructure.Data;
 using CarteiraClientes.Interfaces;
-using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
 using Dapper;
 using Mapster;
@@ -11,8 +9,8 @@ namespace CarteiraClientes.Infrastructure.Repository;
 
 public class CompanyRepository : ICompanyRepository
 {
-    private readonly AppDbContext _dbContext;
     private readonly IDbConnection _dbConnection;
+    private readonly AppDbContext _dbContext;
 
     public CompanyRepository(AppDbContext dbContext, IDbConnection dbConnection)
     {
@@ -50,10 +48,7 @@ public class CompanyRepository : ICompanyRepository
             if (company == null)
                 throw new Exception("Company not found!");
 
-            else
-            {
-                serviceResponse.Data = company.Adapt<GetCompanyViewModel>();
-            }
+            serviceResponse.Data = company.Adapt<GetCompanyViewModel>();
         }
         catch (Exception ex)
         {
@@ -81,20 +76,19 @@ public class CompanyRepository : ICompanyRepository
             var company = await _dbContext.Companies.FindAsync(updatedCompany.CompanyId);
 
             if (company == null)
-                throw new Exception("Company not found!");
-
-            else
             {
-                company.Adapt<UpdateCompanyViewModel>();
-
-                company.CompanyName = updatedCompany.CompanyName;
-                company.FoundedDate = updatedCompany.FoundedDate;
-                company.Revenue = updatedCompany.Revenue;
-
-                await _dbContext.SaveChangesAsync();
-
-                serviceResponse.Data = company.Adapt<GetCompanyViewModel>();
+                throw new Exception("Company not found!");
             }
+
+            company.Adapt<UpdateCompanyViewModel>();
+
+            company.CompanyName = updatedCompany.CompanyName;
+            company.FoundedDate = updatedCompany.FoundedDate;
+            company.Revenue = updatedCompany.Revenue;
+
+            await _dbContext.SaveChangesAsync();
+
+            serviceResponse.Data = company.Adapt<GetCompanyViewModel>();
         }
         catch (Exception ex)
         {
@@ -114,13 +108,12 @@ public class CompanyRepository : ICompanyRepository
             var company = await _dbContext.Companies.FindAsync(id);
 
             if (company == null)
-                throw new Exception("Company not found!");
-
-            else
             {
-                _dbContext.Companies.Remove(company);
-                await _dbContext.SaveChangesAsync();
+                throw new Exception("Company not found!");
             }
+
+            _dbContext.Companies.Remove(company);
+            await _dbContext.SaveChangesAsync();
         }
         catch (Exception ex)
         {
