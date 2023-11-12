@@ -13,6 +13,7 @@ public class ClientsController : Controller
         _repository = repository;
     }
 
+    // View Listar todos Clientes
     [HttpGet]
     public async Task<IActionResult> Index()
     {
@@ -22,7 +23,8 @@ public class ClientsController : Controller
             : NoContent();
     }
 
-    [HttpGet("{id}")]
+    // View Detalhes cliente selecionado
+    [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
         if (!ModelState.IsValid)
@@ -30,21 +32,45 @@ public class ClientsController : Controller
 
         var client = await _repository.GetClientById(id);
         return client.Data != null
-            ? Ok(client)
-            : NotFound();
+            ? View(client.Data)
+            : NotFound(client);
     }
 
+    // View Adicionar novo cliente
+    [HttpGet]
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    // Ação criar novo cliente
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AddClientViewModel newClient)
+    {
+        if (!ModelState.IsValid)
+            return View(nameof(Create));
+
+        await _repository.AddClient(newClient);
+        return RedirectToAction(nameof(Index));
+    }
+
+    // Chamar View Editar
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
     {
         if (!ModelState.IsValid)
             return BadRequest();
 
-        await _repository.AddClient(newClient);
-        return Ok();
+        var client = await _repository.GetClientById(id);
+        return client != null
+            ? View(client)
+            : NotFound(client);
     }
 
-    [HttpPut]
+    // Ação editar cliente
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(UpdateClientViewModel updatedClient)
     {
         if (!ModelState.IsValid)
@@ -52,17 +78,30 @@ public class ClientsController : Controller
 
         var client = await _repository.UpdateClient(updatedClient);
         return client.Data != null
-            ? Ok(client)
+            ? RedirectToAction(nameof(Index))
+            : View(nameof(Edit));
+    }
+
+    // Chamar view deletar cliente
+    [HttpGet]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var client = await _repository.GetClientById(id);
+        return client.Data != null
+            ? View(client.Data)
             : NotFound(client);
     }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    // Action de deletar cliente
+    [HttpPost]
+    [ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
     {
         if (!ModelState.IsValid)
             return BadRequest();
 
         await _repository.RemoveClient(id);
-        return NoContent();
+        return RedirectToAction(nameof(Index));
     }
 }

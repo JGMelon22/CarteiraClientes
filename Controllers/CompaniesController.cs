@@ -43,7 +43,7 @@ public class CompaniesController : Controller
         return View();
     }
 
-    // Ação criar nova empresa
+    // Action criar nova empresa
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AddCompanyViewModel newCompany)
@@ -82,6 +82,7 @@ public class CompaniesController : Controller
             : View(nameof(Edit));
     }
 
+    // Chamar View Deletar empresa
     [HttpGet]
     public async Task<IActionResult> Delete(int id)
     {
@@ -91,6 +92,7 @@ public class CompaniesController : Controller
             : NotFound(company);
     }
 
+    // Action deletar empresa
     [HttpPost]
     [ActionName("Delete")]
     [ValidateAntiForgeryToken]
