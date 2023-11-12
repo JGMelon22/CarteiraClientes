@@ -1,0 +1,35 @@
+@model CarteiraClientes.ViewModels.Company.GetCompanyViewModel
+
+<div class="alert alert-danger w-50">
+    <strong class="fs-4">Cuidado!</strong>
+    <p class="text-white fs-6">Você realmente deseja deletar esta empresa?</p>
+</div>
+<br/>
+<div class="col-md-4">
+    <form asp-action="Details">
+        <div class="form-group">
+            <label asp-for="CompanyId" class="text-white fs-4">Id</label>
+            <input class="border-light-subtle form-control w-50" type="text" placeholder="@Html.DisplayFor(model => model.CompanyId)" disable/>
+        </div>
+        <div class="form-group">
+            <label asp-for="CompanyName" class="text-white fs-4">Nome Empresa</label>
+            <input class="border-light-subtle form-control w-50" type="text" placeholder="@Html.DisplayFor(model => model.CompanyName)" disable/>
+        </div>
+        <div class="form-group">
+            <label asp-for="CompanyName" class="text-white fs-4">Data Fundação</label>
+            <input class="border-light-subtle form-control w-50" type="date" placeholder="@Html.DisplayFor(model => model.FoundedDate)" disable/>
+        </div>
+        <div class="form-group">
+            <label asp-for="FoundedDate" class="text-white fs-4">Lucro Anual</label>
+            <input class="border-light-subtle form-control w-50" type="text" placeholder="@($"{Model.Revenue:c}")" disable/>
+        </div>
+    </form>
+</div>
+<h4></h4>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="CompanyId"/>
+    <button class="btn btn-danger rounded-1 md-1" onclick="return confirm('Deseja realmente deletar esta empresa?')">
+        Deletar
+    </button>
+    <a class="btn btn-secondary rounded-1 m-1" asp-action="Index">Retornar a Lista</a>
+</form>
