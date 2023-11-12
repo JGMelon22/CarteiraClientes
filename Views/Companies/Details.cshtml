@@ -8,20 +8,20 @@
     <div class="col-md-4">
         <form asp-action="Details">
             <div class="form-group">
-                <label asp-for="CompanyId" class="text-black fs-4">Código</label>
-                <input class="form-control w-50" type="text" placeholder="@Html.DisplayFor(model => model.CompanyId)" readonly/>
+                <label asp-for="CompanyId" class="text-white fs-4">Código</label>
+                <input class="form-control w-50" type="text" placeholder="@Html.DisplayFor(model => model.CompanyId)" disabled/>
             </div>
             <div class="form-group">
-                <label asp-for="CompanyName" class="text-black fs-4">Nome Empresa</label>
-                <input class="form-control w-75" type="text" placeholder="@Html.DisplayFor(model => model.CompanyName)" readonly/>
+                <label asp-for="CompanyName" class="text-white fs-4">Nome Empresa</label>
+                <input class="form-control w-75" type="text" placeholder="@Html.DisplayFor(model => model.CompanyName)" disabled/>
             </div>
             <div class="form-group">
-                <label asp-for="FoundedDate" class="text-black fs-4">Data Fundação</label>
-                <input class="form-control w-75" type="date" placeholder="@($"{Model.FoundedDate.ToString("dd/MM/yyyy")}")" readonly/>
+                <label asp-for="FoundedDate" class="text-white fs-4">Data Fundação</label>
+                <input class="form-control w-75" type="text" placeholder="@($"{Model.FoundedDate.ToString("dd/MM/yyyy")}")" disabled/>
             </div>
             <div class="form-group">
-                <label asp-for="Revenue" class="text-black fs-4"></label>
-                <input class="form-control w-75" type="date" placeholder=" @($"{Model.Revenue.ToString("c", CultureInfo.CreateSpecificCulture("pt-BR"))}")" readonly/>
+                <label asp-for="Revenue" class="text-white fs-4"></label>
+                <input class="form-control w-75" type="number" placeholder=" @($"{Model.Revenue.ToString("c", CultureInfo.CreateSpecificCulture("pt-BR"))}")" disabled/>
             </div>
         </form>
     </div>
