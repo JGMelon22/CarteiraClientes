@@ -1,0 +1,44 @@
+@model CarteiraClientes.ViewModels.Client.AddClientViewModel
+
+<h3 class="text-success fst-normal">Registrar um novo cliente</h3>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label">Nome Completo</label>
+                <input asp-for="FullName" type="text" class="border-light-subtle form-control w-100 p-1"/>
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label">Idade</label>
+                <input asp-for="Age" type="number" min="0" max="255" class="border-light-subtle form-control w-25 p-1"/>
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Document" class="control-label">Registro Geral</label>
+                <input asp-for="Document" type="text" maxlength="9" class="border-light-subtle form-control w-50 p-1"/>
+                <span asp-validation-for="Document" class="text-danger"></span>
+            </div>
+            <div class="form-group ">
+                <label asp-for="Gender" class="control-label">Sexo</label>
+                <select asp-for="Gender" class="dropdown-item bg-light-subtle border-light-subtle rounded-1" asp-items="Html.GetEnumSelectList<Gender>()"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsOverdue" class="control-label">Inadimplente?</label>
+                <input class="form-check-input" asp-for="IsOverdue"/>
+            </div>
+            <div class="form-group">
+                <h4>
+                    <h6></h6>
+                    <input class="btn btn-success border-1 rounded-1 m-1" type="submit" value="Criar"/>
+                    <a class="btn btn-secondary border-1 rounded-1 m-1" asp-action="Index">Retornar a Lista</a>
+                </h4>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
