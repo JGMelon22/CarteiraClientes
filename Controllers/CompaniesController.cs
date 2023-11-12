@@ -44,16 +44,31 @@ public class CompaniesController : Controller
         return Ok();
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Edit(UpdateCompanyViewModel updatedCompany)
+    // Chamar View Editar
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
     {
         if (!ModelState.IsValid)
             return BadRequest();
 
+        var company = await _repository.GetCompanyById(id);
+        return company.Data != null
+            ? View(company.Data)
+            : NotFound(company);
+    }
+
+    // Action Post Editar Company
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(UpdateCompanyViewModel updatedCompany)
+    {
+        if (!ModelState.IsValid)
+            return View(nameof(Edit));
+
         var company = await _repository.UpdateCompany(updatedCompany);
         return company.Data != null
-            ? Ok(company)
-            : NotFound(company);
+            ? RedirectToAction(nameof(Index))
+            : View(nameof(Edit));
     }
 
     [HttpDelete("{id}")]
