@@ -58,9 +58,9 @@ public class ClientsController : Controller
         }
         catch (Exception e)
         {
-           return RedirectToAction("Error", "Home");
+            return RedirectToAction("Error", "Home");
         }
-        
+
         return RedirectToAction(nameof(Index));
     }
 
