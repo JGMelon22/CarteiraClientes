@@ -18,15 +18,19 @@
                 <label asp-for="Age" class="text-white fs-4">Idade</label>
                 <input class="form-control w-25" type="number" placeholder="@Html.DisplayFor(model => model.Age)" disabled/>
             </div>
+            <div class="form-group">
+                <label asp-for="Document" class="text-white fs-4">Registro Geral</label>
+                @* Formata RG *@
+                <input class="form-control w-75" type="text" placeholder="@($"{Model.Document.Substring(0, 2)}.{Model.Document.Substring(2, 3)}.{Model.Document.Substring(5, 3)}-{Model.Document.Substring(8)}")" disabled/>
+            </div>
             @* sexo *@
             <div class="form-group ">
                 <label asp-for="Gender" class="control-label">Sexo</label>
                 <select asp-for="Gender" class="dropdown-item bg-light-subtle border-light-subtle rounded-1" asp-items="Html.GetEnumSelectList<Gender>()" disabled></select>
             </div>
             <div class="form-group">
-                <label asp-for="Document" class="text-white fs-4">Registro Geral</label>
-                @* Formata RG *@
-                <input class="form-control w-75" type="text" placeholder="@($"{Model.Document.Substring(0, 2)}.{Model.Document.Substring(2, 3)}.{Model.Document.Substring(5, 3)}-{Model.Document.Substring(8)}")" disabled/>
+                <label asp-for="IsOverdue" class="control-label">Inadimplente?</label>
+                @Html.DisplayFor(model => model.IsOverdue)
             </div>
         </form>
     </div>
