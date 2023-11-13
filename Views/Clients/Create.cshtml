@@ -28,6 +28,13 @@
                 <label asp-for="IsOverdue" class="control-label">Inadimplente?</label>
                 <input class="form-check-input" asp-for="IsOverdue"/>
             </div>
+            @* TODO *@
+            @* Empresas que o cliente pode ser registrado através de uma dropdown list *@
+            <div class="form-group">
+                <label asp-for="ClientsCompanies[0].CompanyId" class="control-label">Código Empresa</label>
+                <input asp-for="ClientsCompanies[0].CompanyId" type="number" min="1" class="border-light-subtle form-control w-25 p-1"/>
+                <span asp-validation-for="ClientsCompanies[0].CompanyId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <h4>
                     <h6></h6>

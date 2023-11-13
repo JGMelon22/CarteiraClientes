@@ -1,5 +1,6 @@
 using CarteiraClientes.Interfaces;
 using CarteiraClientes.ViewModels.Client;
+using CarteiraClientes.ViewModels.Company;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Controllers;
