@@ -52,7 +52,15 @@ public class ClientsController : Controller
         if (!ModelState.IsValid)
             return View(nameof(Create));
 
-        await _repository.AddClient(newClient);
+        try
+        {
+            await _repository.AddClient(newClient);
+        }
+        catch (Exception e)
+        {
+           return RedirectToAction("Error", "Home");
+        }
+        
         return RedirectToAction(nameof(Index));
     }
 
