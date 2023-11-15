@@ -109,7 +109,7 @@
       <workItem from="1699903819269" duration="6241000" />
       <workItem from="1700012790278" duration="4471000" />
       <workItem from="1700017301518" duration="144000" />
-      <workItem from="1700071785634" duration="2586000" />
+      <workItem from="1700071785634" duration="3208000" />
     </task>
     <servers />
   </component>
@@ -118,37 +118,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Infrastructure/Validators/Company/UpdateCompanyValidator.cs</url>
-          <line>32</line>
-          <properties documentPath="$PROJECT_DIR$/Infrastructure/Validators/Company/UpdateCompanyValidator.cs" initialLine="32" containingFunctionPresentation="Constructor 'UpdateCompanyValidator'">
-            <startOffsets>
-              <option value="1089" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1373" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Infrastructure/Repository/ClientCompanyRepository.cs</url>
-          <line>18</line>
-          <properties documentPath="$PROJECT_DIR$/Infrastructure/Repository/ClientCompanyRepository.cs" initialLine="18" containingFunctionPresentation="Method 'GetAllClientsCompanies'">
-            <startOffsets>
-              <option value="527" />
-            </startOffsets>
-            <endOffsets>
-              <option value="604" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
