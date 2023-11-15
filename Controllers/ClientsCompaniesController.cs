@@ -17,7 +17,7 @@ public class ClientsCompaniesController : Controller
     {
         var clientsCompanies = await _repository.GetAllClientsCompanies();
         return clientsCompanies.Data != null
-            ? Ok(View(clientsCompanies.Data))
+            ? View(clientsCompanies.Data)
             : NoContent();
     }
 }

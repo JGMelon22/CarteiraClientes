@@ -25,14 +25,10 @@ public class ClientCompanyRepository : IClientCompanyRepository
             {
                 cl.ClientId,
                 cl.FullName,
-                cl.Age,
                 cl.Document,
-                cl.Gender,
                 cl.IsOverdue,
                 co.CompanyId,
-                co.CompanyName,
-                co.FoundedDate,
-                co.Revenue
+                co.CompanyName
             }).AsNoTracking().ToListAsync();
 
         serviceResponse.Data = clientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
