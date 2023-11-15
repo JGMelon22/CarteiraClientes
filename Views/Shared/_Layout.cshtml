@@ -36,7 +36,7 @@
                             <a class="dropdown-item" asp-area="" asp-controller="Clients" asp-action="Create">Adicionar Cliente</a>
                         </div>
                     </li>
-                    <a type="button" class="btn btn-info" asp-area="" asp-controller="ClientsCompanies" asp-action="Index">Relacionamento</a>
+                    <a id="relationshipButton" type="button" class="btn btn-info" asp-area="" asp-controller="ClientsCompanies" asp-action="Index">Relacionamento</a>
                 </ul>
             </div>
         </div>
@@ -46,6 +46,13 @@
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
+</div>
+
+@* Loading Spinner *@
+<div class="d-flex justify-content-center h-100">
+    <button id="loadingSpinner" class="btn btn-lg btn-light disabled" style="display: none">
+        <span class="spinner-border spinner-border-lg"></span>
+    </button>
 </div>
 
 <footer class="border-top footer text-muted">
