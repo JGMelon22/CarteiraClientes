@@ -1,0 +1,58 @@
+@model IEnumerable<CarteiraClientes.ViewModels.ClientCompany.GetClientCompanyViewModel>
+
+<div class="text-primary fs-4">Relação entre Clientes e Empresas</div>
+<br/>
+
+<form asp-action="Index" method="get">
+    <table class="table border-light-subtle table-bordered table-hover">
+        <thead class="text-center">
+        <td>
+            @Html.DisplayName("Código Cliente")
+        </td>
+        <td>
+            @Html.DisplayName("Registro Geral Cliente")
+        </td>
+        <td>
+            @Html.DisplayName("Nome Completo Cliente")
+        </td>
+        <td>
+            @Html.DisplayName("Inadimplete?")
+        </td>
+        <td>
+            @Html.DisplayName("Código Empresa")
+        </td>
+        <td>
+            @Html.DisplayName("Nome Empresa")
+        </td>
+        </thead>
+        <tbody>
+        @foreach (var clientCompany in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.ClientId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.Document)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.IsOverdue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.CompanyId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.CompanyName)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</form>
+<h4></h4>
+<di>
+    <a class="btn btn-secondary rounded-1 mb-1" asp-action="Index">Retornar a Lista</a>
+</di>
