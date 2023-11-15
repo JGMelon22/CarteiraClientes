@@ -34,6 +34,7 @@ builder.Services.AddScoped<IValidator<UpdateCompanyViewModel>, UpdateCompanyVali
 // Interface & Repository register
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<IClientCompanyRepository, ClientCompanyRepository>();
 
 var app = builder.Build();
 

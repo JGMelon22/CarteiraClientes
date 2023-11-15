@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CarteiraClientes.ViewModels.ClientCompany;
 
-public record GetClienCompanyViewModel
+public record GetClientCompanyViewModel
 {
     // Dados Client
     public int ClientId { get; init; }
