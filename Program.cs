@@ -1,5 +1,6 @@
 using System.Data;
 using CarteiraClientes.Infrastructure.Data;
+using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.Infrastructure.Repository;
 using CarteiraClientes.Infrastructure.Validators.Client;
 using CarteiraClientes.Infrastructure.Validators.Company;
@@ -23,6 +24,9 @@ builder.Services.AddScoped<IDbConnection>(x =>
 // DbContext - EFCore
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+
+// Mapster Service
+builder.Services.RegisterMapsterConfiguration();
 
 // Fluent Validator Service 
 builder.Services.AddFluentValidationAutoValidation();
