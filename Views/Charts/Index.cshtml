@@ -1,0 +1,99 @@
+@using System.Text.Json
+@model List<CarteiraClientes.ViewModels.Chart.ChartViewModel>  
+@{
+    var xLabels = JsonSerializer.Serialize(Model.Select(x => x.DimensionOne).ToList()); // Serializar para funcionar com o Google Charts
+    var yValues = JsonSerializer.Serialize(Model.Select(x => x.Quantity).ToList());
+    ViewData["Title"] = "Gráfico de Barra";
+}
+
+<div>
+    <body>
+    <h3 class="text-md-center">Relação de Empresas e Clientes</h3>
+    <div class="box-body">
+
+        <div class="chart-container">
+            <canvas id="chart" style="width:100%; height:500px"></canvas>
+        </div>
+    </div>
+    </body>
+</div>
+
+@* Invoca Google Charts *@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+@* Lógica em JS para montar o gráfico com dados do back em .NET *@
+<script type="text/javascript">  
+            $(function () {  
+        let chartName = "chart";  
+            let ctx = document.getElementById(chartName).getContext('2d');  
+            let data = {  
+                    labels: @Html.Raw(xLabels),  
+                    datasets: [{  
+                        label: "Empresas X Clientes X Inadimplentes",  
+                        backgroundColor: [  
+                            'rgba(255, 99, 132, 0.2)',  
+                            'rgba(54, 162, 235, 0.2)',  
+                            'rgba(255, 206, 86, 0.2)',  
+                            'rgba(75, 192, 192, 0.2)',  
+                            'rgba(153, 102, 255, 0.2)',  
+                            'rgba(255, 159, 64, 0.2)',  
+                            'rgba(255, 0, 0)',  
+                            'rgba(0, 255, 0)',  
+                            'rgba(0, 0, 255)',  
+                            'rgba(192, 192, 192)',  
+                            'rgba(255, 255, 0)',  
+                            'rgba(255, 0, 255)'  
+                        ],  
+                        borderColor: [  
+                            'rgba(255,99,132,1)',  
+                            'rgba(54, 162, 235, 1)',  
+                            'rgba(255, 206, 86, 1)',  
+                            'rgba(75, 192, 192, 1)',  
+                            'rgba(153, 102, 255, 1)',  
+                            'rgba(255, 159, 64, 1)',  
+                            'rgba(255, 0, 0)',  
+                            'rgba(0, 255, 0)',  
+                            'rgba(0, 0, 255)',  
+                            'rgba(192, 192, 192)',  
+                            'rgba(255, 255, 0)',  
+                            'rgba(255, 0, 255)'  
+                        ],  
+                        borderWidth: 1,  
+                        data: @Html.Raw(yValues)  
+        }]  
+                };  
+      
+    let options = {  
+                    maintainAspectRatio: false,  
+                    scales: {  
+                        yAxes: [{  
+                            ticks: {  
+                                min: 0,  
+                                beginAtZero: true  
+                            },  
+                            gridLines: {  
+                                display: true,  
+                                color: "rgba(255,99,164,0.2)"  
+                            }  
+    }],  
+                        xAxes: [{  
+                            ticks: {  
+                                min: 0,  
+                                beginAtZero: true  
+                            },  
+                            gridLines: {  
+                                display: false  
+                            }  
+                        }]  
+                    }  
+                };  
+      
+           let myChart = new Chart(ctx, {  
+                    options: options,  
+                    data: data,  
+                    type:'bar'  
+      
+                });  
+            });  
+    </script>
