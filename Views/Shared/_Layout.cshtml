@@ -31,12 +31,20 @@
                     <li class="nav-item dropdown">
                         <a class="text-white nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                         <div class="dropdown-menu border-info-subtle">
-                            <a class="dropdown-item" asp-area="" asp-controller="Clients" asp-action="Index">Listar Clientes</a>=
+                            <a class="dropdown-item" asp-area="" asp-controller="Clients" asp-action="Index">Listar Clientes</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" asp-area="" asp-controller="Clients" asp-action="Create">Adicionar Cliente</a>
                         </div>
                     </li>
-                    <a id="relationshipButton" type="button" class="btn btn-info" asp-area="" asp-controller="ClientsCompanies" asp-action="Index">Relacionamento</a>
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Miscellaneous</button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                <a id="relationshipButton" class="dropdown-item" asp-area="" asp-controller="ClientsCompanies" asp-action="Index">Relacionamento</a>
+                                <a id="chartButton" class="dropdown-item" asp-area="" asp-controller="Charts" asp-action="Index">Gráfico</a>
+                            </div>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>

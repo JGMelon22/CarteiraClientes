@@ -3,8 +3,13 @@
 
 // Write your JavaScript code.
 let clientCompanyButton = document.getElementById('relationshipButton');
+let clientCompanyChartButton = document.getElementById('chartButton');
 let spinnerLoading = document.getElementById('loadingSpinner');
 
 clientCompanyButton.onclick = () => {
+    spinnerLoading.style.display = 'block';
+}
+
+clientCompanyChartButton.onclick = () => {
     spinnerLoading.style.display = 'block';
 }
