@@ -29,6 +29,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Mapster Service
 builder.Services.RegisterMapsterConfiguration();
 
+// Pagination Service
+builder.Services.AddScoped<IPaginationService, PaginationService>();
+builder.Services.AddCloudscribePagination();
+
 // Fluent Validator Service 
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddScoped<IValidator<AddClientViewModel>, AddClientValidador>();

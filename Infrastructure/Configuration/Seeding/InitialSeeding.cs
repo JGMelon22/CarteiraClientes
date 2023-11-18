@@ -118,7 +118,7 @@ public class InitialSeeding
             CompanyId = 2,
             CompanyName = "Tech Solutions Inc.",
             FoundedDate = new DateTime(2000, 05, 15),
-            Revenue = 15_500_000_000.00M
+            Revenue = 15500_000_000.00M
         };
 
         var company3 = new Company

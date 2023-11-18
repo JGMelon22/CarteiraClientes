@@ -15,6 +15,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/66fb396b9859c8734ef8e8dd529955858164ba8a4e32d9085dd3099d5c9127b/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cc62364a2aeba5ac3bffd88882924585b2dfa3fde6aa5b5be373c35eefe50eb/SelectListItem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -34,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.12912913",
+    "XThreadsFramesViewSplitterKey": "0.13003096",
     "last_opened_file_path": "/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -109,7 +111,10 @@
       <workItem from="1699903819269" duration="6241000" />
       <workItem from="1700012790278" duration="4471000" />
       <workItem from="1700017301518" duration="144000" />
-      <workItem from="1700071785634" duration="12448000" />
+      <workItem from="1700071785634" duration="12547000" />
+      <workItem from="1700169394644" duration="5306000" />
+      <workItem from="1700180664106" duration="891000" />
+      <workItem from="1700340575789" duration="5505000" />
     </task>
     <servers />
   </component>

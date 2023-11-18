@@ -7,21 +7,42 @@ namespace CarteiraClientes.Controllers;
 public class ClientsController : Controller
 {
     private readonly IClientRepository _repository;
+    private readonly IPaginationService _pagination;
 
-    public ClientsController(IClientRepository repository)
+    public ClientsController(IClientRepository repository, IPaginationService pagination)
     {
         _repository = repository;
+        _pagination = pagination;
     }
 
     // View Listar todos Clientes
+    // [HttpGet]
+    // public async Task<IActionResult> Index()
+    // {
+    //     var clients = await _repository.GetAllClients();
+    //     return clients.Data != null
+    //         ? View(clients.Data)
+    //         : NoContent();
+    // }
+
+    // Clientes Paginados
     [HttpGet]
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 1)
     {
-        var clients = await _repository.GetAllClients();
+        var clients = await _pagination.PagingClients(pageNumber, pageSize);
         return clients.Data != null
             ? View(clients.Data)
             : NoContent();
     }
+    
+    // [HttpGet]
+    // public async Task<IActionResult> Index()
+    // {
+    //     var clients = await _pagination.PagingClients();
+    //     return clients.Data != null
+    //         ? View(clients.Data)
+    //         : NoContent();
+    // }
 
     // View Detalhes cliente selecionado
     [HttpGet]
