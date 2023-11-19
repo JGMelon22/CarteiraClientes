@@ -28,7 +28,9 @@ public class ClientRepository : IClientRepository
                                           document as Document,
                                           gender as Gender,
                                           is_overdue as IsOverdue
-                                   from clients;";
+                                    from clients
+                                    order BY client_id DESC
+                                    limit 100;";
 
         _dbConnection.Open();
 
