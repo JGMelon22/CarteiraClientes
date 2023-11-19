@@ -17,7 +17,8 @@ public class PaginationService : IPaginationService
         _dbContext = dbContext;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(string sortOrder,
+    public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(string searchString,
+        string sortOrder,
         int pageNumber = 1,
         int pageSize = 15)
     {
@@ -26,6 +27,12 @@ public class PaginationService : IPaginationService
         var excludeRecords = pageSize * pageNumber - pageSize;
         var clientsQuery = _dbContext.Clients
             .AsNoTracking();
+
+        // Verify if seacrhString is null or empty 
+        if (!String.IsNullOrEmpty(searchString))
+        {
+            clientsQuery = clientsQuery.Where(c => c.FullName.Contains(searchString));
+        }
 
         // Sort Logic
         switch (sortOrder)
@@ -118,7 +125,7 @@ public class PaginationService : IPaginationService
             }).AsNoTracking();
 
         var pagedClientsCompanies = await clientsCompaniesQuery
-            .OrderBy(cc=>cc.ClientId)
+            .OrderBy(cc => cc.ClientId)
             .Skip(excludedRecords)
             .Take(pageSize)
             .AsNoTracking()
