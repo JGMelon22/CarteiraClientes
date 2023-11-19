@@ -4,9 +4,19 @@
 // Write your JavaScript code.
 let clientCompanyButton = document.getElementById('relationshipButton');
 let clientCompanyChartButton = document.getElementById('chartButton');
+let topClientsButton = document.getElementById('topClientsButton');
+let pagedClientsButtonButton = document.getElementById('pagedClientsButton');
 let spinnerLoading = document.getElementById('loadingSpinner');
 
 clientCompanyButton.onclick = () => {
+    spinnerLoading.style.display = 'block';
+}
+
+topClientsButton.onclick = () => {
+    spinnerLoading.style.display = 'block';
+}
+
+pagedClientsButtonButton.onclick = () => {
     spinnerLoading.style.display = 'block';
 }
 

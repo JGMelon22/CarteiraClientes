@@ -6,8 +6,8 @@ namespace CarteiraClientes.Controllers;
 
 public class ClientsController : Controller
 {
-    private readonly IClientRepository _repository;
     private readonly IPaginationService _pagination;
+    private readonly IClientRepository _repository;
 
     public ClientsController(IClientRepository repository, IPaginationService pagination)
     {
@@ -24,7 +24,7 @@ public class ClientsController : Controller
             ? View(clients.Data)
             : NoContent();
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> IndexPaged(int pageNumber = 1, int pageSize = 15)
     {
@@ -33,7 +33,7 @@ public class ClientsController : Controller
             ? View(clients.Data)
             : NoContent();
     }
-    
+
 
     // View Detalhes cliente selecionado
     [HttpGet]

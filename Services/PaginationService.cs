@@ -20,7 +20,7 @@ public class PaginationService : IPaginationService
     {
         var serviceResponse = new ServiceResponse<PagedResult<GetClientViewModel>>();
 
-        var excludeRecords = (pageSize * pageNumber) - pageSize; 
+        var excludeRecords = pageSize * pageNumber - pageSize;
         var clients = _dbContext.Clients
             .Skip(excludeRecords)
             .Take(pageSize);
