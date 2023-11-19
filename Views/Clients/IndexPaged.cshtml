@@ -9,7 +9,7 @@
         <td>
             @Html.DisplayName("Código")
         </td>
-        <td class="text-info">
+        <td class="text-center text-info">
             <a asp-action="IndexPaged" asp-route-sortOrder="@ViewBag.NameSortParam">@Html.DisplayName("Nome Completo")</a>
         </td>
         <td class="text-center">
@@ -21,8 +21,8 @@
         <td class="text-center">
             @Html.DisplayName("Sexo")
         </td>
-        <td class="text-center">
-            @Html.DisplayName("Inadimplente?")
+        <td class="text-center text-info">
+            <a asp-action="IndexPaged" asp-route-sortOrder="@ViewBag.IsOverdueSortParam">@Html.DisplayName("Inadimplente?")</a>
         </td>
         <td class="text-center">
             @Html.DisplayName("Opções?")

@@ -33,6 +33,9 @@ public class PaginationService : IPaginationService
             case "name_desc":
                 clientsQuery = clientsQuery.OrderByDescending(c => c.FullName);
                 break;
+            case "is_overdue":
+                clientsQuery = clientsQuery.Where(c => c.IsOverdue == true);
+                break;
             default:
                 clientsQuery = clientsQuery.OrderBy(c => c.FullName);
                 break;

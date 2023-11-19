@@ -29,6 +29,7 @@ public class ClientsController : Controller
     public async Task<IActionResult> IndexPaged(string sortOrder, int pageNumber = 1, int pageSize = 15)
     {
         ViewBag.NameSortParam = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        ViewBag.IsOverdueSortParam = string.IsNullOrEmpty(sortOrder) ? "is_overdue" : "";
         var clients = await _pagination.PagingClients(sortOrder, pageNumber, pageSize);
         return clients.Data != null
             ? View(clients.Data)
