@@ -21,7 +21,6 @@ public class InitialSeeding
             .RuleFor(c => c.FoundedDate, f => f.Date.Past())
             .RuleFor(c => c.Revenue, f => f.Random.Decimal(1000M, 99999999999999999.99M));
 
-        // Populating with Many-to-Many relationship
         var clientCompany = new Faker<ClientCompany>()
             .RuleFor(cc => cc.ClientId, f => f.Random.Number(1, 1000))
             .RuleFor(cc => cc.CompanyId, f => f.Random.Number(1, 1000));
@@ -32,6 +31,7 @@ public class InitialSeeding
         modelBuilder.Entity<Company>()
             .HasData(company.GenerateBetween(1000, 1000));
 
+        // Populating with Many-to-Many relationship
         modelBuilder.Entity<ClientCompany>()
             .HasData(clientCompany.GenerateBetween(1000, 1000));
     }
