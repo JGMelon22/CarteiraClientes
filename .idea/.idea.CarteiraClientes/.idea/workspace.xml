@@ -17,7 +17,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/97982ada126b4a44bc33c12235fc663b24fc00/a8/95965e27/Faker`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/66fb396b9859c8734ef8e8dd529955858164ba8a4e32d9085dd3099d5c9127b/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb21aecde0464bbf27bc18a873ba73ca78ef3e6c947d7464c2cd54571bf42421/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cc62364a2aeba5ac3bffd88882924585b2dfa3fde6aa5b5be373c35eefe50eb/SelectListItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de271ccf3ff37986b6d3371645fe3b139cc5e384e759f686d8b2e87c734b0/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ef9fac28673997ad0bd391339338d623247ad395e117dff375bf90a2c35d/Person.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -119,7 +121,7 @@
       <workItem from="1700356334139" duration="2257000" />
       <workItem from="1700359301086" duration="1584000" />
       <workItem from="1700404640872" duration="8952000" />
-      <workItem from="1700417926730" duration="1079000" />
+      <workItem from="1700417926730" duration="3431000" />
     </task>
     <servers />
   </component>

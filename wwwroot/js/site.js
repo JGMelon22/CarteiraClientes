@@ -9,6 +9,7 @@ let topClientsButton = document.getElementById('topClientsButton');
 let pagedClientsButtonButton = document.getElementById('pagedClientsButton');
 let topCompaniesButton = document.getElementById('topCompaniesButton');
 let pagedCompaniesButtonButton = document.getElementById('pagedCompaniesButton');
+let relationshipPagedButton = document.getElementById('relationshipPagedButton');
 let spinnerLoading = document.getElementById('loadingSpinner');
 
 // Then set spinner visibility to 'block' on click event, just to depict a better loading response to the user
@@ -33,5 +34,9 @@ pagedCompaniesButtonButton.onclick = () => {
 }
 
 clientCompanyChartButton.onclick = () => {
+    spinnerLoading.style.display = 'block';
+}
+
+relationshipPagedButton.onclick = () => {
     spinnerLoading.style.display = 'block';
 }

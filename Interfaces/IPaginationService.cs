@@ -1,4 +1,5 @@
 using CarteiraClientes.ViewModels.Client;
+using CarteiraClientes.ViewModels.ClientCompany;
 using CarteiraClientes.ViewModels.Company;
 using cloudscribe.Pagination.Models;
 
@@ -8,4 +9,5 @@ public interface IPaginationService
 {
     Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(int pageNumber, int pageSize);
     Task<ServiceResponse<PagedResult<GetCompanyViewModel>>> PagingCompany(int pageNumber, int pageSize);
+    Task<ServiceResponse<PagedResult<GetClientCompanyViewModel>>> PagingClientCompany(int pageNumber, int pageSize);
 }

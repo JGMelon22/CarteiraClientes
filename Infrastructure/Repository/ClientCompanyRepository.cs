@@ -19,17 +19,19 @@ public class ClientCompanyRepository : IClientCompanyRepository
         var serviceResponse = new ServiceResponse<List<GetClientCompanyViewModel>>();
 
         var clientsCompanies = await (from cl in _dbContext.Clients
-            join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
-            join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
-            select new
-            {
-                cl.ClientId,
-                cl.FullName,
-                cl.Document,
-                cl.IsOverdue,
-                co.CompanyId,
-                co.CompanyName
-            }).AsNoTracking().ToListAsync();
+                join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
+                join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
+                select new
+                {
+                    cl.ClientId,
+                    cl.FullName,
+                    cl.Document,
+                    cl.IsOverdue,
+                    co.CompanyId,
+                    co.CompanyName
+                }).AsNoTracking()
+            .Take(100)
+            .ToListAsync();
 
         serviceResponse.Data = clientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
         return serviceResponse;

@@ -1,0 +1,67 @@
+@model cloudscribe.Pagination.Models.PagedResult<CarteiraClientes.ViewModels.ClientCompany.GetClientCompanyViewModel>
+
+<div class="text-primary fs-4">Relação entre Clientes e Empresas</div>
+<a class="btn btn-secondary rounded-1 float-end mb-1" asp-controller="Home" asp-action="Index">Retornar ao Início</a>
+<br/>
+
+<form asp-action="Index" method="get">
+    <table class="table border-light-subtle table-bordered table-hover">
+        <thead class="text-center">
+        <td>
+            @Html.DisplayName("Código Cliente")
+        </td>
+        <td>
+            @Html.DisplayName("Registro Geral Cliente")
+        </td>
+        <td>
+            @Html.DisplayName("Nome Completo Cliente")
+        </td>
+        <td>
+            @Html.DisplayName("Inadimplete?")
+        </td>
+        <td>
+            @Html.DisplayName("Código Empresa")
+        </td>
+        <td>
+            @Html.DisplayName("Nome Empresa")
+        </td>
+        </thead>
+        <tbody>
+        @foreach (var clientCompany in Model.Data)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.ClientId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.Document)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.IsOverdue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.CompanyId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => clientCompany.CompanyName)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</form>
+<cs-pager cs-paging-pagenumber="Model.PageNumber"
+          cs-paging-totalitems="Model.TotalItems"
+          cs-paging-pagesize="Model.PageSize"
+          cs-pagenumber-param="pagenumber"
+          asp-controller="ClientsCompanies"
+          asp-action="IndexPaged"
+          cs-pager-li-current-class="page-item active"
+          cs-pager-li-other-class="page-item"
+          cs-pager-li-non-active-class="page-item disabled"
+          cs-pager-link-current-class="page-link"
+          cs-pager-link-other-class="page-link">
+</cs-pager>
