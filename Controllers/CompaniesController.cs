@@ -7,17 +7,29 @@ namespace CarteiraClientes.Controllers;
 public class CompaniesController : Controller
 {
     private readonly ICompanyRepository _repository;
+    private readonly IPaginationService _service;
 
-    public CompaniesController(ICompanyRepository repository)
+    public CompaniesController(ICompanyRepository repository, IPaginationService service)
     {
         _repository = repository;
+        _service = service;
     }
 
-    // View Listar todas empresas
+    // View Listar top 100 empresas
     [HttpGet]
     public async Task<IActionResult> Index()
     {
         var companies = await _repository.GetAllCompanies();
+        return companies.Data != null
+            ? View(companies.Data)
+            : NoContent();
+    }
+
+    // Todas as empresas paginadas
+    [HttpGet]
+    public async Task<IActionResult> IndexPaged(int pageNumber = 1, int pageSize = 15)
+    {
+        var companies = await _service.PagingCompany(pageNumber, pageSize);
         return companies.Data != null
             ? View(companies.Data)
             : NoContent();
