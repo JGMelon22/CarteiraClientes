@@ -5,8 +5,8 @@ namespace CarteiraClientes.Controllers;
 
 public class ClientsCompaniesController : Controller
 {
-    private readonly IClientCompanyRepository _repository;
     private readonly IPaginationService _pagination;
+    private readonly IClientCompanyRepository _repository;
 
     public ClientsCompaniesController(IClientCompanyRepository repository, IPaginationService pagination)
     {
@@ -22,7 +22,7 @@ public class ClientsCompaniesController : Controller
             ? View(clientsCompanies.Data)
             : NoContent();
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> IndexPaged(int pageNumber = 1, int pageSize = 15)
     {
