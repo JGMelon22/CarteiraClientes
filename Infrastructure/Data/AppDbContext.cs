@@ -20,6 +20,7 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ClientCompanyConfiguration());
 
         // Chama o initial seeding
-        InitialSeeding.Seed(modelBuilder);
+        // InitialSeeding.Seed(modelBuilder);
+        BogusSeeding.BogusSeed(modelBuilder);
     }
 }
