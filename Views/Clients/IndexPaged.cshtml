@@ -12,7 +12,7 @@
 <form asp-action="IndexPaged" method="get">
     <div>
         <p class="text-white">
-            Procurar Pessoa: <input type="text" name="searchString" value=""/>
+            Procurar Pessoa: <input type="text" name="searchString" value="@ViewBag.CurrentFilter"/> @* Saving the current filter *@
             <input type="submit" value="Pesquisar"/> |
             <a class="text-light" asp-action="IndexPaged">Limpar Filtro</a>
         </p>

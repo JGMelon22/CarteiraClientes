@@ -27,7 +27,7 @@ public class PaginationService : IPaginationService
         var excludeRecords = pageSize * pageNumber - pageSize;
         var clientsQuery = _dbContext.Clients
             .AsNoTracking();
-
+        
         // Verify if seacrhString is null or empty 
         if (!String.IsNullOrEmpty(searchString))
         {
