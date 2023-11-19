@@ -29,7 +29,7 @@ public class ClientRepository : IClientRepository
                                           gender as Gender,
                                           is_overdue as IsOverdue
                                     from clients
-                                    order BY client_id DESC
+                                    order by client_id asc
                                     limit 100;";
 
         _dbConnection.Open();
