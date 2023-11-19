@@ -13,6 +13,8 @@
 - Microsoft.EntityFrameworkCore <br/>
 - Microsoft.EntityFrameworkCore.Design <br/>
 - Microsoft.EntityFrameworkCore.Tools <br/>
+- cloudscribe.Pagination.Models <br/>
+- cloudscribe.Web.Pagination <br/>
 - Dapper<br/>
 - Npgsql <br/>
 - Npgsql.EntityFrameworkCore.PostgreSQL <br/>
