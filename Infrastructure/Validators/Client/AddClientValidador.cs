@@ -1,5 +1,4 @@
 using CarteiraClientes.ViewModels.Client;
-using FluentValidation;
 
 namespace CarteiraClientes.Infrastructure.Validators.Client;
 

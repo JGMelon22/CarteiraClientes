@@ -21,9 +21,6 @@ public class AppDbContext : DbContext
 
         // If there are pending migrations, run the seeding logic
         var pendingMigrations = Database.GetPendingMigrations();
-        if (pendingMigrations.Any())
-        {
-            InitialSeeding.Seed(modelBuilder);
-        }
+        if (pendingMigrations.Any()) InitialSeeding.Seed(modelBuilder);
     }
 }

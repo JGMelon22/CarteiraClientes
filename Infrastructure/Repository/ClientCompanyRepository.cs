@@ -1,7 +1,4 @@
-using CarteiraClientes.Infrastructure.Data;
-using CarteiraClientes.Interfaces;
 using CarteiraClientes.ViewModels.ClientCompany;
-using Mapster;
 
 namespace CarteiraClientes.Infrastructure.Repository;
 

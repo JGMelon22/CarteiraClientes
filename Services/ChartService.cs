@@ -1,4 +1,3 @@
-using CarteiraClientes.Infrastructure.Data;
 using CarteiraClientes.ViewModels.Chart;
 
 namespace CarteiraClientes.Services;

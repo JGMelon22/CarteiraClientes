@@ -1,5 +1,4 @@
 using CarteiraClientes.ViewModels.ClientCompany;
-using Mapster;
 
 namespace CarteiraClientes.Infrastructure.Mappling;
 

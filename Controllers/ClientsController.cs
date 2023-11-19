@@ -1,4 +1,3 @@
-using CarteiraClientes.Interfaces;
 using CarteiraClientes.ViewModels.Client;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,12 +25,13 @@ public class ClientsController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> IndexPaged(string searchString, string sortOrder, int pageNumber = 1, int pageSize = 15)
+    public async Task<IActionResult> IndexPaged(string searchString, string sortOrder, int pageNumber = 1,
+        int pageSize = 15)
     {
         ViewBag.CurrentSortOrder = sortOrder; // To allow us to store current sort order when we change pages
         ViewBag.CurrentFilter = searchString; // Allow us to preserver search filter values
-        ViewBag.NameSortParam = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-        ViewBag.IsOverdueSortParam = String.IsNullOrEmpty(sortOrder) ? "is_overdue" : "";
+        ViewBag.NameSortParam = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        ViewBag.IsOverdueSortParam = string.IsNullOrEmpty(sortOrder) ? "is_overdue" : "";
         var clients = await _pagination.PagingClients(searchString, sortOrder, pageNumber, pageSize);
         return clients.Data != null
             ? View(clients.Data)

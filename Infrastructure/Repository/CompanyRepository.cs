@@ -1,9 +1,6 @@
 using System.Data;
-using CarteiraClientes.Infrastructure.Data;
-using CarteiraClientes.Interfaces;
 using CarteiraClientes.ViewModels.Company;
 using Dapper;
-using Mapster;
 
 namespace CarteiraClientes.Infrastructure.Repository;
 

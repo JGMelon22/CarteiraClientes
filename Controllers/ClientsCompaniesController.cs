@@ -1,4 +1,3 @@
-using CarteiraClientes.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Controllers;

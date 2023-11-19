@@ -1,10 +1,7 @@
-using CarteiraClientes.Infrastructure.Data;
-using CarteiraClientes.Interfaces;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.ClientCompany;
 using CarteiraClientes.ViewModels.Company;
 using cloudscribe.Pagination.Models;
-using Mapster;
 
 namespace CarteiraClientes.Services;
 
@@ -27,12 +24,10 @@ public class PaginationService : IPaginationService
         var excludeRecords = pageSize * pageNumber - pageSize;
         var clientsQuery = _dbContext.Clients
             .AsNoTracking();
-        
+
         // Verify if seacrhString is null or empty 
-        if (!String.IsNullOrEmpty(searchString))
-        {
+        if (!string.IsNullOrEmpty(searchString))
             clientsQuery = clientsQuery.Where(c => c.FullName.Contains(searchString));
-        }
 
         // Sort Logic
         switch (sortOrder)

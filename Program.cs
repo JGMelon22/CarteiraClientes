@@ -1,14 +1,11 @@
 using System.Data;
-using CarteiraClientes.Infrastructure.Data;
 using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.Infrastructure.Repository;
 using CarteiraClientes.Infrastructure.Validators.Client;
 using CarteiraClientes.Infrastructure.Validators.Company;
-using CarteiraClientes.Interfaces;
 using CarteiraClientes.Services;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Npgsql;
 
