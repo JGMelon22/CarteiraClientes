@@ -12,7 +12,7 @@
         <td class="text-center text-info">
             <a asp-action="IndexPaged"
                asp-route-sortOrder="@ViewBag.NameSortParam"
-               asp-route-pageNumber="@Model.PageNumber">
+               asp-route-pageNumber="@Model.PageNumber"> @* Preserver paging status after sorting filter *@
                 @Html.DisplayName("Nome Completo")
             </a>
         </td>
@@ -28,7 +28,7 @@
         <td class="text-center text-info">
             <a asp-action="IndexPaged"
                asp-route-sortOrder="@ViewBag.IsOverdueSortParam"
-               asp-route-pageNumber="@Model.PageNumber">
+               asp-route-pageNumber="@Model.PageNumber"> @* Preserver paging status after sorting filter *@
                 @Html.DisplayName("Inadimplente?")
             </a>
         </td>
