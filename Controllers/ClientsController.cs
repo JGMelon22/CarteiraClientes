@@ -16,8 +16,17 @@ public class ClientsController : Controller
     }
 
     // Clientes Paginados
+    [HttpGet("topClients")]
+    public async Task<IActionResult> Index()
+    {
+        var clients = await _repository.GetAllClients();
+        return clients.Data != null
+            ? View(clients.Data)
+            : NoContent();
+    }
+    
     [HttpGet]
-    public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 15)
+    public async Task<IActionResult> IndexPaged(int pageNumber = 1, int pageSize = 15)
     {
         var clients = await _pagination.PagingClients(pageNumber, pageSize);
         return clients.Data != null
