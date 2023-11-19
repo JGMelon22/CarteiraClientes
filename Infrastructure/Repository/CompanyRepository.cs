@@ -25,7 +25,9 @@ public class CompanyRepository : ICompanyRepository
                                             company_name as CompanyName,
                                             founded_date as FoundedDate,
                                             revenue as Revenue
-                                     from companies";
+                                      from companies
+                                      order by company_id asc
+                                      limit 100;";
 
         _dbConnection.Open();
 
