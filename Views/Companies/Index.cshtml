@@ -1,7 +1,7 @@
 @using System.Globalization
 @model IEnumerable<CarteiraClientes.ViewModels.Company.GetCompanyViewModel>
 
-<div class="text-primary fs-4">Lista de Companhias</div>
+<div class="text-primary fs-4">Top @Model.Count() Companhias da Lista</div>
 <br/>
 
 <form asp-action="Index" method="get">
