@@ -16,7 +16,7 @@ public class ClientsController : Controller
     }
 
     // Clientes Paginados
-    [HttpGet("topClients")]
+    [HttpGet]
     public async Task<IActionResult> Index()
     {
         var clients = await _repository.GetAllClients();
