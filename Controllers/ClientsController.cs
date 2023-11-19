@@ -28,6 +28,7 @@ public class ClientsController : Controller
     [HttpGet]
     public async Task<IActionResult> IndexPaged(string sortOrder, int pageNumber = 1, int pageSize = 15)
     {
+        ViewBag.CurrentSortOrder = sortOrder; // To allow us to store current sort order when we change pages 
         ViewBag.NameSortParam = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
         ViewBag.IsOverdueSortParam = string.IsNullOrEmpty(sortOrder) ? "is_overdue" : "";
         var clients = await _pagination.PagingClients(sortOrder, pageNumber, pageSize);
