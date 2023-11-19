@@ -1,4 +1,8 @@
 @model cloudscribe.Pagination.Models.PagedResult<CarteiraClientes.ViewModels.ClientCompany.GetClientCompanyViewModel>
+@{
+    ViewData["Controller"] = "ClientsCompanies";
+    ViewData["Action"] = "IndexPaged";
+}
 
 <div class="text-primary fs-4">Relação entre Clientes e Empresas</div>
 <a class="btn btn-secondary rounded-1 float-end mb-1" asp-controller="Home" asp-action="Index">Retornar ao Início</a>
@@ -53,15 +57,4 @@
         </tbody>
     </table>
 </form>
-<cs-pager cs-paging-pagenumber="Model.PageNumber"
-          cs-paging-totalitems="Model.TotalItems"
-          cs-paging-pagesize="Model.PageSize"
-          cs-pagenumber-param="pagenumber"
-          asp-controller="ClientsCompanies"
-          asp-action="IndexPaged"
-          cs-pager-li-current-class="page-item active"
-          cs-pager-li-other-class="page-item"
-          cs-pager-li-non-active-class="page-item disabled"
-          cs-pager-link-current-class="page-link"
-          cs-pager-link-other-class="page-link">
-</cs-pager>
+<partial name="_PaginationPartial" view-data="ViewData" model="Model"/>

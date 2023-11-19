@@ -1,5 +1,11 @@
 @model cloudscribe.Pagination.Models.PagedResult<CarteiraClientes.ViewModels.Client.GetClientViewModel>
 
+@* ViewDictionary to use PartialView *@
+@{
+    ViewData["Controller"] = "Clients";
+    ViewData["Action"] = "IndexPaged";
+}
+
 <div class="text-primary fs-4">Lista de Clientes</div>
 <br/>
 
@@ -70,16 +76,4 @@
         </tbody>
     </table>
 </form>
-
-<cs-pager cs-paging-pagenumber="Model.PageNumber"
-          cs-paging-totalitems="Model.TotalItems"
-          cs-paging-pagesize="Model.PageSize"
-          cs-pagenumber-param="pagenumber"
-          asp-controller="Clients"
-          asp-action="IndexPaged"
-          cs-pager-li-current-class="page-item active"
-          cs-pager-li-other-class="page-item"
-          cs-pager-li-non-active-class="page-item disabled"
-          cs-pager-link-current-class="page-link"
-          cs-pager-link-other-class="page-link">
-</cs-pager>
+<partial name="_PaginationPartial" view-data="ViewData" model="Model"/>
