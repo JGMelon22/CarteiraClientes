@@ -42,7 +42,7 @@ public class PaginationService : IPaginationService
         }
 
         // Pagination
-        var clients = await clientsQuery
+        var pagedClients = await clientsQuery
             .Skip(excludeRecords)
             .Take(pageSize)
             .ToListAsync();
@@ -50,7 +50,7 @@ public class PaginationService : IPaginationService
         var totalItems = await clientsQuery.CountAsync();
 
         // Use Mapster to adapt clientEntities to List<GetClientViewModel>
-        var clientViewModels = clients.Adapt<List<GetClientViewModel>>();
+        var clientViewModels = pagedClients.Adapt<List<GetClientViewModel>>();
 
         var result = new PagedResult<GetClientViewModel> // cloudscribe.Pagination.Models to help at view
         {
@@ -104,44 +104,35 @@ public class PaginationService : IPaginationService
         var serviceResponse = new ServiceResponse<PagedResult<GetClientCompanyViewModel>>();
 
         var excludedRecords = pageSize * pageNumber - pageSize;
-        var clientsCompanies = await (from cl in _dbContext.Clients
-                join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
-                join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
-                select new
-                {
-                    cl.ClientId,
-                    cl.FullName,
-                    cl.Document,
-                    cl.IsOverdue,
-                    co.CompanyId,
-                    co.CompanyName
-                })
-            .OrderBy(c => c.ClientId)
+        var clientsCompaniesQuery = (from cl in _dbContext.Clients
+            join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
+            join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
+            select new
+            {
+                cl.ClientId,
+                cl.FullName,
+                cl.Document,
+                cl.IsOverdue,
+                co.CompanyId,
+                co.CompanyName
+            }).AsNoTracking();
+
+        var pagedClientsCompanies = await clientsCompaniesQuery
+            .OrderBy(cc=>cc.ClientId)
             .Skip(excludedRecords)
             .Take(pageSize)
             .AsNoTracking()
             .ToListAsync();
 
+        var totalItems = await clientsCompaniesQuery.CountAsync();
+
         // Use Mapster to adapt clientEntities to List<GetClientViewModel>
-        var clientCompanyModel = clientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
+        var clientCompanyModel = pagedClientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
 
         var result = new PagedResult<GetClientCompanyViewModel> // cloudscribe.Pagination.Models to help at view
         {
             Data = clientCompanyModel,
-            TotalItems = await (from cl in _dbContext.Clients
-                    join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
-                    join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
-                    select new
-                    {
-                        cl.ClientId,
-                        cl.FullName,
-                        cl.Document,
-                        cl.IsOverdue,
-                        co.CompanyId,
-                        co.CompanyName
-                    })
-                .AsNoTracking()
-                .CountAsync(),
+            TotalItems = totalItems,
             PageNumber = pageNumber,
             PageSize = pageSize
         };
