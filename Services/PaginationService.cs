@@ -16,7 +16,7 @@ public class PaginationService : IPaginationService
     }
 
     public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(int pageNumber = 1,
-        int pageSize = 25)
+        int pageSize = 15)
     {
         var serviceResponse = new ServiceResponse<PagedResult<GetClientViewModel>>();
 
