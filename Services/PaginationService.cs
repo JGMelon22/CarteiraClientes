@@ -1,5 +1,4 @@
 using CarteiraClientes.Infrastructure.Data;
-using CarteiraClientes.Infrastructure.Repository;
 using CarteiraClientes.Interfaces;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.ClientCompany;
@@ -18,16 +17,31 @@ public class PaginationService : IPaginationService
         _dbContext = dbContext;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(int pageNumber = 1,
+    public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(string sortOrder,
+        int pageNumber = 1,
         int pageSize = 15)
     {
         var serviceResponse = new ServiceResponse<PagedResult<GetClientViewModel>>();
 
         var excludeRecords = pageSize * pageNumber - pageSize;
-        var clients = await _dbContext.Clients
+        var clientsQuery = _dbContext.Clients
+            .AsNoTracking();
+
+        // Sort Logic
+        switch (sortOrder)
+        {
+            case "name_desc":
+                clientsQuery = clientsQuery.OrderByDescending(c => c.FullName);
+                break;
+            default:
+                clientsQuery = clientsQuery.OrderBy(c => c.FullName);
+                break;
+        }
+
+        // Pagination
+        var clients = await clientsQuery
             .Skip(excludeRecords)
             .Take(pageSize)
-            .AsNoTracking()
             .ToListAsync();
 
         // Use Mapster to adapt clientEntities to List<GetClientViewModel>

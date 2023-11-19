@@ -9,8 +9,8 @@
         <td>
             @Html.DisplayName("Código")
         </td>
-        <td>
-            @Html.DisplayName("Nome Completo")
+        <td class="text-info">
+            <a asp-action="IndexPaged" asp-route-sortOrder="@ViewBag.NameSortParam">@Html.DisplayName("Nome Completo")</a>
         </td>
         <td class="text-center">
             @Html.DisplayName("Idade")

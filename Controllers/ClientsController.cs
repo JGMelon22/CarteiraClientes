@@ -26,9 +26,10 @@ public class ClientsController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> IndexPaged(int pageNumber = 1, int pageSize = 15)
+    public async Task<IActionResult> IndexPaged(string sortOrder, int pageNumber = 1, int pageSize = 15)
     {
-        var clients = await _pagination.PagingClients(pageNumber, pageSize);
+        ViewBag.NameSortParam = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        var clients = await _pagination.PagingClients(sortOrder, pageNumber, pageSize);
         return clients.Data != null
             ? View(clients.Data)
             : NoContent();
