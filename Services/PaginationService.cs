@@ -22,16 +22,14 @@ public class PaginationService : IPaginationService
         var serviceResponse = new ServiceResponse<PagedResult<GetClientViewModel>>();
 
         var excludeRecords = pageSize * pageNumber - pageSize;
-        var clients = _dbContext.Clients
+        var clients = await _dbContext.Clients
             .Skip(excludeRecords)
-            .Take(pageSize);
-
-        var clientEntities = await clients
+            .Take(pageSize)
             .AsNoTracking()
             .ToListAsync();
 
         // Use Mapster to adapt clientEntities to List<GetClientViewModel>
-        var clientViewModels = clientEntities.Adapt<List<GetClientViewModel>>();
+        var clientViewModels = clients.Adapt<List<GetClientViewModel>>();
 
         var result = new PagedResult<GetClientViewModel> // cloudscribe.Pagination.Models to help at view
         {
@@ -51,16 +49,14 @@ public class PaginationService : IPaginationService
         var serviceResponse = new ServiceResponse<PagedResult<GetCompanyViewModel>>();
 
         var excludedRecords = pageSize * pageNumber - pageSize;
-        var companies = _dbContext.Companies
+        var companies = await _dbContext.Companies
             .Skip(excludedRecords)
-            .Take(pageSize);
-
-        var companiesEntity = await companies
+            .Take(pageSize)
             .AsNoTracking()
             .ToListAsync();
 
         // Use Mapster to adapt clientEntities to List<GetClientViewModel>
-        var companyViewModel = companiesEntity.Adapt<List<GetCompanyViewModel>>();
+        var companyViewModel = companies.Adapt<List<GetCompanyViewModel>>();
 
         var result = new PagedResult<GetCompanyViewModel> // cloudscribe.Pagination.Models to help at view
         {
