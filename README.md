@@ -28,6 +28,9 @@
 -  <a href="https://github.com/bchavez/Bogus">Bogus</a> <br/>
 -  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/>
 
+<h2>Diagrama de Classe</h2>
+<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/11636d90-4a48-47f6-beb8-ded496d6c662" width="800" height="600"/> <span>&nbsp;</span>
+
 <div style="display: inline_block" class="flex-container"><br>
         <img align="center" alt="CSharp" height="5%" width="5%" <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
