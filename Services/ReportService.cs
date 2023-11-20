@@ -18,8 +18,15 @@ public class ReportService : IReportService
 
     public List<ReportViewModel> GetAllReports()
     {
-        // Current path where reports should exist
-        var filePath = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, "Reports"));
+        // Path where reports should exist
+        var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "Reports");
+        
+        // If does not exists, create one
+        if(!Directory.Exists(folderPath))
+            Directory.CreateDirectory(folderPath);
+        
+        // Current path where reports should be created
+        var filePath = Directory.GetFiles(Path.Combine(folderPath));
 
         // Create a list with all found reports on directory
         var createdReports = new List<ReportViewModel>();
