@@ -42,6 +42,9 @@ builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IClientCompanyRepository, ClientCompanyRepository>();
 
+builder.Services.AddScoped<IReportRepository, ReportRepository>();
+builder.Services.AddScoped<IReportService, ReportService>();
+
 // Service Pattern DI
 builder.Services.AddScoped<ChartService>();
 
