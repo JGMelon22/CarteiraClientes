@@ -5,7 +5,7 @@
 <ul>
   <li>Gerar relatórios em .xlsx referentes ao status do cliente</li>
   <li>Listar a relação entre clientes e empresas atarvés de gráfico de barra</li>
-  <li>Gerar dados mocados de forma rápida e eficiente grtaças ao Bogus</li>
+  <li>Gerar dados mocados de forma rápida e eficiente graças ao Bogus</li>
 </ul>  
 
 <h2> O que foi usado? </h2>
