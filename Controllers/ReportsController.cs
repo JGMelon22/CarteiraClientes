@@ -28,7 +28,7 @@ public class ReportsController : Controller
     [HttpGet]
     public async Task<IActionResult> Download(string reportName)
     {
-        byte[] bytes = await _service.DownloadReport(reportName); // bytes array to invoke file download service
+        var bytes = await _service.DownloadReport(reportName); // bytes array to invoke file download service
         return File(bytes, "application/octet-stream", reportName); // generic binary file type
     }
 

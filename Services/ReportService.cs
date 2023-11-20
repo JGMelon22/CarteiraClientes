@@ -37,7 +37,7 @@ public class ReportService : IReportService
     public async Task PlotReport()
     {
         // Local variable  to hold current date when report is been generated
-        DateTime reportGenerateDate = DateTime.Now;
+        var reportGenerateDate = DateTime.Now;
 
         var dataTable = new DataTable();
         dataTable.Columns.AddRange(
@@ -58,8 +58,8 @@ public class ReportService : IReportService
         // And does format Client Document using RG template with substring
         foreach (var result in results)
             dataTable.Rows.Add(result.ClientId, result.FullName,
-                (result.Document.Substring(0, 2) + "." + result.Document.Substring(2, 3) + "." +
-                 result.Document.Substring(5, 3) + "-" + result.Document.Substring(8)),
+                result.Document.Substring(0, 2) + "." + result.Document.Substring(2, 3) + "." +
+                result.Document.Substring(5, 3) + "-" + result.Document.Substring(8),
                 result.IsOverdue, result.CompanyId,
                 result.CompanyName);
 
