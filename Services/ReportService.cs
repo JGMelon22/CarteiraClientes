@@ -53,7 +53,10 @@ public class ReportService : IReportService
 
         // Populate report with DB data
         foreach (var result in results)
-            dataTable.Rows.Add(result.ClientId, result.FullName, result.Document, result.IsOverdue, result.CompanyId,
+            dataTable.Rows.Add(result.ClientId, result.FullName,
+                (result.Document.Substring(0, 2) + "." + result.Document.Substring(2, 3) + "." +
+                 result.Document.Substring(5, 3) + "-" + result.Document.Substring(8)),
+                result.IsOverdue, result.CompanyId,
                 result.CompanyName);
 
         // Directory where reports should be places
