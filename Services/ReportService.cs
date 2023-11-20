@@ -6,6 +6,7 @@ namespace CarteiraClientes.Services;
 
 public class ReportService : IReportService
 {
+    private DateOnly _reportGenerateDate = DateOnly.FromDateTime(DateTime.Now);
     /// <summary>
     ///     DI to have Clients X Companies query
     /// </summary>
@@ -52,6 +53,7 @@ public class ReportService : IReportService
         var results = await _repository.GetAllClientsCompanies();
 
         // Populate report with DB data
+        // And does format Client Document using RG template with substring
         foreach (var result in results)
             dataTable.Rows.Add(result.ClientId, result.FullName,
                 (result.Document.Substring(0, 2) + "." + result.Document.Substring(2, 3) + "." +
@@ -69,7 +71,7 @@ public class ReportService : IReportService
         // Create the report per se
         using var workBook = new XLWorkbook();
         workBook.Worksheets.Add(dataTable, "ClientesEmpresas");
-        workBook.SaveAs(folderPath + Path.DirectorySeparatorChar + "RelatorioClientesEmpresas.xlsx");
+        workBook.SaveAs(folderPath + Path.DirectorySeparatorChar + $"RelatorioClientesEmpresas{_reportGenerateDate.ToString("yyyy-MM-dd")}.xlsx");
     }
 
     public async Task<byte[]> DownloadReport(string reportName)

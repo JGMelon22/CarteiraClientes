@@ -21,6 +21,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cc62364a2aeba5ac3bffd88882924585b2dfa3fde6aa5b5be373c35eefe50eb/SelectListItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de271ccf3ff37986b6d3371645fe3b139cc5e384e759f686d8b2e87c734b0/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ef9fac28673997ad0bd391339338d623247ad395e117dff375bf90a2c35d/Person.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Migrations/20231119183406_BogusSeed.Designer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -123,7 +124,7 @@
       <workItem from="1700404640872" duration="8952000" />
       <workItem from="1700417926730" duration="17482000" />
       <workItem from="1700492702716" duration="4706000" />
-      <workItem from="1700497951601" duration="1339000" />
+      <workItem from="1700497951601" duration="2348000" />
     </task>
     <servers />
   </component>
@@ -132,24 +133,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/ReportsController.cs</url>
-          <line>23</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/ReportsController.cs" initialLine="23" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="473" />
-            </startOffsets>
-            <endOffsets>
-              <option value="501" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
