@@ -22,14 +22,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td class="d-flex justify-content-center">
+                <td>
                     @Html.DisplayFor(modelItem => item.ReportName)
                 </td>
-                <td>
-                    <a href="@Url.Action("Download", new { reportName = item.ReportName })" class="btn btn-success" onclick="return confirm('Deseja realmente deletar este relatório?')">Download</a>
+                <td class="d-flex justify-content-center">
+                    <a href="@Url.Action("Download", new { reportName = item.ReportName })" class="btn btn-success">Download</a>
                 </td>
                 <td class="d-flex justify-content-center">
-                    <a href="@Url.Action("Delete", new { reportName = item.ReportName })" class="btn btn-danger">Deletar</a>
+                    <a href="@Url.Action("Delete", new { reportName = item.ReportName })" class="btn btn-danger" onclick="return confirm('Deseja realmente deletar este relatório?')">Deletar</a>
                 </td>
             </tr>
         }
