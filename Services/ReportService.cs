@@ -6,7 +6,6 @@ namespace CarteiraClientes.Services;
 
 public class ReportService : IReportService
 {
-    private DateOnly _reportGenerateDate = DateOnly.FromDateTime(DateTime.Now);
     /// <summary>
     ///     DI to have Clients X Companies query
     /// </summary>
@@ -37,6 +36,9 @@ public class ReportService : IReportService
 
     public async Task PlotReport()
     {
+        // Local variable  to hold current date when report is been generated
+        DateTime reportGenerateDate = DateTime.Now;
+
         var dataTable = new DataTable();
         dataTable.Columns.AddRange(
             new DataColumn[6] // Six headers due to projection from GetClientsCompanies EF Core Query
@@ -71,7 +73,8 @@ public class ReportService : IReportService
         // Create the report per se
         using var workBook = new XLWorkbook();
         workBook.Worksheets.Add(dataTable, "ClientesEmpresas");
-        workBook.SaveAs(folderPath + Path.DirectorySeparatorChar + $"RelatorioClientesEmpresas{_reportGenerateDate.ToString("yyyy-MM-dd")}.xlsx");
+        workBook.SaveAs(folderPath + Path.DirectorySeparatorChar +
+                        $"RelatorioClientesEmpresas{reportGenerateDate:yyyy-MM-dd-HH-mm-ss}.xlsx");
     }
 
     public async Task<byte[]> DownloadReport(string reportName)
