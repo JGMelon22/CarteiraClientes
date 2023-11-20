@@ -25,7 +25,6 @@ public class ReportRepository : IReportRepository
                     co.CompanyId,
                     co.CompanyName
                 }).AsNoTracking()
-            .Take(100)
             .ToListAsync();
 
         return clientsCompanies.Adapt<List<GetClientCompanyViewModel>>();

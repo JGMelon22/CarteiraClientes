@@ -38,7 +38,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.06306306&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.039039038&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -122,7 +122,8 @@
       <workItem from="1700359301086" duration="1584000" />
       <workItem from="1700404640872" duration="8952000" />
       <workItem from="1700417926730" duration="17482000" />
-      <workItem from="1700492702716" duration="4324000" />
+      <workItem from="1700492702716" duration="4706000" />
+      <workItem from="1700497951601" duration="727000" />
     </task>
     <servers />
   </component>
@@ -131,5 +132,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/ReportsController.cs</url>
+          <line>23</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/ReportsController.cs" initialLine="23" containingFunctionPresentation="Method 'Create'">
+            <startOffsets>
+              <option value="473" />
+            </startOffsets>
+            <endOffsets>
+              <option value="501" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -17,4 +17,11 @@ public class ReportsController : Controller
         var reports = _service.GetAllReports();
         return View(reports);
     }
+
+    [HttpGet]
+    public async Task<IActionResult> Create()
+    {
+        await _service.PlotReport();
+        return RedirectToAction("Index", "Reports");
+    }
 }
