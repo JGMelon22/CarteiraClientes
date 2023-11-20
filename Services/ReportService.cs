@@ -7,7 +7,7 @@ namespace CarteiraClientes.Services;
 public class ReportService : IReportService
 {
     /// <summary>
-    /// DI to have Clients X Companies query
+    ///     DI to have Clients X Companies query
     /// </summary>
     private readonly IReportRepository _repository;
 
@@ -26,12 +26,10 @@ public class ReportService : IReportService
 
         // Adds to the list each report found 
         foreach (var report in filePath)
-        {
-            createdReports.Add(new ReportViewModel()
+            createdReports.Add(new ReportViewModel
             {
                 ReportName = Path.GetFileName(report)
             });
-        }
 
         return createdReports.ToList();
     }
@@ -55,10 +53,8 @@ public class ReportService : IReportService
 
         // Populate report with DB data
         foreach (var result in results)
-        {
             dataTable.Rows.Add(result.ClientId, result.FullName, result.Document, result.IsOverdue, result.CompanyId,
                 result.CompanyName);
-        }
 
         // Directory where reports should be places
         var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "Reports");

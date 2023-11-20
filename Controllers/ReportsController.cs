@@ -1,4 +1,3 @@
-using CarteiraClientes.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Controllers;
@@ -18,6 +17,4 @@ public class ReportsController : Controller
         var reports = _service.GetAllReports();
         return View(reports);
     }
-    
-    
 }

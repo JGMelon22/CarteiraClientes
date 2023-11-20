@@ -1,0 +1,29 @@
+@model IEnumerable<CarteiraClientes.ViewModels.Report.ReportViewModel>
+
+@{
+    ViewData["Title"] = "Relatórios Gerados";
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<div>
+    <table class="table table-bordered border-light-subtle table-striped table-hover">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nome do Arquivo")
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReportName)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
