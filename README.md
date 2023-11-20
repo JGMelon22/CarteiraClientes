@@ -18,6 +18,7 @@
 - Dapper<br/>
 - Npgsql <br/>
 - Npgsql.EntityFrameworkCore.PostgreSQL <br/>
+- ClosedXML <br/>
 -  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/>
 
 <div style="display: inline_block" class="flex-container"><br>
