@@ -1,6 +1,12 @@
 # Sistema Carteira de Clientes
 
-<span>Sistema simplificado para cadastro e listagem de clientes inadimplentes</span>
+<span>Sistema simplificado para cadastro e listagem de clientes inadimplentes.</span>
+<span>Com este projeto, além do CRUD, é possível: </span>
+<ul>
+  <li>Gerar relatórios em .xlsx referentes ao status do cliente</li>
+  <li>Listar a relação entre clientes e empresas atarvés de gráfico de barra</li>
+  <li>Gerar dados mocados de forma rápida e eficiente grtaças ao Bogus</li>
+</ul>  
 
 <h2> O que foi usado? </h2>
 - ASP .NET Core 7.0 <br/>
@@ -19,6 +25,7 @@
 - Npgsql <br/>
 - Npgsql.EntityFrameworkCore.PostgreSQL <br/>
 - ClosedXML <br/>
+-  <a href="https://github.com/bchavez/Bogus">Bogus</a> <br/>
 -  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/>
 
 <div style="display: inline_block" class="flex-container"><br>
