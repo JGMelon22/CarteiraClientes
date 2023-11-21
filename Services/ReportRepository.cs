@@ -11,8 +11,10 @@ public class ReportRepository : IReportRepository
         _dbContext = dbContext;
     }
 
-    public async Task<List<GetClientCompanyViewModel>> GetAllClientsCompanies()
+    public async Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompanies()
     {
+        var serviceResponse = new ServiceResponse<List<GetClientCompanyViewModel>>();
+
         var clientsCompanies = await (from cl in _dbContext.Clients
                 join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
                 join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
@@ -27,6 +29,7 @@ public class ReportRepository : IReportRepository
                 }).AsNoTracking()
             .ToListAsync();
 
-        return clientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
+        serviceResponse.Data = clientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
+        return serviceResponse;
     }
 }

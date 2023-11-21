@@ -4,5 +4,5 @@ namespace CarteiraClientes.Interfaces;
 
 public interface IReportRepository
 {
-    Task<List<GetClientCompanyViewModel>> GetAllClientsCompanies();
+    Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompanies();
 }

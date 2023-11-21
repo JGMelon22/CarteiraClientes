@@ -63,7 +63,7 @@ public class ReportService : IReportService
 
         // Populate report with DB data
         // And does format Client Document using RG template with substring
-        foreach (var result in results)
+        foreach (var result in results.Data!)
             dataTable.Rows.Add(result.ClientId, result.FullName,
                 result.Document.Substring(0, 2) + "." + result.Document.Substring(2, 3) + "." +
                 result.Document.Substring(5, 3) + "-" + result.Document.Substring(8),
