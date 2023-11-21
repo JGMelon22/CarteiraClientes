@@ -11,6 +11,7 @@ public class ReportRepository : IReportRepository
         _dbContext = dbContext;
     }
 
+
     public async Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompanies()
     {
         var serviceResponse = new ServiceResponse<List<GetClientCompanyViewModel>>();

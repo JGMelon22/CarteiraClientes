@@ -20,11 +20,11 @@ public class ReportService : IReportService
     {
         // Path where reports should exist
         var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "Reports");
-        
+
         // If does not exists, create one
-        if(!Directory.Exists(folderPath))
+        if (!Directory.Exists(folderPath))
             Directory.CreateDirectory(folderPath);
-        
+
         // Current path where reports should be created
         var filePath = Directory.GetFiles(Path.Combine(folderPath));
 
