@@ -1,6 +1,6 @@
 using CarteiraClientes.ViewModels.ClientCompany;
 
-namespace CarteiraClientes.Services;
+namespace CarteiraClientes.Infrastructure.Repository;
 
 public class ReportRepository : IReportRepository
 {
