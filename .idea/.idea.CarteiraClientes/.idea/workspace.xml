@@ -39,7 +39,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.08049536&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.039039038&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -125,7 +125,12 @@
       <workItem from="1700417926730" duration="17482000" />
       <workItem from="1700492702716" duration="4706000" />
       <workItem from="1700497951601" duration="4966000" />
-      <workItem from="1700526269252" duration="1115000" />
+      <workItem from="1700526269252" duration="1186000" />
+      <workItem from="1700613985866" duration="84000" />
+      <workItem from="1700614092239" duration="5833000" />
+      <workItem from="1700659875717" duration="453000" />
+      <workItem from="1700680311822" duration="4392000" />
+      <workItem from="1700755841241" duration="2072000" />
     </task>
     <servers />
   </component>
@@ -134,5 +139,29 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/ReportService.cs</url>
+          <line>66</line>
+          <properties documentPath="$PROJECT_DIR$/Services/ReportService.cs" initialLine="67" containingFunctionPresentation="Method 'PlotReport'">
+            <startOffsets>
+              <option value="2139" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2462" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.Client" memberName="Document" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

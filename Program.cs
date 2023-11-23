@@ -31,7 +31,8 @@ builder.Services.AddScoped<IPaginationService, PaginationService>();
 builder.Services.AddCloudscribePagination();
 
 // Fluent Validator Service 
-builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationAutoValidation(); // Server Side
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters(); // Client Side
 builder.Services.AddScoped<IValidator<AddClientViewModel>, AddClientValidador>();
 builder.Services.AddScoped<IValidator<UpdateClientViewModel>, UpdateClientValidator>();
 builder.Services.AddScoped<IValidator<AddCompanyViewModel>, AddCompanyValidator>();

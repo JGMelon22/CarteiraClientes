@@ -5,13 +5,16 @@ namespace CarteiraClientes.Controllers;
 
 public class CompaniesController : Controller
 {
+    private readonly IValidator<AddCompanyViewModel> _addValidator;
     private readonly ICompanyRepository _repository;
     private readonly IPaginationService _service;
 
-    public CompaniesController(ICompanyRepository repository, IPaginationService service)
+    public CompaniesController(ICompanyRepository repository, IPaginationService service,
+        IValidator<AddCompanyViewModel> addValidator)
     {
         _repository = repository;
         _service = service;
+        _addValidator = addValidator;
     }
 
     // View Listar top 100 empresas
@@ -59,6 +62,10 @@ public class CompaniesController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AddCompanyViewModel newCompany)
     {
+        // ValidationResult result = await _addValidator.ValidateAsync(newCompany);
+        // if(!result.IsValid)
+        //     return View(nameof(Create));
+
         if (!ModelState.IsValid)
             return View(nameof(Create));
 
