@@ -33,10 +33,10 @@ builder.Services.AddCloudscribePagination();
 // Fluent Validator Service 
 builder.Services.AddFluentValidationAutoValidation(); // Server Side
 builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters(); // Client Side
-builder.Services.AddScoped<IValidator<AddClientViewModel>, AddClientValidador>();
-builder.Services.AddScoped<IValidator<UpdateClientViewModel>, UpdateClientValidator>();
-builder.Services.AddScoped<IValidator<AddCompanyViewModel>, AddCompanyValidator>();
-builder.Services.AddScoped<IValidator<UpdateCompanyViewModel>, UpdateCompanyValidator>();
+builder.Services.AddTransient<IValidator<AddClientViewModel>, AddClientValidador>();
+builder.Services.AddTransient<IValidator<UpdateClientViewModel>, UpdateClientValidator>();
+builder.Services.AddTransient<IValidator<AddCompanyViewModel>, AddCompanyValidator>();
+builder.Services.AddTransient<IValidator<UpdateCompanyViewModel>, UpdateCompanyValidator>();
 
 // Interface & Repository register
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
@@ -52,7 +52,7 @@ builder.Services.AddScoped<ChartService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (!=app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
