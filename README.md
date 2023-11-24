@@ -10,7 +10,7 @@
 
 <h2> O que foi usado? </h2>
 - ASP .NET Core 7.0 <br/>
-- PostgreSQL <br/>
+- SQL Server 2019 Developer <br/>
 - Abordagem MVC c/ Razor pages <br/>
 - <a href="https://developers.google.com/chart">Google Charts</a> <br/>
 
@@ -22,8 +22,8 @@
 - cloudscribe.Pagination.Models <br/>
 - cloudscribe.Web.Pagination <br/>
 - Dapper<br/>
-- Npgsql <br/>
-- Npgsql.EntityFrameworkCore.PostgreSQL <br/>
+- Microsoft.Data.SqlClient <br/>
+- EntityFrameworkCore.SqlServer <br/>
 - ClosedXML <br/>
 -  <a href="https://github.com/bchavez/Bogus">Bogus</a> <br/>
 -  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/>
