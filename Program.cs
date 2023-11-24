@@ -1,4 +1,3 @@
-using System.Data;
 using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.Infrastructure.Repository;
 using CarteiraClientes.Infrastructure.Validators.Client;
@@ -7,21 +6,22 @@ using CarteiraClientes.Services;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
 using FluentValidation.AspNetCore;
-using Npgsql;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// IDBConnection to help with Dapper
-builder.Services.AddScoped<IDbConnection>(x =>
-    new NpgsqlConnection(builder.Configuration.GetConnectionString("Default"))
-);
-
 // DbContext - EFCore
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+
+// IDBConnection to help with Dapper
+builder.Services.AddScoped<IDbConnection>(x =>
+    new SqlConnection(builder.Configuration.GetConnectionString("Default")));
 
 // Mapster Service
 builder.Services.RegisterMapsterConfiguration();

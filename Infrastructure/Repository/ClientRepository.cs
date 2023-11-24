@@ -1,6 +1,6 @@
-using System.Data;
 using CarteiraClientes.ViewModels.Client;
 using Dapper;
+using System.Data;
 
 namespace CarteiraClientes.Infrastructure.Repository;
 
@@ -19,22 +19,19 @@ public class ClientRepository : IClientRepository
     public async Task<ServiceResponse<List<GetClientViewModel>>> GetAllClients()
     {
         var serviceResponse = new ServiceResponse<List<GetClientViewModel>>();
-        var getAllClientsQuery = @"select client_id as ClientId,
+        var getAllClientsQuery = @"select top 100 client_id as ClientId,
                                           full_name as FullName,
                                           age as Age,
                                           document as Document,
                                           gender as Gender,
                                           is_overdue as IsOverdue
                                     from clients
-                                    order by client_id asc
-                                    limit 100;";
+                                    order by client_id asc;";
 
         _dbConnection.Open();
 
-        // var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
         var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
 
-        // serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList(); // Mapeando Model para ViewModel
         serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList();
 
         _dbConnection.Close();

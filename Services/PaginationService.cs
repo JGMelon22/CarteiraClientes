@@ -107,17 +107,17 @@ public class PaginationService : IPaginationService
 
         var excludedRecords = pageSize * pageNumber - pageSize;
         var clientsCompaniesQuery = (from cl in _dbContext.Clients
-            join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
-            join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
-            select new
-            {
-                cl.ClientId,
-                cl.FullName,
-                cl.Document,
-                cl.IsOverdue,
-                co.CompanyId,
-                co.CompanyName
-            }).AsNoTracking();
+                                     join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
+                                     join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
+                                     select new
+                                     {
+                                         cl.ClientId,
+                                         cl.FullName,
+                                         cl.Document,
+                                         cl.IsOverdue,
+                                         co.CompanyId,
+                                         co.CompanyName
+                                     }).AsNoTracking();
 
         var pagedClientsCompanies = await clientsCompaniesQuery
             .OrderBy(cc => cc.ClientId)

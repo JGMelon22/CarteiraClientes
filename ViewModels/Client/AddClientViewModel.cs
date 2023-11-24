@@ -1,5 +1,5 @@
-using System.ComponentModel.DataAnnotations;
 using CarteiraClientes.ViewModels.ClientCompany;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarteiraClientes.ViewModels.Client;
 

@@ -1,6 +1,6 @@
-using System.Data;
 using CarteiraClientes.ViewModels.Company;
 using Dapper;
+using System.Data;
 
 namespace CarteiraClientes.Infrastructure.Repository;
 
@@ -18,13 +18,12 @@ public class CompanyRepository : ICompanyRepository
     public async Task<ServiceResponse<List<GetCompanyViewModel>>> GetAllCompanies()
     {
         var serviceResponse = new ServiceResponse<List<GetCompanyViewModel>>();
-        var getAllCompaniesQuery = @"select company_id as CompanyId,
-                                            company_name as CompanyName,
-                                            founded_date as FoundedDate,
-                                            revenue as Revenue
+        var getAllCompaniesQuery = @"select top 100 company_id as CompanyId,
+                                                    company_name as CompanyName,
+                                                    founded_date as FoundedDate,
+                                                    revenue as Revenue
                                       from companies
-                                      order by company_id asc
-                                      limit 100;";
+                                      order by company_id asc;";
 
         _dbConnection.Open();
 

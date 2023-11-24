@@ -1,6 +1,6 @@
-using System.Data;
 using CarteiraClientes.ViewModels.Report;
 using ClosedXML.Excel;
+using System.Data;
 
 namespace CarteiraClientes.Services;
 
