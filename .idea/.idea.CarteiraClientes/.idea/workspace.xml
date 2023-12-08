@@ -15,12 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/97982ada126b4a44bc33c12235fc663b24fc00/a8/95965e27/Faker`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/66fb396b9859c8734ef8e8dd529955858164ba8a4e32d9085dd3099d5c9127b/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb21aecde0464bbf27bc18a873ba73ca78ef3e6c947d7464c2cd54571bf42421/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cc62364a2aeba5ac3bffd88882924585b2dfa3fde6aa5b5be373c35eefe50eb/SelectListItem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de271ccf3ff37986b6d3371645fe3b139cc5e384e759f686d8b2e87c734b0/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ef9fac28673997ad0bd391339338d623247ad395e117dff375bf90a2c35d/Person.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d37126de17d46baad9e2258a5a93c1bc44200/39/8c799905/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20231119183406_BogusSeed.Designer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -34,32 +29,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.039039038&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.039039038",
+    "last_opened_file_path": "/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/joaog/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
-      &quot;/home/joaog/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
-      &quot;/home/joaog/.local/share/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/home/joaog/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/home/joaog/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/home/joaog/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CarteiraClientes: https">
     <configuration name="CarteiraClientes: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CarteiraClientes.csproj" />
@@ -130,7 +126,12 @@
       <workItem from="1700680311822" duration="4392000" />
       <workItem from="1700755841241" duration="2072000" />
       <workItem from="1700773981823" duration="65000" />
-      <workItem from="1700774448612" duration="2845000" />
+      <workItem from="1700774448612" duration="3357000" />
+      <workItem from="1700780798186" duration="6213000" />
+      <workItem from="1700962512810" duration="5521000" />
+      <workItem from="1701910015560" duration="2243000" />
+      <workItem from="1701948510776" duration="442000" />
+      <workItem from="1701996617868" duration="1816000" />
     </task>
     <servers />
   </component>
@@ -143,7 +144,10 @@
   <component name="XDebuggerManager">
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Company" />
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.Client" memberName="Document" />
+        <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Client" />
+        <PinnedItemInfo parentTag="Type#CarteiraClientes.ViewModels.ClientCompany.GetClientCompanyViewModel" memberName="FullName" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

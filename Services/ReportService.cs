@@ -59,6 +59,7 @@ public class ReportService : IReportService
             });
 
         // Query fetch data from clients x companies
+        // var results = await _repository.GetAllClientsCompaniesEFCoreRawQueryUnmappedType();
         var results = await _repository.GetAllClientsCompanies();
 
         // Populate report with DB data
