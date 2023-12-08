@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace CarteiraClientes.ViewModels.ClientCompany;
 
 public record GetClientCompanyViewModel
