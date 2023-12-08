@@ -9,7 +9,7 @@
 </ul>  
 
 <h2> O que foi usado? </h2>
-- ASP .NET Core 7.0 <br/>
+- ASP .NET Core 8.0 <br/>
 - PostgreSQL <br/>
 - Abordagem MVC c/ Razor pages <br/>
 - <a href="https://developers.google.com/chart">Google Charts</a> <br/>
