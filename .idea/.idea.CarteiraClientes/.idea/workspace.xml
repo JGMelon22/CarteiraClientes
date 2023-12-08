@@ -42,7 +42,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -132,7 +132,7 @@
       <workItem from="1701910015560" duration="2243000" />
       <workItem from="1701948510776" duration="442000" />
       <workItem from="1701996617868" duration="1935000" />
-      <workItem from="1702038661772" duration="2608000" />
+      <workItem from="1702038661772" duration="4110000" />
     </task>
     <servers />
   </component>
@@ -143,23 +143,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Infrastructure/Repository/ReportRepository.cs</url>
-          <line>46</line>
-          <properties documentPath="$PROJECT_DIR$/Infrastructure/Repository/ReportRepository.cs" initialLine="46" containingFunctionPresentation="Method 'GetAllClientsCompaniesEFCoreRawQueryUnmappedType'">
-            <startOffsets>
-              <option value="1649" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2397" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Company" />
@@ -168,5 +151,9 @@
         <PinnedItemInfo parentTag="Type#CarteiraClientes.ViewModels.ClientCompany.GetClientCompanyViewModel" memberName="FullName" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
