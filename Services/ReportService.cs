@@ -59,7 +59,7 @@ public class ReportService : IReportService
             });
 
         // Query fetch data from clients x companies
-        var results = await _repository.GetAllClientsCompanies();
+        var results = await _repository.GetAllClientsCompaniesEfCoreRawQueryUnmappedType();
 
         // Populate report with DB data
         // And does format Client Document using RG template with substring
