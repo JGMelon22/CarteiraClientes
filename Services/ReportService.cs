@@ -16,7 +16,7 @@ public class ReportService : IReportService
         _repository = repository;
     }
 
-    public List<ReportViewModel> GetAllReports()
+    public List<ReportFileViewModel> GetAllReports()
     {
         // Path where reports should exist
         var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "Reports");
@@ -29,11 +29,11 @@ public class ReportService : IReportService
         var filePath = Directory.GetFiles(Path.Combine(folderPath));
 
         // Create a list with all found reports on directory
-        var createdReports = new List<ReportViewModel>();
+        var createdReports = new List<ReportFileViewModel>();
 
         // Adds to the list each report found 
         foreach (var report in filePath)
-            createdReports.Add(new ReportViewModel
+            createdReports.Add(new ReportFileViewModel
             {
                 ReportName = Path.GetFileName(report)
             });
@@ -59,8 +59,8 @@ public class ReportService : IReportService
             });
 
         // Query fetch data from clients x companies
-        // var results = await _repository.GetAllClientsCompaniesEFCoreRawQueryUnmappedType();
-        var results = await _repository.GetAllClientsCompanies();
+        var results = await _repository.GetAllClientsCompaniesEfCoreRawQueryUnmappedType();
+        // var results = await _repository.GetAllClientsCompanies();
 
         // Populate report with DB data
         // And does format Client Document using RG template with substring

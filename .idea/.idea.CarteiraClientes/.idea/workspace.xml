@@ -31,7 +31,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Debug",
+    ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -131,7 +131,8 @@
       <workItem from="1700962512810" duration="5521000" />
       <workItem from="1701910015560" duration="2243000" />
       <workItem from="1701948510776" duration="442000" />
-      <workItem from="1701996617868" duration="1816000" />
+      <workItem from="1701996617868" duration="1935000" />
+      <workItem from="1702038661772" duration="2608000" />
     </task>
     <servers />
   </component>
@@ -142,6 +143,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/Repository/ReportRepository.cs</url>
+          <line>46</line>
+          <properties documentPath="$PROJECT_DIR$/Infrastructure/Repository/ReportRepository.cs" initialLine="46" containingFunctionPresentation="Method 'GetAllClientsCompaniesEFCoreRawQueryUnmappedType'">
+            <startOffsets>
+              <option value="1649" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2397" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Company" />

@@ -1,9 +1,8 @@
-using CarteiraClientes.ViewModels.ClientCompany;
+using CarteiraClientes.ViewModels.Report;
 
 namespace CarteiraClientes.Interfaces;
 
 public interface IReportRepository
 {
-    Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompanies();
-    Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompaniesEFCoreRawQueryUnmappedType();
+    Task<ServiceResponse<List<GetReportViewModel>>> GetAllClientsCompaniesEfCoreRawQueryUnmappedType();
 }

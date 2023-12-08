@@ -1,6 +1,6 @@
 namespace CarteiraClientes.ViewModels.Report;
 
-public record ReportViewModel
+public record ReportFileViewModel
 {
     public required string ReportName { get; init; }
 }
