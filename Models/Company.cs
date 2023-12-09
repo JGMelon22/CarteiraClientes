@@ -6,5 +6,5 @@ public class Company
     public required string CompanyName { get; set; }
     public DateTime FoundedDate { get; set; }
     public decimal Revenue { get; set; }
-    public List<ClientCompany> ClientsCompanies { get; set; }
+    public List<ClientCompany> ClientsCompanies { get; set; } = null!;
 }
