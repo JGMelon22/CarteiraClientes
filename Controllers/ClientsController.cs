@@ -71,7 +71,7 @@ public class ClientsController : Controller
         {
             await _repository.AddClient(newClient);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return RedirectToAction("Error", "Home");
         }

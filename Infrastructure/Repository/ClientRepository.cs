@@ -20,11 +20,11 @@ public class ClientRepository : IClientRepository
     {
         var serviceResponse = new ServiceResponse<List<GetClientViewModel>>();
         var getAllClientsQuery = @"select top 100 client_id as ClientId,
-                                          full_name as FullName,
-                                          age as Age,
-                                          document as Document,
-                                          gender as Gender,
-                                          is_overdue as IsOverdue
+                                                  full_name as FullName,
+                                                  age as Age,
+                                                  document as Document,
+                                                  gender as Gender,
+                                                  is_overdue as IsOverdue
                                     from clients
                                     order by client_id asc;";
 
@@ -32,7 +32,7 @@ public class ClientRepository : IClientRepository
 
         var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
 
-        serviceResponse.Data = result.Adapt<List<GetClientViewModel>>().ToList();
+        serviceResponse.Data = result.ToList();
 
         _dbConnection.Close();
 

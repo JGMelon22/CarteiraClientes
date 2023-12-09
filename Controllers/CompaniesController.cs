@@ -5,16 +5,13 @@ namespace CarteiraClientes.Controllers;
 
 public class CompaniesController : Controller
 {
-    private readonly IValidator<AddCompanyViewModel> _addValidator;
     private readonly ICompanyRepository _repository;
     private readonly IPaginationService _service;
 
-    public CompaniesController(ICompanyRepository repository, IPaginationService service,
-        IValidator<AddCompanyViewModel> addValidator)
+    public CompaniesController(ICompanyRepository repository, IPaginationService service)
     {
         _repository = repository;
         _service = service;
-        _addValidator = addValidator;
     }
 
     // View Listar top 100 empresas
@@ -44,7 +41,7 @@ public class CompaniesController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var company = await _repository.GetCompanyById(id);
+        var company = await _repository.GetCompanyByIdCompiledEfCoreQueryAsync(id);
         return company.Data != null
             ? View(company.Data)
             : NotFound(company);
@@ -80,7 +77,7 @@ public class CompaniesController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var company = await _repository.GetCompanyById(id);
+        var company = await _repository.GetCompanyByIdCompiledEfCoreQueryAsync(id);
         return company.Data != null
             ? View(company.Data)
             : NotFound(company);
@@ -104,7 +101,7 @@ public class CompaniesController : Controller
     [HttpGet]
     public async Task<IActionResult> Delete(int id)
     {
-        var company = await _repository.GetCompanyById(id);
+        var company = await _repository.GetCompanyByIdCompiledEfCoreQueryAsync(id);
         return company.Data != null
             ? View(company.Data)
             : NotFound(company);
