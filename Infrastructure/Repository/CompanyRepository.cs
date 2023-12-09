@@ -29,7 +29,7 @@ public class CompanyRepository : ICompanyRepository
         _dbConnection.Open();
 
         var result = await _dbConnection.QueryAsync<GetCompanyViewModel>(getAllCompaniesQuery);
-        serviceResponse.Data = result.Adapt<List<GetCompanyViewModel>>().ToList();
+        serviceResponse.Data = result.ToList();
 
         _dbConnection.Close();
 
