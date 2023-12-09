@@ -26,7 +26,8 @@ public class ClientCompanyRepository : IClientCompanyRepository
                     cl.IsOverdue,
                     co.CompanyId,
                     co.CompanyName
-                }).AsNoTracking()
+                })
+            .AsNoTracking()
             .Take(100)
             .ToListAsync();
 

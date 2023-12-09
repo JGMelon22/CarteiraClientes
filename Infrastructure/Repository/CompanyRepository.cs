@@ -6,6 +6,18 @@ namespace CarteiraClientes.Infrastructure.Repository;
 
 public class CompanyRepository : ICompanyRepository
 {
+    private static readonly Func<AppDbContext, int, Task<GetCompanyViewModel?>> GetCompany =
+        EF.CompileAsyncQuery((AppDbContext context, int id) =>
+            context.Companies
+                .Select(c => new GetCompanyViewModel
+                {
+                    CompanyId = c.CompanyId,
+                    CompanyName = c.CompanyName,
+                    FoundedDate = c.FoundedDate,
+                    Revenue = c.Revenue
+                })
+                .FirstOrDefault(x => x.CompanyId == id));
+
     private readonly IDbConnection _dbConnection;
     private readonly AppDbContext _dbContext;
 
@@ -36,18 +48,17 @@ public class CompanyRepository : ICompanyRepository
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<GetCompanyViewModel>> GetCompanyById(int id)
+    public async Task<ServiceResponse<GetCompanyViewModel>> GetCompanyByIdCompiledEfCoreQueryAsync(int id)
     {
         var serviceResponse = new ServiceResponse<GetCompanyViewModel>();
 
         try
         {
-            var company = await _dbContext.Companies.FindAsync(id);
+            var company = await GetCompany(_dbContext, id);
 
-            if (company == null)
-                throw new Exception("Company not found!");
+            if (company == null) throw new Exception("Company not found!");
 
-            serviceResponse.Data = company.Adapt<GetCompanyViewModel>();
+            serviceResponse.Data = company;
         }
         catch (Exception ex)
         {

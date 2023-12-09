@@ -44,7 +44,7 @@ public class CompaniesController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var company = await _repository.GetCompanyById(id);
+        var company = await _repository.GetCompanyByIdCompiledEfCoreQueryAsync(id); // GetCompanyById
         return company.Data != null
             ? View(company.Data)
             : NotFound(company);
@@ -80,7 +80,7 @@ public class CompaniesController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var company = await _repository.GetCompanyById(id);
+        var company = await _repository.GetCompanyByIdCompiledEfCoreQueryAsync(id);
         return company.Data != null
             ? View(company.Data)
             : NotFound(company);
@@ -104,7 +104,7 @@ public class CompaniesController : Controller
     [HttpGet]
     public async Task<IActionResult> Delete(int id)
     {
-        var company = await _repository.GetCompanyById(id);
+        var company = await _repository.GetCompanyByIdCompiledEfCoreQueryAsync(id);
         return company.Data != null
             ? View(company.Data)
             : NotFound(company);

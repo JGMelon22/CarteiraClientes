@@ -30,9 +30,9 @@ public class ClientRepository : IClientRepository
                                     limit 100;";
 
         _dbConnection.Open();
-        
+
         var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
-        
+
         serviceResponse.Data = result.ToList();
 
         _dbConnection.Close();

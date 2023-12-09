@@ -16,7 +16,7 @@ public class ClientsCompaniesController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        var clientsCompanies = await _repository.GetAllClientsCompanies(); // GetAllClientsCompanies
+        var clientsCompanies = await _repository.GetAllClientsCompanies();
         return clientsCompanies.Data != null
             ? View(clientsCompanies.Data)
             : NoContent();
