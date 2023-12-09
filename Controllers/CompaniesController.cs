@@ -5,16 +5,13 @@ namespace CarteiraClientes.Controllers;
 
 public class CompaniesController : Controller
 {
-    private readonly IValidator<AddCompanyViewModel> _addValidator;
     private readonly ICompanyRepository _repository;
     private readonly IPaginationService _service;
 
-    public CompaniesController(ICompanyRepository repository, IPaginationService service,
-        IValidator<AddCompanyViewModel> addValidator)
+    public CompaniesController(ICompanyRepository repository, IPaginationService service)
     {
         _repository = repository;
         _service = service;
-        _addValidator = addValidator;
     }
 
     // View Listar top 100 empresas
