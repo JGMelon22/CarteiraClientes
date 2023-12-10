@@ -19,15 +19,17 @@ public class ClientRepository : IClientRepository
     public async Task<ServiceResponse<List<GetClientViewModel>>> GetAllClients()
     {
         var serviceResponse = new ServiceResponse<List<GetClientViewModel>>();
-        var getAllClientsQuery = @"select client_id as ClientId,
-                                          full_name as FullName,
-                                          age as Age,
-                                          document as Document,
-                                          gender as Gender,
-                                          is_overdue as IsOverdue
-                                    from clients
-                                    order by client_id asc
-                                    limit 100;";
+        var getAllClientsQuery = """
+                                 select client_id as ClientId,
+                                        full_name as FullName,
+                                        age as Age,
+                                        document as Document,
+                                        gender as Gender,
+                                        is_overdue as IsOverdue
+                                 from clients
+                                 order by client_id asc
+                                 limit 100;
+                                 """;
 
         _dbConnection.Open();
 

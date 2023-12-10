@@ -30,13 +30,15 @@ public class CompanyRepository : ICompanyRepository
     public async Task<ServiceResponse<List<GetCompanyViewModel>>> GetAllCompanies()
     {
         var serviceResponse = new ServiceResponse<List<GetCompanyViewModel>>();
-        var getAllCompaniesQuery = @"select company_id as CompanyId,
-                                            company_name as CompanyName,
-                                            founded_date as FoundedDate,
-                                            revenue as Revenue
-                                      from companies
-                                      order by company_id asc
-                                      limit 100;";
+        var getAllCompaniesQuery = """
+                                    select company_id as CompanyId,
+                                           company_name as CompanyName,
+                                           founded_date as FoundedDate,
+                                           revenue as Revenue
+                                    from companies
+                                    order by company_id asc
+                                    limit 100;
+                                    """;
 
         _dbConnection.Open();
 

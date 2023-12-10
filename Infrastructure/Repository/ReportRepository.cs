@@ -21,19 +21,19 @@ public class ReportRepository : IReportRepository
 
         var clientsCompanies = await _dbContext
             .Database
-            .SqlQueryRaw<GetReportViewModel>(@"
-                   SELECT c.client_id AS ClientId, 
-                          c.full_name AS FullName, 
-                          c.document AS Document, 
-                          c.is_overdue AS IsOverdue, 
-                          c1.company_id AS CompanyId, 
-                          c1.company_name AS CompanyName
-                   FROM clients AS c
-                   INNER JOIN clients_companies AS c0 
-                   	ON c.client_id = c0.client_id
-                   INNER JOIN companies AS c1 
-                   	ON c0.company_id = c1.company_id;
-                "
+            .SqlQueryRaw<GetReportViewModel>("""
+                                                select c.client_id as ClientId,
+                                                       c.full_name as FullName,
+                                                       c.document as Document,
+                                                       c.is_overdue as IsOverdue,
+                                                       c1.company_id as CompanyId,
+                                                       c1.company_name as CompanyName
+                                                from clients as c
+                                                inner join clients_companies as c0
+                                                	on c.client_id = c0.client_id
+                                                inner join companies as c1
+                                                	on c0.company_id = c1.company_id;
+                                             """
             ).AsNoTracking()
             .ToListAsync();
 
