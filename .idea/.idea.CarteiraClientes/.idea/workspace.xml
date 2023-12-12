@@ -16,11 +16,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0c53ee5c91f047f387400d094b3581c4267420/09/316ea8c2/CompiledAsyncTaskQuery`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0c53ee5c91f047f387400d094b3581c4267420/bb/35e7eca7/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d37126de17d46baad9e2258a5a93c1bc44200/39/8c799905/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6e3ca6302ea5e1b02a167479ad4f28b8382cd37bb04971892cee97557d3b3/A.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarteiraClientes.Tests/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20231119183406_BogusSeed.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -139,7 +146,11 @@
       <workItem from="1702038661772" duration="8421000" />
       <workItem from="1702057666955" duration="319000" />
       <workItem from="1702133276673" duration="5503000" />
-      <workItem from="1702243265762" duration="537000" />
+      <workItem from="1702243265762" duration="588000" />
+      <workItem from="1702248990492" duration="29000" />
+      <workItem from="1702329103068" duration="1507000" />
+      <workItem from="1702378703528" duration="759000" />
+      <workItem from="1702383525915" duration="7769000" />
     </task>
     <servers />
   </component>

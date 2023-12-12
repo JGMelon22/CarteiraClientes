@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="bogus" Version="34.0.2"/>
+        <PackageReference Include="bogus" Version="35.0.1"/>
         <PackageReference Include="ClosedXML" Version="0.102.1"/>
         <PackageReference Include="cloudscribe.Pagination.Models" Version="1.1.0"/>
         <PackageReference Include="cloudscribe.Web.Pagination" Version="6.0.0"/>
@@ -25,6 +25,46 @@
         </PackageReference>
         <PackageReference Include="Npgsql" Version="8.0.1"/>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\obj\CarteiraClientes.Tests.csproj.nuget.dgspec.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\obj\project.assets.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\obj\project.packagespec.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests.deps.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests.runtimeconfig.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\obj\Debug\net8.0\CarteiraClientes.Tests.sourcelink.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\appsettings.Development.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\appsettings.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.deps.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.runtimeconfig.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.staticwebassets.runtime.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\appsettings.Development.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.deps.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.runtimeconfig.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\appsettings.Development.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.deps.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.runtimeconfig.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\appsettings.Development.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.runtimeconfig.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\appsettings.Development.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.runtimeconfig.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\obj\CarteiraClientes.Tests.csproj.nuget.dgspec.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\obj\Debug\net8.0\CarteiraClientes.Tests.sourcelink.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\obj\project.assets.json"/>
+        <_ContentIncludedByDefault Remove="CarteiraClientes.Tests\bin\Debug\net8.0\CarteiraClientes.Tests\obj\project.packagespec.json"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="FakeItEasy">
+            <HintPath>..\..\..\..\.nuget\packages\fakeiteasy\8.0.0\lib\net6.0\FakeItEasy.dll</HintPath>
+        </Reference>
+        <Reference Include="FluentAssertions">
+            <HintPath>..\..\..\..\.nuget\packages\fluentassertions\6.12.0\lib\net6.0\FluentAssertions.dll</HintPath>
+        </Reference>
+        <Reference Include="xunit.core">
+            <HintPath>..\..\..\..\.nuget\packages\xunit.extensibility.core\2.6.3\lib\netstandard1.1\xunit.core.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
 </Project>

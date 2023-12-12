@@ -59,10 +59,6 @@ public class CompaniesController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AddCompanyViewModel newCompany)
     {
-        // ValidationResult result = await _addValidator.ValidateAsync(newCompany);
-        // if(!result.IsValid)
-        //     return View(nameof(Create));
-
         if (!ModelState.IsValid)
             return View(nameof(Create));
 
