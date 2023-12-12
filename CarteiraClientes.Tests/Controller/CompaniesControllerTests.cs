@@ -40,8 +40,8 @@ public class CompaniesControllerTests
     public void CompaniesController_IndexPaged_ReturnsSuccess()
     {
         // Arrange
-        var pageNumber = 1;
-        var pageSize = 15;
+        int pageNumber = 1;
+        int pageSize = 15;
 
         var companies = A.Fake<ServiceResponse<PagedResult<GetCompanyViewModel>>>();
         A.CallTo(() => _paginationService.PagingCompany(pageNumber, pageSize)).Returns(companies);
