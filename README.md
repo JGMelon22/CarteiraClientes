@@ -35,11 +35,15 @@
 [<img width="600" height="300"/>](https://github.com/JGMelon22/CarteiraClientes/assets/73988556/7ece2e20-d188-41db-b9b4-e4b18010e8ff)
 
 <h2>Diagrama de Classe</h2>
-<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/f6f896b0-23ab-46b9-95be-0e53b542b1f0" width="600" height="350"/> <span>
+<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/f6f896b0-23ab-46b9-95be-0e53b542b1f0" width="300" height="150"/> <span>
 &nbsp;</span>
 
 <h2>Type Dependency Diagram</h2>
 <img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/3baea96d-9bf3-4d10-99f5-3cf68142f4f8" width="600" height="350"/> <span>
+&nbsp;</span>
+
+<h2> Unit Tests </h2>
+<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/54b3f5c3-3abb-410f-986d-b1b177c60d9d" width="50%"/> <span>
 &nbsp;</span>
 
 <div style="display: inline_block" class="flex-container"><br>
