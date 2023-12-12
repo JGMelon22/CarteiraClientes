@@ -27,6 +27,7 @@
 - ClosedXML <br/>
 -  <a href="https://github.com/bchavez/Bogus">Bogus</a> <br/>
 -  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/>
+-  xunit <br/>
 -  <a href="https://fakeiteasy.github.io">FakeItEasy</a> <br/>
 -  <a href="https://fluentassertions.com">FluentAssertions</a> <br/><br/>
 
