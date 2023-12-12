@@ -26,7 +26,9 @@
 - Npgsql.EntityFrameworkCore.PostgreSQL <br/>
 - ClosedXML <br/>
 -  <a href="https://github.com/bchavez/Bogus">Bogus</a> <br/>
--  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/><br/>
+-  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/>
+-  <a href="https://fakeiteasy.github.io">FakeItEasy</a> <br/>
+-  <a href="https://fluentassertions.com">FluentAssertions</a> <br/><br/>
 
 <h2>Tech demo</h2>
 
