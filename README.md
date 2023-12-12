@@ -43,7 +43,7 @@
 &nbsp;</span>
 
 <h2> Unit Tests </h2>
-<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/54b3f5c3-3abb-410f-986d-b1b177c60d9d" width="50%"/> <span>
+<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/1baeebb3-e07e-4141-bd66-4983ed668bfc" width="45%"/> <span>
 &nbsp;</span>
 
 <div style="display: inline_block" class="flex-container"><br>
