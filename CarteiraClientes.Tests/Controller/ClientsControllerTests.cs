@@ -44,8 +44,7 @@ public class ClientsControllerTests
         string sortOrder = "name_desc";
         int pageNumber = 1;
         int pageSize = 15;
-
-
+        
         var clients = A.Fake<ServiceResponse<PagedResult<GetClientViewModel>>>();
         A.CallTo(() => _paginationService.PagingClients(searchString, sortOrder, pageNumber, pageSize))
             .Returns(clients);
