@@ -20,7 +20,7 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ClientCompanyConfiguration());
 
         // If there are pending migrations, run the seeding logic
-        var pendingMigrations = Database.GetPendingMigrations();
-        if (pendingMigrations.Any()) InitialSeeding.Seed(modelBuilder);
+        // var pendingMigrations = Database.GetPendingMigrations();
+        // if (pendingMigrations.Any()) InitialSeeding.Seed(modelBuilder);
     }
 }

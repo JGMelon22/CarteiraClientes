@@ -18,8 +18,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0c53ee5c91f047f387400d094b3581c4267420/09/316ea8c2/CompiledAsyncTaskQuery`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0c53ee5c91f047f387400d094b3581c4267420/bb/35e7eca7/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d37126de17d46baad9e2258a5a93c1bc44200/39/8c799905/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d37126de17d46baad9e2258a5a93c1bc44200/7e/921892e1/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8aebf8fb61df4a2c836b6a1e60a71b0333030/0c/652ed324/InMemoryDbContextOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6e3ca6302ea5e1b02a167479ad4f28b8382cd37bb04971892cee97557d3b3/A.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CarteiraClientes.Tests/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ceb1ac48cf123a13013a5d2bbf953667cf9f0ec664e30b95bf87d9f726c23e1/AssertionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20231119183406_BogusSeed.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -39,14 +41,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Run",
+    ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Debug",
     ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.08108108",
+    "XThreadsFramesViewSplitterKey": "0.039237667",
+    "c72d0816-2b89-432d-b223-cf8764ae8163.executor": "Debug",
     "ed794361-3220-4040-8638-9000827cc9cc.executor": "Debug",
-    "last_opened_file_path": "/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln",
+    "last_opened_file_path": "/home/joaog/Documents/TempCodes/UnitTests/RunGroop-733211bead30ca28061aef96b6388a9201dfb54c",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -152,6 +155,9 @@
       <workItem from="1702329103068" duration="1507000" />
       <workItem from="1702378703528" duration="759000" />
       <workItem from="1702383525915" duration="12858000" />
+      <workItem from="1702470721554" duration="1097000" />
+      <workItem from="1702471976230" duration="3044000" />
+      <workItem from="1702475301591" duration="2269000" />
     </task>
     <servers />
   </component>
@@ -162,11 +168,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints">
+          <properties exception="System.NullReferenceException" isInternal="false" displayValue="NullReferenceException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Company" />
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.Client" memberName="Document" />
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Client" />
+        <PinnedItemInfo parentTag="Frame#CarteiraClientes.Tests.Repository.CompanyRepositoryTests.CompanyRepository_AddCompany_ReturnsSuccess" memberName="this" />
         <PinnedItemInfo parentTag="Type#CarteiraClientes.ViewModels.ClientCompany.GetClientCompanyViewModel" memberName="FullName" />
       </pinned-members>
     </pin-to-top-manager>
