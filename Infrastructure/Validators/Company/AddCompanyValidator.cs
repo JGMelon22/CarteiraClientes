@@ -19,6 +19,7 @@ public class AddCompanyValidator : AbstractValidator<AddCompanyViewModel>
             .WithMessage("Nome da empresa deve ser informado!")
             .MinimumLength(2)
             .WithMessage("Nome da empresa deve conter ao menos 2 caracteres")
+            .WithMessage("Nome da empresa deve ser informado!")
             .MaximumLength(100)
             .WithMessage("Nome da empresa não deve exceder 100 caracteres");
 

@@ -15,7 +15,7 @@
 - <a href="https://developers.google.com/chart">Google Charts</a> <br/>
 
 <h2> Pacotes NuGet </h2>
-- FluentValidation.AspNetCore <br/>
+- FluentValidation <br/>
 - Microsoft.EntityFrameworkCore <br/>
 - Microsoft.EntityFrameworkCore.Design <br/>
 - Microsoft.EntityFrameworkCore.Tools <br/>
@@ -44,7 +44,7 @@
 &nbsp;</span>
 
 <h2> Unit Tests </h2>
-<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/1baeebb3-e07e-4141-bd66-4983ed668bfc" width="45%"/> <span>
+<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/f8774271-4bbb-474e-b13b-150fe9cb34ea" width="45%"/> <span>
 &nbsp;</span>
 
 <div style="display: inline_block" class="flex-container"><br>
