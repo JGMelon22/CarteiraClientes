@@ -1,3 +1,4 @@
+using CarteiraClientes.Controllers.ExtensionMethods;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
 using Microsoft.AspNetCore.Mvc;
@@ -67,7 +68,10 @@ public class CompaniesController : Controller
     {
         var result = await _addCompanyValidator.ValidateAsync(newCompany);
         if (!result.IsValid)
+        {
+            result.AddToModelState(ModelState);
             return View(nameof(Create));
+        }
 
         await _repository.AddCompany(newCompany);
         return RedirectToAction(nameof(Index));
@@ -93,7 +97,10 @@ public class CompaniesController : Controller
     {
         var result = await _updateCompanyValidator.ValidateAsync(updatedCompany);
         if (!result.IsValid)
+        {
+            result.AddToModelState(ModelState);
             return View(nameof(Edit));
+        }
 
         var company = await _repository.UpdateCompany(updatedCompany);
         return company.Data != null

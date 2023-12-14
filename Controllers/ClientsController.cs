@@ -109,7 +109,10 @@ public class ClientsController : Controller
     {
         var result = await _updateClientValidator.ValidateAsync(updatedClient);
         if (!result.IsValid)
+        {
+            result.AddToModelState(ModelState);
             return View(nameof(Edit));
+        }
 
         var client = await _repository.UpdateClient(updatedClient);
         return client.Data != null
