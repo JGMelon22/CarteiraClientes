@@ -25,7 +25,7 @@ public class CompanyRepositoryTests
         _dbConnection = A.Fake<IDbConnection>(); // Always create a fake IDbConnection using FakeItEasy
         _companyRepository = new CompanyRepository(_dbContext, _dbConnection);
 
-        if (_dbContext.Companies.Count() < 0)
+        if (_dbContext.Companies.Count() == 0)
         {
             for (int i = 0; i < 10; i++)
             {
@@ -46,12 +46,12 @@ public class CompanyRepositoryTests
     [Fact]
     public void CompanyRepository_GetAllCompanies_ReturnsCompanies()
     {
-        // Assert
+        // Arrange
 
         // Act
         var result = _companyRepository.GetAllCompanies();
 
-        // Arrange
+        // Assert
         result.Should().NotBeNull();
         result.Should().BeOfType<Task<ServiceResponse<List<GetCompanyViewModel>>>>();
     }
@@ -67,6 +67,7 @@ public class CompanyRepositoryTests
 
         // Assert
         result.Should().NotBeNull();
+        result.Should().BeOfType<Task<ServiceResponse<GetCompanyViewModel>>>();
     }
 
     [Fact]
@@ -88,7 +89,7 @@ public class CompanyRepositoryTests
     }
 
     [Fact]
-    public void CompanyRepository_UpdateCompany_ReturnsSuccess()
+    public void CompanyRepository_UpdateCompany_ReturnsClient()
     {
         // Arrange 
         var updatedCompany = A.Fake<UpdateCompanyViewModel>();
