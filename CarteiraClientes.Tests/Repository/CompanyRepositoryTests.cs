@@ -22,7 +22,10 @@ public class CompanyRepositoryTests
         _dbContext = new AppDbContext(options);
         _dbContext.Database.EnsureCreated();
 
-        if (_dbContext.Companies.Count() < 0)
+        _dbConnection = A.Fake<IDbConnection>(); // Always create a fake IDbConnection using FakeItEasy
+        _companyRepository = new CompanyRepository(_dbContext, _dbConnection);
+
+        if (_dbContext.Companies.Count() < 10) 
         {
             for (int i = 0; i < 10; i++)
             {
@@ -34,15 +37,12 @@ public class CompanyRepositoryTests
                         Revenue = 123456789.0M
                     }
                 );
-
-                _dbContext.SaveChanges();
             }
 
-            _dbConnection = A.Fake<IDbConnection>(); // Create a fake IDbConnection using FakeItEasy
-
-            _companyRepository = new CompanyRepository(_dbContext, _dbConnection);
+            _dbContext.SaveChanges();
         }
     }
+
 
     [Fact]
     public void CompanyRepository_AddCompany_ReturnsSuccess()
