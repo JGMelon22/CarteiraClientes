@@ -51,39 +51,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.CarteiraClientes: http.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Launch Settings Profile.CarteiraClientes: https.executor&quot;: &quot;Run&quot;,
-    &quot;48ec0086-779a-4623-a039-217c74b3a6c6.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.029147983&quot;,
-    &quot;c72d0816-2b89-432d-b223-cf8764ae8163.executor&quot;: &quot;Debug&quot;,
-    &quot;dfcc776c-4354-460a-992e-1542d0ac61ea.executor&quot;: &quot;Debug&quot;,
-    &quot;e4da5306-adc1-492e-bc4d-a304274fe64b.executor&quot;: &quot;Debug&quot;,
-    &quot;ed794361-3220-4040-8638-9000827cc9cc.executor&quot;: &quot;Debug&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/joaog/Documents/TempCodes/UnitTests/RunGroop-733211bead30ca28061aef96b6388a9201dfb54c&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Run",
+    ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Run",
+    "48ec0086-779a-4623-a039-217c74b3a6c6.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.029147983",
+    "c72d0816-2b89-432d-b223-cf8764ae8163.executor": "Debug",
+    "dfcc776c-4354-460a-992e-1542d0ac61ea.executor": "Debug",
+    "e4da5306-adc1-492e-bc4d-a304274fe64b.executor": "Debug",
+    "ed794361-3220-4040-8638-9000827cc9cc.executor": "Debug",
+    "last_opened_file_path": "/home/joaog/Documents/TempCodes/UnitTests/RunGroop-733211bead30ca28061aef96b6388a9201dfb54c",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/joaog/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/home/joaog/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/home/joaog/.local/share/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/home/joaog/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/home/joaog/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/home/joaog/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CarteiraClientes: http">
     <configuration name="CarteiraClientes: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CarteiraClientes.csproj" />
@@ -178,7 +178,7 @@
       <workItem from="1702552349429" duration="4872000" />
       <workItem from="1702558203380" duration="2116000" />
       <workItem from="1702560330673" duration="2300000" />
-      <workItem from="1702562642168" duration="1171000" />
+      <workItem from="1702562642168" duration="3157000" />
     </task>
     <servers />
   </component>

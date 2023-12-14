@@ -6,7 +6,6 @@ using CarteiraClientes.Infrastructure.Validators.Company;
 using CarteiraClientes.Services;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
-using FluentValidation.AspNetCore;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,8 +30,6 @@ builder.Services.AddScoped<IPaginationService, PaginationService>();
 builder.Services.AddCloudscribePagination();
 
 // Fluent Validator Service 
-builder.Services.AddFluentValidationAutoValidation(); // Server Side
-builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters(); // Client Side
 builder.Services.AddTransient<IValidator<AddClientViewModel>, AddClientValidador>();
 builder.Services.AddTransient<IValidator<UpdateClientViewModel>, UpdateClientValidator>();
 builder.Services.AddTransient<IValidator<AddCompanyViewModel>, AddCompanyValidator>();

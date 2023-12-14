@@ -1,3 +1,4 @@
+using CarteiraClientes.Controllers.ExtensionMethods;
 using CarteiraClientes.ViewModels.Client;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,11 +8,16 @@ public class ClientsController : Controller
 {
     private readonly IPaginationService _pagination;
     private readonly IClientRepository _repository;
+    private readonly IValidator<AddClientViewModel> _addClientValidator;
+    private readonly IValidator<UpdateClientViewModel> _updateClientValidator;
 
-    public ClientsController(IClientRepository repository, IPaginationService pagination)
+    public ClientsController(IClientRepository repository, IPaginationService pagination,
+        IValidator<AddClientViewModel> addClientValidator, IValidator<UpdateClientViewModel> updateClientValidator)
     {
         _repository = repository;
         _pagination = pagination;
+        _addClientValidator = addClientValidator;
+        _updateClientValidator = updateClientValidator;
     }
 
     // Clientes Paginados
@@ -64,8 +70,12 @@ public class ClientsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AddClientViewModel newClient)
     {
-        if (!ModelState.IsValid)
+        var result = await _addClientValidator.ValidateAsync(newClient);
+        if (!result.IsValid)
+        {
+            result.AddToModelState(ModelState);
             return View(nameof(Create));
+        }
 
         try
         {
@@ -97,8 +107,9 @@ public class ClientsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(UpdateClientViewModel updatedClient)
     {
-        if (!ModelState.IsValid)
-            return BadRequest();
+        var result = await _updateClientValidator.ValidateAsync(updatedClient);
+        if (!result.IsValid)
+            return View(nameof(Edit));
 
         var client = await _repository.UpdateClient(updatedClient);
         return client.Data != null

@@ -3,6 +3,7 @@ using CarteiraClientes.Interfaces;
 using CarteiraClientes.Models;
 using CarteiraClientes.ViewModels.Company;
 using cloudscribe.Pagination.Models;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Tests.Controller;
@@ -12,14 +13,19 @@ public class CompaniesControllerTests
     private readonly CompaniesController _companiesController;
     private readonly ICompanyRepository _companyRepository;
     private readonly IPaginationService _paginationService;
+    private readonly IValidator<AddCompanyViewModel> _addCompanyValidator;
+    private readonly IValidator<UpdateCompanyViewModel> _updateCompanyValidator;
 
     public CompaniesControllerTests()
     {
         _companyRepository = A.Fake<ICompanyRepository>();
         _paginationService = A.Fake<IPaginationService>();
+        _addCompanyValidator = A.Fake<IValidator<AddCompanyViewModel>>();
+        _updateCompanyValidator = A.Fake<IValidator<UpdateCompanyViewModel>>();
 
         // SUT
-        _companiesController = new CompaniesController(_companyRepository, _paginationService);
+        _companiesController = new CompaniesController(_companyRepository, _paginationService, _addCompanyValidator,
+            _updateCompanyValidator);
     }
 
     [Fact]

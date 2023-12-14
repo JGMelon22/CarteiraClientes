@@ -3,6 +3,7 @@ using CarteiraClientes.Interfaces;
 using CarteiraClientes.Models;
 using CarteiraClientes.ViewModels.Client;
 using cloudscribe.Pagination.Models;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarteiraClientes.Tests.Controller;
@@ -12,14 +13,19 @@ public class ClientsControllerTests
     private readonly ClientsController _clientsController;
     private readonly IClientRepository _clientRepository;
     private readonly IPaginationService _paginationService;
+    private readonly IValidator<AddClientViewModel> _addClientValidator;
+    private readonly IValidator<UpdateClientViewModel> _updateClientValidator;
 
     public ClientsControllerTests()
     {
         _clientRepository = A.Fake<IClientRepository>();
         _paginationService = A.Fake<IPaginationService>();
+        _addClientValidator = A.Fake<IValidator<AddClientViewModel>>();
+        _updateClientValidator = A.Fake<IValidator<UpdateClientViewModel>>();
 
         // SUT
-        _clientsController = new ClientsController(_clientRepository, _paginationService);
+        _clientsController = new ClientsController(_clientRepository, _paginationService, _addClientValidator,
+            _updateClientValidator);
     }
 
     [Fact]
@@ -44,7 +50,7 @@ public class ClientsControllerTests
         string sortOrder = "name_desc";
         int pageNumber = 1;
         int pageSize = 15;
-        
+
         var clients = A.Fake<ServiceResponse<PagedResult<GetClientViewModel>>>();
         A.CallTo(() => _paginationService.PagingClients(searchString, sortOrder, pageNumber, pageSize))
             .Returns(clients);

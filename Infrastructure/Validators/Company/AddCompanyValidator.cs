@@ -13,6 +13,7 @@ public class AddCompanyValidator : AbstractValidator<AddCompanyViewModel>
         var minimunGrossRevenue = 100.00M;
 
         RuleFor(c => c.CompanyName)
+            .Cascade(CascadeMode.Stop)
             .NotEmpty()
             .WithMessage("Nome da empresa deve ser informado!")
             .NotNull()

@@ -1,3 +1,4 @@
+using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,11 +8,16 @@ public class CompaniesController : Controller
 {
     private readonly ICompanyRepository _repository;
     private readonly IPaginationService _service;
+    private readonly IValidator<AddCompanyViewModel> _addCompanyValidator;
+    private readonly IValidator<UpdateCompanyViewModel> _updateCompanyValidator;
 
-    public CompaniesController(ICompanyRepository repository, IPaginationService service)
+    public CompaniesController(ICompanyRepository repository, IPaginationService service,
+        IValidator<AddCompanyViewModel> addCompanyValidator, IValidator<UpdateCompanyViewModel> updateCompanyValidator)
     {
         _repository = repository;
         _service = service;
+        _addCompanyValidator = addCompanyValidator;
+        _updateCompanyValidator = updateCompanyValidator;
     }
 
     // View Listar top 100 empresas
@@ -59,7 +65,8 @@ public class CompaniesController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AddCompanyViewModel newCompany)
     {
-        if (!ModelState.IsValid)
+        var result = await _addCompanyValidator.ValidateAsync(newCompany);
+        if (!result.IsValid)
             return View(nameof(Create));
 
         await _repository.AddCompany(newCompany);
@@ -84,7 +91,8 @@ public class CompaniesController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(UpdateCompanyViewModel updatedCompany)
     {
-        if (!ModelState.IsValid)
+        var result = await _updateCompanyValidator.ValidateAsync(updatedCompany);
+        if (!result.IsValid)
             return View(nameof(Edit));
 
         var company = await _repository.UpdateCompany(updatedCompany);
