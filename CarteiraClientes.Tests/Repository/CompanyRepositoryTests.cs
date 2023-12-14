@@ -20,12 +20,12 @@ public class CompanyRepositoryTests
             .Options;
 
         _dbContext = new AppDbContext(options);
-        _dbContext.Database.EnsureCreated();
+        _dbContext.Database.EnsureCreatedAsync();
 
         _dbConnection = A.Fake<IDbConnection>(); // Always create a fake IDbConnection using FakeItEasy
         _companyRepository = new CompanyRepository(_dbContext, _dbConnection);
 
-        if (_dbContext.Companies.Count() < 10) 
+        if (_dbContext.Companies.Count() < 0)
         {
             for (int i = 0; i < 10; i++)
             {
@@ -43,6 +43,31 @@ public class CompanyRepositoryTests
         }
     }
 
+    [Fact]
+    public void CompanyRepository_GetAllCompanies_ReturnsCompanies()
+    {
+        // Assert
+
+        // Act
+        var result = _companyRepository.GetAllCompanies();
+
+        // Arrange
+        result.Should().NotBeNull();
+        result.Should().BeOfType<Task<ServiceResponse<List<GetCompanyViewModel>>>>();
+    }
+
+    [Fact]
+    public void CompanyRepository_GetCompanyByIdCompiledEfCoreQueryAsync_ReturnsCompany()
+    {
+        // Arrange
+        int id = 1;
+
+        // Act 
+        var result = _companyRepository.GetCompanyByIdCompiledEfCoreQueryAsync(id);
+
+        // Assert
+        result.Should().NotBeNull();
+    }
 
     [Fact]
     public void CompanyRepository_AddCompany_ReturnsSuccess()
@@ -63,13 +88,27 @@ public class CompanyRepositoryTests
     }
 
     [Fact]
-    public void CompanyRepository_GetCompanyByIdCompiledEfCoreQueryAsync_ReturnsCompany()
+    public void CompanyRepository_UpdateCompany_ReturnsSuccess()
+    {
+        // Arrange 
+        var updatedCompany = A.Fake<UpdateCompanyViewModel>();
+
+        // Act
+        var result = _companyRepository.UpdateCompany(updatedCompany);
+
+        // Assert
+        result.Should().NotBeNull();
+        result.Should().BeOfType<Task<ServiceResponse<GetCompanyViewModel>>>();
+    }
+
+    [Fact]
+    public void CompanyRepository_RemoveCompany_ReturnsSuccess()
     {
         // Arrange
         int id = 1;
 
-        // Act 
-        var result = _companyRepository.GetCompanyByIdCompiledEfCoreQueryAsync(id);
+        // Act
+        var result = _companyRepository.RemoveCompany(id);
 
         // Assert
         result.Should().NotBeNull();

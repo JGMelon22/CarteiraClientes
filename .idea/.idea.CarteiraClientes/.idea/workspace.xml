@@ -23,8 +23,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50b055b115a844119b03ca391fb46d3c26800/ff/76235f56/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8aebf8fb61df4a2c836b6a1e60a71b0333030/0c/652ed324/InMemoryDbContextOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2532c812356b7d5448418be580b9c7afbc61d9f577df866acfb87950ef277b/TestInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/38284ca4f4afe378f96fccac3e179f4bceda7a74eb151623b66d2dc3634d9b/ExceptionAggregator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3b92f859131bde25d0f7a63de08963e995d1e1426e584dfd4b8e833d2d3dba/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3d39b7365ca42b2d8c4e732f62ab42f8e55276a28f58835d74b42ccc2bc1/XunitTestRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/688dbce4f433a52e2291fa092af648d81dc75562e42e95781a964b5e92328/XunitTestCaseRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6e3ca6302ea5e1b02a167479ad4f28b8382cd37bb04971892cee97557d3b3/A.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d758cb8e8552e2d6f6090aca7f1f89295d333a8fc12804bdbce1e236cd1735/TestRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97dcfb9497a64d9a78bfca4ec28b52c457d66d64c9bc4d602cfdb35744f918e/TestCaseRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bce78fe52d797846b2e554f7e0fb8c831d7f4aeee133452a18131aee2eb9b2/ReflectionAbstractionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ceb1ac48cf123a13013a5d2bbf953667cf9f0ec664e30b95bf87d9f726c23e1/AssertionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20231119183406_BogusSeed.Designer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -48,12 +53,14 @@
   "keyToString": {
     ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Debug",
     ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Run",
+    "48ec0086-779a-4623-a039-217c74b3a6c6.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "XThreadsFramesViewSplitterKey": "0.029147983",
     "c72d0816-2b89-432d-b223-cf8764ae8163.executor": "Debug",
     "dfcc776c-4354-460a-992e-1542d0ac61ea.executor": "Debug",
+    "e4da5306-adc1-492e-bc4d-a304274fe64b.executor": "Debug",
     "ed794361-3220-4040-8638-9000827cc9cc.executor": "Debug",
     "last_opened_file_path": "/home/joaog/Documents/TempCodes/UnitTests/RunGroop-733211bead30ca28061aef96b6388a9201dfb54c",
     "node.js.detected.package.eslint": "true",
@@ -166,6 +173,7 @@
       <workItem from="1702475301591" duration="2269000" />
       <workItem from="1702514653218" duration="1121000" />
       <workItem from="1702516083162" duration="573000" />
+      <workItem from="1702552349429" duration="2932000" />
     </task>
     <servers />
   </component>
@@ -184,11 +192,90 @@
           </properties>
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs</url>
+          <line>55</line>
+          <properties documentPath="$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs" initialLine="55" containingFunctionPresentation="Method 'CompanyRepository_GetAllCompanies_ReturnsCompanies'">
+            <startOffsets>
+              <option value="1688" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1765" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs</url>
+          <line>47</line>
+          <properties documentPath="$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs" initialLine="47" containingFunctionPresentation="Method 'CompanyRepository_GetAllCompanies_ReturnsCompanies'">
+            <startOffsets>
+              <option value="1528" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1529" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs</url>
+          <line>30</line>
+          <properties documentPath="$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs" initialLine="30" containingFunctionPresentation="Constructor 'CompanyRepositoryTests'">
+            <startOffsets>
+              <option value="1062" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1063" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs</url>
+          <line>27</line>
+          <properties documentPath="$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs" initialLine="27" containingFunctionPresentation="Constructor 'CompanyRepositoryTests'">
+            <startOffsets>
+              <option value="961" />
+            </startOffsets>
+            <endOffsets>
+              <option value="998" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs</url>
+          <line>29</line>
+          <properties documentPath="$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs" initialLine="29" containingFunctionPresentation="Constructor 'CompanyRepositoryTests'">
+            <startOffsets>
+              <option value="1021" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1049" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/CarteiraClientes.Tests/Repository/CompanyRepositoryTests.cs" initialLine="28" containingFunctionPresentation="Constructor 'CompanyRepositoryTests'">
+            <startOffsets>
+              <option value="1007" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1008" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Company" />
+        <PinnedItemInfo parentTag="Frame#CarteiraClientes.Tests.Repository.CompanyRepositoryTests.CompanyRepository_GetAllCompanies_ReturnsCompanies" memberName="result" />
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.Client" memberName="Document" />
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Client" />
         <PinnedItemInfo parentTag="Frame#CarteiraClientes.Tests.Repository.CompanyRepositoryTests.CompanyRepository_AddCompany_ReturnsSuccess" memberName="this" />
