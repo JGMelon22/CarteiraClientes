@@ -26,13 +26,13 @@ public class InitialSeeding
             .RuleFor(cc => cc.CompanyId, f => f.Random.Number(1, 1000));
 
         modelBuilder.Entity<Client>()
-            .HasData(client.GenerateBetween(1000, 1000));
+            .HasData(client.Generate(1000));
 
         modelBuilder.Entity<Company>()
-            .HasData(company.GenerateBetween(1000, 1000));
+            .HasData(company.Generate(1000));
 
         // Populating with Many-to-Many relationship
         modelBuilder.Entity<ClientCompany>()
-            .HasData(clientCompany.GenerateBetween(1000, 1000));
+            .HasData(clientCompany.Generate(1000));
     }
 }
