@@ -10,7 +10,7 @@ public class UpdateCompanyValidator : AbstractValidator<UpdateCompanyViewModel>
         var dataValida = DateTime.Now;
 
         // Minimum gross revenue
-        var minimunGrossRevenue = 100.00M;
+        var minimumGrossRevenue = 100.00M;
 
         RuleFor(c => c.CompanyId)
             .NotEmpty()
@@ -41,7 +41,7 @@ public class UpdateCompanyValidator : AbstractValidator<UpdateCompanyViewModel>
             .WithMessage("Receita bruta da empresa deve ser informada!")
             .NotNull()
             .WithMessage("Receita bruta da empresa deve ser informada!")
-            .Must(revenue => revenue > minimunGrossRevenue)
-            .WithMessage($"Receita bruta da empresa deve ser superior a {minimunGrossRevenue:C2}");
+            .Must(revenue => revenue > minimumGrossRevenue)
+            .WithMessage($"Receita bruta da empresa deve ser superior a {minimumGrossRevenue:C2}");
     }
 }

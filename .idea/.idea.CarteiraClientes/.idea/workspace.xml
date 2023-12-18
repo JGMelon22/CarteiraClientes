@@ -14,6 +14,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d37126de17d46baad9e2258a5a93c1bc44200/12/0b72a05c/MethodBaseInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -138,7 +141,8 @@
       <workItem from="1702243265762" duration="537000" />
       <workItem from="1702507865587" duration="1561000" />
       <workItem from="1702682757546" duration="857000" />
-      <workItem from="1702942109440" duration="414000" />
+      <workItem from="1702942109440" duration="461000" />
+      <workItem from="1702942585036" duration="529000" />
     </task>
     <servers />
   </component>
@@ -149,6 +153,25 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/Validators/Company/AddCompanyValidator.cs</url>
+          <line>14</line>
+          <properties documentPath="$PROJECT_DIR$/Infrastructure/Validators/Company/AddCompanyValidator.cs" initialLine="14" containingFunctionPresentation="Constructor 'AddCompanyValidator'">
+            <startOffsets>
+              <option value="372" />
+              <option value="385" />
+            </startOffsets>
+            <endOffsets>
+              <option value="791" />
+              <option value="398" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Company" />
