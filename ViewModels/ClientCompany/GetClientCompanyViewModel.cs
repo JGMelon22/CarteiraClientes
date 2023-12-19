@@ -11,4 +11,5 @@ public record GetClientCompanyViewModel
     // Dados Empresa
     public int CompanyId { get; init; }
     public required string CompanyName { get; init; }
+    
 }

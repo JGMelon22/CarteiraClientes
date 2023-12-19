@@ -1,3 +1,4 @@
+using CarteiraClientes.ViewModels.ClientCompany;
 using CarteiraClientes.ViewModels.Report;
 
 namespace CarteiraClientes.Interfaces;
