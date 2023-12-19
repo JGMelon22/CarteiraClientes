@@ -92,7 +92,7 @@ public class CompaniesController : Controller
     // Action Post Editar Company
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateCompanyViewModel updatedCompany)
+    public async Task<IActionResult> Edit(int id, UpdateCompanyViewModel updatedCompany)
     {
         var result = await _updateCompanyValidator.ValidateAsync(updatedCompany);
         if (!result.IsValid)
@@ -101,7 +101,7 @@ public class CompaniesController : Controller
             return View(nameof(Edit));
         }
 
-        var company = await _repository.UpdateCompanyAsync(updatedCompany);
+        var company = await _repository.UpdateCompanyAsync(id, updatedCompany);
         return company.Data != null
             ? RedirectToAction(nameof(Index))
             : View(nameof(Edit));

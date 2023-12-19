@@ -104,7 +104,7 @@ public class ClientsController : Controller
     // Ação editar cliente
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(UpdateClientViewModel updatedClient)
+    public async Task<IActionResult> Edit(int id, UpdateClientViewModel updatedClient)
     {
         var result = await _updateClientValidator.ValidateAsync(updatedClient);
         if (!result.IsValid)
@@ -114,7 +114,7 @@ public class ClientsController : Controller
             return View(nameof(Edit));
         }
 
-        var client = await _repository.UpdateClientAsync(updatedClient);
+        var client = await _repository.UpdateClientAsync(id, updatedClient);
         return client.Data != null
             ? RedirectToAction(nameof(Index))
             : View(nameof(Edit));

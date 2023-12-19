@@ -31,14 +31,14 @@ public class CompanyRepository : ICompanyRepository
     {
         var serviceResponse = new ServiceResponse<List<GetCompanyViewModel>>();
         var GetAllCompaniesAsyncQuery = """
-                                   select company_id as CompanyId,
-                                          company_name as CompanyName,
-                                          founded_date as FoundedDate,
-                                          revenue as Revenue
-                                   from companies
-                                   order by company_id asc
-                                   limit 100;
-                                   """;
+                                        select company_id as CompanyId,
+                                               company_name as CompanyName,
+                                               founded_date as FoundedDate,
+                                               revenue as Revenue
+                                        from companies
+                                        order by company_id asc
+                                        limit 100;
+                                        """;
 
         _dbConnection.Open();
 
@@ -79,13 +79,14 @@ public class CompanyRepository : ICompanyRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<ServiceResponse<GetCompanyViewModel>> UpdateCompanyAsync(UpdateCompanyViewModel updatedCompany)
+    public async Task<ServiceResponse<GetCompanyViewModel>> UpdateCompanyAsync(int id,
+        UpdateCompanyViewModel updatedCompany)
     {
         var serviceResponse = new ServiceResponse<GetCompanyViewModel>();
 
         try
         {
-            var company = await _dbContext.Companies.FindAsync(updatedCompany.CompanyId);
+            var company = await _dbContext.Companies.FindAsync(id);
 
             if (company == null) throw new Exception("Company not found!");
 

@@ -72,13 +72,13 @@ public class ClientRepository : IClientRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<ServiceResponse<GetClientViewModel>> UpdateClientAsync(UpdateClientViewModel updatedClient)
+    public async Task<ServiceResponse<GetClientViewModel>> UpdateClientAsync(int id, UpdateClientViewModel updatedClient)
     {
         var serviceResponse = new ServiceResponse<GetClientViewModel>();
 
         try
         {
-            var client = await _dbContext.Clients.FindAsync(updatedClient.ClientId);
+            var client = await _dbContext.Clients.FindAsync(id);
 
             if (client == null) throw new Exception("Client not found!");
 

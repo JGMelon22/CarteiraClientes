@@ -7,6 +7,6 @@ public interface IClientRepository
     Task<ServiceResponse<List<GetClientViewModel>>> GetAllClientsAsync();
     Task<ServiceResponse<GetClientViewModel>> GetClientByIdAsync(int id);
     Task AddClientAsync(AddClientViewModel newClient);
-    Task<ServiceResponse<GetClientViewModel>> UpdateClientAsync(UpdateClientViewModel updatedClient);
+    Task<ServiceResponse<GetClientViewModel>> UpdateClientAsync(int id, UpdateClientViewModel updatedClient);
     Task RemoveClientAsync(int id);
 }
