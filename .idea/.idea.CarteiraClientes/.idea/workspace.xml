@@ -142,7 +142,7 @@
       <workItem from="1702507865587" duration="1561000" />
       <workItem from="1702682757546" duration="857000" />
       <workItem from="1702942109440" duration="461000" />
-      <workItem from="1702942585036" duration="529000" />
+      <workItem from="1702942585036" duration="1734000" />
     </task>
     <servers />
   </component>
@@ -153,25 +153,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Infrastructure/Validators/Company/AddCompanyValidator.cs</url>
-          <line>14</line>
-          <properties documentPath="$PROJECT_DIR$/Infrastructure/Validators/Company/AddCompanyValidator.cs" initialLine="14" containingFunctionPresentation="Constructor 'AddCompanyValidator'">
-            <startOffsets>
-              <option value="372" />
-              <option value="385" />
-            </startOffsets>
-            <endOffsets>
-              <option value="791" />
-              <option value="398" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CarteiraClientes.Models.ClientCompany" memberName="Company" />

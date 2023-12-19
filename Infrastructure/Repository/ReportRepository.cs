@@ -15,7 +15,7 @@ public class ReportRepository : IReportRepository
     ///     Performs an Inner Join operation with RawQuery for Unmapped Type
     /// </summary>
     /// <returns>Returns same data as traditional EF Core approach</returns>
-    public async Task<ServiceResponse<List<GetReportViewModel>>> GetAllClientsCompaniesEfCoreRawQueryUnmappedType()
+    public async Task<ServiceResponse<List<GetReportViewModel>>> GetAllClientsCompaniesEfCoreRawQueryUnmappedTypeAsync()
     {
         var serviceResponse = new ServiceResponse<List<GetReportViewModel>>();
 

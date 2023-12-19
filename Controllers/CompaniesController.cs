@@ -24,7 +24,7 @@ public class CompaniesController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        var companies = await _repository.GetAllCompanies();
+        var companies = await _repository.GetAllCompaniesAsync();
         return companies.Data != null
             ? View(companies.Data)
             : NoContent();
@@ -34,7 +34,7 @@ public class CompaniesController : Controller
     [HttpGet]
     public async Task<IActionResult> IndexPaged(int pageNumber = 1, int pageSize = 15)
     {
-        var companies = await _service.PagingCompany(pageNumber, pageSize);
+        var companies = await _service.PagingCompanyAsync(pageNumber, pageSize);
         return companies.Data != null
             ? View(companies.Data)
             : NoContent();
@@ -72,7 +72,7 @@ public class CompaniesController : Controller
             return View(nameof(Create));
         }
 
-        await _repository.AddCompany(newCompany);
+        await _repository.AddCompanyAsync(newCompany);
         return RedirectToAction(nameof(Index));
     }
 
@@ -101,7 +101,7 @@ public class CompaniesController : Controller
             return View(nameof(Edit));
         }
 
-        var company = await _repository.UpdateCompany(updatedCompany);
+        var company = await _repository.UpdateCompanyAsync(updatedCompany);
         return company.Data != null
             ? RedirectToAction(nameof(Index))
             : View(nameof(Edit));
@@ -126,7 +126,7 @@ public class CompaniesController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        await _repository.RemoveCompany(id);
+        await _repository.RemoveCompanyAsync(id);
         return RedirectToAction(nameof(Index));
     }
 }

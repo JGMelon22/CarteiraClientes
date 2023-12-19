@@ -41,7 +41,7 @@ public class ReportService : IReportService
         return createdReports.ToList();
     }
 
-    public async Task PlotReport()
+    public async Task PlotReportAsync()
     {
         // Local variable  to hold current date when report is been generated
         var reportGenerateDate = DateTime.Now;
@@ -59,8 +59,8 @@ public class ReportService : IReportService
             });
 
         // Query fetch data from clients x companies
-        var results = await _repository.GetAllClientsCompaniesEfCoreRawQueryUnmappedType();
-        // var results = await _repository.GetAllClientsCompanies();
+        var results = await _repository.GetAllClientsCompaniesEfCoreRawQueryUnmappedTypeAsync();
+        // var results = await _repository.GetAllClientsCompaniesAsync();
 
         // Populate report with DB data
         // And does format Client Document using RG template with substring
@@ -85,7 +85,7 @@ public class ReportService : IReportService
                         $"RelatorioClientesEmpresas{reportGenerateDate:yyyy-MM-dd-HH-mm-ss}.xlsx");
     }
 
-    public async Task<byte[]> DownloadReport(string reportName)
+    public async Task<byte[]> DownloadReportAsync(string reportName)
     {
         // Find file (report) path
         var path = Path.Combine(Path.Combine(Environment.CurrentDirectory,

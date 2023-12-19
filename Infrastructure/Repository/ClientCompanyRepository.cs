@@ -11,7 +11,7 @@ public class ClientCompanyRepository : IClientCompanyRepository
         _dbContext = dbContext;
     }
 
-    public async Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompanies()
+    public async Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompaniesAsync()
     {
         var serviceResponse = new ServiceResponse<List<GetClientCompanyViewModel>>();
 

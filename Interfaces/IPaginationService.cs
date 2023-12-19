@@ -7,9 +7,9 @@ namespace CarteiraClientes.Interfaces;
 
 public interface IPaginationService
 {
-    Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(string searchString, string sortOrder,
+    Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClientsAsync(string searchString, string sortOrder,
         int pageNumber, int pageSize);
 
-    Task<ServiceResponse<PagedResult<GetCompanyViewModel>>> PagingCompany(int pageNumber, int pageSize);
-    Task<ServiceResponse<PagedResult<GetClientCompanyViewModel>>> PagingClientCompany(int pageNumber, int pageSize);
+    Task<ServiceResponse<PagedResult<GetCompanyViewModel>>> PagingCompanyAsync(int pageNumber, int pageSize);
+    Task<ServiceResponse<PagedResult<GetClientCompanyViewModel>>> PagingClientCompanyAsync(int pageNumber, int pageSize);
 }

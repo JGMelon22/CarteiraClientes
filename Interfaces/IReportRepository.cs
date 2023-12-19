@@ -4,5 +4,5 @@ namespace CarteiraClientes.Interfaces;
 
 public interface IReportRepository
 {
-    Task<ServiceResponse<List<GetReportViewModel>>> GetAllClientsCompaniesEfCoreRawQueryUnmappedType();
+    Task<ServiceResponse<List<GetReportViewModel>>> GetAllClientsCompaniesEfCoreRawQueryUnmappedTypeAsync();
 }

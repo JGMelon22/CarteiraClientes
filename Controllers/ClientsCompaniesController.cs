@@ -16,7 +16,7 @@ public class ClientsCompaniesController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        var clientsCompanies = await _repository.GetAllClientsCompanies();
+        var clientsCompanies = await _repository.GetAllClientsCompaniesAsync();
         return clientsCompanies.Data != null
             ? View(clientsCompanies.Data)
             : NoContent();
@@ -25,7 +25,7 @@ public class ClientsCompaniesController : Controller
     [HttpGet]
     public async Task<IActionResult> IndexPaged(int pageNumber = 1, int pageSize = 15)
     {
-        var clientsCompanies = await _pagination.PagingClientCompany(pageNumber, pageSize);
+        var clientsCompanies = await _pagination.PagingClientCompanyAsync(pageNumber, pageSize);
         return clientsCompanies.Data != null
             ? View(clientsCompanies.Data)
             : NoContent();

@@ -5,7 +5,7 @@ namespace CarteiraClientes.Interfaces;
 public interface IReportService
 {
     List<ReportFileViewModel> GetAllReports();
-    Task PlotReport();
-    Task<byte[]> DownloadReport(string reportName);
+    Task PlotReportAsync();
+    Task<byte[]> DownloadReportAsync(string reportName);
     void DeleteReport(string reportName);
 }

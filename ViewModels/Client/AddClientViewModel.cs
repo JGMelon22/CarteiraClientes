@@ -12,5 +12,5 @@ public record AddClientViewModel
     [EnumDataType(typeof(Gender))] public Gender Gender { get; init; }
 
     public bool IsOverdue { get; init; }
-    public List<AddClientCompanyViewModel> ClientsCompanies { get; init; } = new();
+    public List<AddClientAsyncCompanyViewModel> ClientsCompanies { get; init; } = new();
 }

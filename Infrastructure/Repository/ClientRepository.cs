@@ -16,10 +16,10 @@ public class ClientRepository : IClientRepository
     }
 
     //  Busca com Dapper para evitar memory overhead 
-    public async Task<ServiceResponse<List<GetClientViewModel>>> GetAllClients()
+    public async Task<ServiceResponse<List<GetClientViewModel>>> GetAllClientsAsync()
     {
         var serviceResponse = new ServiceResponse<List<GetClientViewModel>>();
-        var getAllClientsQuery = """
+        var GetAllClientsAsyncQuery = """
                                  select client_id as ClientId,
                                         full_name as FullName,
                                         age as Age,
@@ -33,7 +33,7 @@ public class ClientRepository : IClientRepository
 
         _dbConnection.Open();
 
-        var result = await _dbConnection.QueryAsync<GetClientViewModel>(getAllClientsQuery);
+        var result = await _dbConnection.QueryAsync<GetClientViewModel>(GetAllClientsAsyncQuery);
 
         serviceResponse.Data = result.ToList();
 
@@ -42,7 +42,7 @@ public class ClientRepository : IClientRepository
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<GetClientViewModel>> GetClientById(int id)
+    public async Task<ServiceResponse<GetClientViewModel>> GetClientByIdAsync(int id)
     {
         var serviceResponse = new ServiceResponse<GetClientViewModel>();
 
@@ -64,7 +64,7 @@ public class ClientRepository : IClientRepository
         return serviceResponse;
     }
 
-    public async Task AddClient(AddClientViewModel newClient)
+    public async Task AddClientAsync(AddClientViewModel newClient)
     {
         var client = newClient.Adapt<Client>();
 
@@ -72,7 +72,7 @@ public class ClientRepository : IClientRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<ServiceResponse<GetClientViewModel>> UpdateClient(UpdateClientViewModel updatedClient)
+    public async Task<ServiceResponse<GetClientViewModel>> UpdateClientAsync(UpdateClientViewModel updatedClient)
     {
         var serviceResponse = new ServiceResponse<GetClientViewModel>();
 
@@ -102,7 +102,7 @@ public class ClientRepository : IClientRepository
         return serviceResponse;
     }
 
-    public async Task RemoveClient(int id)
+    public async Task RemoveClientAsync(int id)
     {
         var serviceResponse = new ServiceResponse<GetClientViewModel>();
 

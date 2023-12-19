@@ -14,7 +14,7 @@ public class PaginationService : IPaginationService
         _dbContext = dbContext;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClients(string searchString,
+    public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClientsAsync(string searchString,
         string sortOrder,
         int pageNumber = 1,
         int pageSize = 15)
@@ -67,7 +67,7 @@ public class PaginationService : IPaginationService
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetCompanyViewModel>>> PagingCompany(int pageNumber = 1,
+    public async Task<ServiceResponse<PagedResult<GetCompanyViewModel>>> PagingCompanyAsync(int pageNumber = 1,
         int pageSize = 15)
     {
         var serviceResponse = new ServiceResponse<PagedResult<GetCompanyViewModel>>();
@@ -100,7 +100,7 @@ public class PaginationService : IPaginationService
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetClientCompanyViewModel>>> PagingClientCompany(int pageNumber = 1,
+    public async Task<ServiceResponse<PagedResult<GetClientCompanyViewModel>>> PagingClientCompanyAsync(int pageNumber = 1,
         int pageSize = 15)
     {
         var serviceResponse = new ServiceResponse<PagedResult<GetClientCompanyViewModel>>();

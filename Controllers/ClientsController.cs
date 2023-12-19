@@ -6,16 +6,15 @@ namespace CarteiraClientes.Controllers;
 
 public class ClientsController : Controller
 {
-    private readonly IValidator<AddClientViewModel> _addClientValidator;
     private readonly IPaginationService _pagination;
     private readonly IClientRepository _repository;
+    private readonly IValidator<AddClientViewModel> _addClientValidator;
     private readonly IValidator<UpdateClientViewModel> _updateClientValidator;
 
-    public ClientsController(IClientRepository repository, IPaginationService pagination,
-        IValidator<AddClientViewModel> addClientValidator, IValidator<UpdateClientViewModel> updateClientValidator)
+    public ClientsController(IPaginationService pagination, IClientRepository repository, IValidator<AddClientViewModel> addClientValidator, IValidator<UpdateClientViewModel> updateClientValidator)
     {
-        _repository = repository;
         _pagination = pagination;
+        _repository = repository;
         _addClientValidator = addClientValidator;
         _updateClientValidator = updateClientValidator;
     }
@@ -24,7 +23,7 @@ public class ClientsController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        var clients = await _repository.GetAllClients();
+        var clients = await _repository.GetAllClientsAsync();
         return clients.Data != null
             ? View(clients.Data)
             : NoContent();
@@ -38,7 +37,7 @@ public class ClientsController : Controller
         ViewBag.CurrentFilter = searchString; // Allow us to preserver search filter values
         ViewBag.NameSortParam = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
         ViewBag.IsOverdueSortParam = string.IsNullOrEmpty(sortOrder) ? "is_overdue" : "";
-        var clients = await _pagination.PagingClients(searchString, sortOrder, pageNumber, pageSize);
+        var clients = await _pagination.PagingClientsAsync(searchString, sortOrder, pageNumber, pageSize);
         return clients.Data != null
             ? View(clients.Data)
             : NoContent();
@@ -52,7 +51,7 @@ public class ClientsController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var client = await _repository.GetClientById(id);
+        var client = await _repository.GetClientByIdAsync(id);
         return client.Data != null
             ? View(client.Data)
             : NotFound(client);
@@ -79,7 +78,7 @@ public class ClientsController : Controller
 
         try
         {
-            await _repository.AddClient(newClient);
+            await _repository.AddClientAsync(newClient);
         }
         catch (Exception)
         {
@@ -96,7 +95,7 @@ public class ClientsController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var client = await _repository.GetClientById(id);
+        var client = await _repository.GetClientByIdAsync(id);
         return client != null
             ? View(client.Data)
             : NotFound(client);
@@ -115,7 +114,7 @@ public class ClientsController : Controller
             return View(nameof(Edit));
         }
 
-        var client = await _repository.UpdateClient(updatedClient);
+        var client = await _repository.UpdateClientAsync(updatedClient);
         return client.Data != null
             ? RedirectToAction(nameof(Index))
             : View(nameof(Edit));
@@ -125,7 +124,7 @@ public class ClientsController : Controller
     [HttpGet]
     public async Task<IActionResult> Delete(int id)
     {
-        var client = await _repository.GetClientById(id);
+        var client = await _repository.GetClientByIdAsync(id);
         return client.Data != null
             ? View(client.Data)
             : NotFound(client);
@@ -140,7 +139,7 @@ public class ClientsController : Controller
         if (!ModelState.IsValid)
             return BadRequest();
 
-        await _repository.RemoveClient(id);
+        await _repository.RemoveClientAsync(id);
         return RedirectToAction(nameof(Index));
     }
 }
