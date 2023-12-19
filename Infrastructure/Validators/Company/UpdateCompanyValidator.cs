@@ -11,14 +11,7 @@ public class UpdateCompanyValidator : AbstractValidator<UpdateCompanyViewModel>
 
         // Minimum gross revenue
         var minimumGrossRevenue = 100.00M;
-
-        RuleFor(c => c.CompanyId)
-            .NotEmpty()
-            .WithMessage("Código comp")
-            .WithMessage("Código do Cliente deve ser informado!")
-            .NotNull()
-            .WithMessage("Código do Cliente deve ser informado!");
-
+        
         RuleFor(c => c.CompanyName)
             .NotEmpty()
             .WithMessage("Nome da empresa deve ser informado!")

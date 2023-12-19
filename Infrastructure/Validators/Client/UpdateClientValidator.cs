@@ -6,12 +6,6 @@ public class UpdateClientValidator : AbstractValidator<UpdateClientViewModel>
 {
     public UpdateClientValidator()
     {
-        RuleFor(c => c.ClientId)
-            .NotEmpty()
-            .WithMessage("Código do Cliente deve ser informado!")
-            .NotNull()
-            .WithMessage("Código do Cliente deve ser informado!");
-
         RuleFor(c => c.FullName)
             .NotEmpty()
             .WithMessage("Nome do Cliente deve ser informado!")

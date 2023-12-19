@@ -33,12 +33,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Run",
+    ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Debug",
     ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.08108108",
+    "XThreadsFramesViewSplitterKey": "0.08071749",
     "last_opened_file_path": "/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -142,7 +142,7 @@
       <workItem from="1702507865587" duration="1561000" />
       <workItem from="1702682757546" duration="857000" />
       <workItem from="1702942109440" duration="461000" />
-      <workItem from="1702942585036" duration="1919000" />
+      <workItem from="1702942585036" duration="2455000" />
     </task>
     <servers />
   </component>
