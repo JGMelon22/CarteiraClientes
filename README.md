@@ -36,7 +36,7 @@
 <p><strong>To Refactor 🚧</strong></p>
 
 <h2>Type Dependency Diagram</h2>
-<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/3baea96d-9bf3-4d10-99f5-3cf68142f4f8" width="600" height="350"/> <span>
+<img src="https://github.com/JGMelon22/CarteiraClientes/assets/73988556/fe9a71ab-997b-4261-95a3-6b56c94aafa8" width="600" height="350"/> <span>
 &nbsp;</span>
 
 <div style="display: inline_block" class="flex-container"><br>
