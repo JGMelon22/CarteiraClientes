@@ -6,17 +6,16 @@ namespace CarteiraClientes.Controllers;
 
 public class ClientsController : Controller
 {
+    private readonly IValidator<ClientInputViewModel> _clientInputValidator;
     private readonly IPaginationService _pagination;
     private readonly IClientRepository _repository;
-    private readonly IValidator<AddClientViewModel> _addClientValidator;
-    private readonly IValidator<UpdateClientViewModel> _updateClientValidator;
 
-    public ClientsController(IPaginationService pagination, IClientRepository repository, IValidator<AddClientViewModel> addClientValidator, IValidator<UpdateClientViewModel> updateClientValidator)
+    public ClientsController(IPaginationService pagination, IClientRepository repository,
+        IValidator<ClientInputViewModel> clientInputValidator)
     {
         _pagination = pagination;
         _repository = repository;
-        _addClientValidator = addClientValidator;
-        _updateClientValidator = updateClientValidator;
+        _clientInputValidator = clientInputValidator;
     }
 
     // Clientes Paginados
@@ -67,9 +66,9 @@ public class ClientsController : Controller
     // Ação criar novo cliente
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(AddClientViewModel newClient)
+    public async Task<IActionResult> Create(ClientInputViewModel newClientInput)
     {
-        var result = await _addClientValidator.ValidateAsync(newClient);
+        var result = await _clientInputValidator.ValidateAsync(newClientInput);
         if (!result.IsValid)
         {
             result.AddToModelState(ModelState);
@@ -78,7 +77,7 @@ public class ClientsController : Controller
 
         try
         {
-            await _repository.AddClientAsync(newClient);
+            await _repository.AddClientAsync(newClientInput);
         }
         catch (Exception)
         {
@@ -104,9 +103,9 @@ public class ClientsController : Controller
     // Ação editar cliente
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, UpdateClientViewModel updatedClient)
+    public async Task<IActionResult> Edit(int id, ClientInputViewModel updatedClient)
     {
-        var result = await _updateClientValidator.ValidateAsync(updatedClient);
+        var result = await _clientInputValidator.ValidateAsync(updatedClient);
         if (!result.IsValid)
 
         {

@@ -15,25 +15,26 @@ public class ReportRepository : IReportRepository
     ///     Performs an Inner Join operation with RawQuery for Unmapped Type
     /// </summary>
     /// <returns>Returns same data as traditional EF Core approach</returns>
-    public async Task<ServiceResponse<List<GetReportViewModel>>> GetAllClientsCompaniesEfCoreRawQueryUnmappedTypeAsync()
+    public async Task<ServiceResponse<List<ReportResultViewModel>>>
+        GetAllClientsCompaniesEfCoreRawQueryUnmappedTypeAsync()
     {
-        var serviceResponse = new ServiceResponse<List<GetReportViewModel>>();
+        var serviceResponse = new ServiceResponse<List<ReportResultViewModel>>();
 
         var clientsCompanies = await _dbContext
             .Database
-            .SqlQueryRaw<GetReportViewModel>("""
-                                                select c.client_id as ClientId,
-                                                       c.full_name as FullName,
-                                                       c.document as Document,
-                                                       c.is_overdue as IsOverdue,
-                                                       c1.company_id as CompanyId,
-                                                       c1.company_name as CompanyName
-                                                from clients as c
-                                                inner join clients_companies as c0
-                                                	on c.client_id = c0.client_id
-                                                inner join companies as c1
-                                                	on c0.company_id = c1.company_id;
-                                             """
+            .SqlQueryRaw<ReportResultViewModel>("""
+                                                   select c.client_id as ClientId,
+                                                          c.full_name as FullName,
+                                                          c.document as Document,
+                                                          c.is_overdue as IsOverdue,
+                                                          c1.company_id as CompanyId,
+                                                          c1.company_name as CompanyName
+                                                   from clients as c
+                                                   inner join clients_companies as c0
+                                                   	on c.client_id = c0.client_id
+                                                   inner join companies as c1
+                                                   	on c0.company_id = c1.company_id;
+                                                """
             ).AsNoTracking()
             .ToListAsync();
 

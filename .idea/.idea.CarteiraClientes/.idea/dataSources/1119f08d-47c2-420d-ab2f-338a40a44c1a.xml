@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="carteira_clientes@172.17.0.2">
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.51">
-    <root id="1"/>
+    <root id="1">
+      <ServerVersion>16.1</ServerVersion>
+    </root>
     <database id="2" parent="1" name="postgres">
       <Comment>default administrative connection database</Comment>
       <ObjectId>5</ObjectId>
@@ -3482,6 +3484,7 @@
     </table>
     <table id="271" parent="265" name="companies">
       <ObjectId>16404</ObjectId>
+      <Outdated>1</Outdated>
       <StateNumber>745</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>

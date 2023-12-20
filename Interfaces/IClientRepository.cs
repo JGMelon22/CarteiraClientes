@@ -4,9 +4,9 @@ namespace CarteiraClientes.Interfaces;
 
 public interface IClientRepository
 {
-    Task<ServiceResponse<List<GetClientViewModel>>> GetAllClientsAsync();
-    Task<ServiceResponse<GetClientViewModel>> GetClientByIdAsync(int id);
-    Task AddClientAsync(AddClientViewModel newClient);
-    Task<ServiceResponse<GetClientViewModel>> UpdateClientAsync(int id, UpdateClientViewModel updatedClient);
+    Task<ServiceResponse<List<ClientResultViewModel>>> GetAllClientsAsync();
+    Task<ServiceResponse<ClientResultViewModel>> GetClientByIdAsync(int id);
+    Task AddClientAsync(ClientInputViewModel newClientInput);
+    Task<ServiceResponse<ClientResultViewModel>> UpdateClientAsync(int id, ClientInputViewModel updatedClient);
     Task RemoveClientAsync(int id);
 }

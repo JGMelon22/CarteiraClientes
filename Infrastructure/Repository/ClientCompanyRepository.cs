@@ -11,9 +11,9 @@ public class ClientCompanyRepository : IClientCompanyRepository
         _dbContext = dbContext;
     }
 
-    public async Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompaniesAsync()
+    public async Task<ServiceResponse<List<ClientCompanyResultViewModel>>> GetAllClientsCompaniesAsync()
     {
-        var serviceResponse = new ServiceResponse<List<GetClientCompanyViewModel>>();
+        var serviceResponse = new ServiceResponse<List<ClientCompanyResultViewModel>>();
 
         var clientsCompanies = await (from cl in _dbContext.Clients
                 join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
@@ -31,7 +31,7 @@ public class ClientCompanyRepository : IClientCompanyRepository
             .Take(100)
             .ToListAsync();
 
-        serviceResponse.Data = clientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
+        serviceResponse.Data = clientsCompanies.Adapt<List<ClientCompanyResultViewModel>>();
         return serviceResponse;
     }
 }

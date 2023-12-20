@@ -1,15 +1,11 @@
-namespace CarteiraClientes.ViewModels.ClientCompany;
+namespace CarteiraClientes.ViewModels.Report;
 
-public record GetClientCompanyViewModel
+public record ReportResultViewModel
 {
-    // Dados Client
     public int ClientId { get; init; }
     public required string FullName { get; init; }
     public required string Document { get; init; }
     public bool IsOverdue { get; init; }
-
-    // Dados Empresa
     public int CompanyId { get; init; }
     public required string CompanyName { get; init; }
-    
 }

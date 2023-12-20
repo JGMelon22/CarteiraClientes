@@ -1,17 +1,17 @@
 using CarteiraClientes.ViewModels.Company;
 
-namespace CarteiraClientes.Infrastructure.Validators.Company;
+namespace CarteiraClientes.Infrastructure.Validators;
 
-public class UpdateCompanyValidator : AbstractValidator<UpdateCompanyViewModel>
+public class CompanyValidator : AbstractValidator<CompanyInputViewModel>
 {
-    public UpdateCompanyValidator()
+    public CompanyValidator()
     {
         // Validar data 
         var dataValida = DateTime.Now;
 
         // Minimum gross revenue
         var minimumGrossRevenue = 100.00M;
-        
+
         RuleFor(c => c.CompanyName)
             .NotEmpty()
             .WithMessage("Nome da empresa deve ser informado!")

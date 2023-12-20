@@ -6,7 +6,7 @@ public static class MapsterConfig
 {
     public static void RegisterMapsterConfiguration(this IServiceCollection services)
     {
-        TypeAdapterConfig<ClientCompany, GetClientCompanyViewModel>
+        TypeAdapterConfig<ClientCompany, ClientCompanyResultViewModel>
             .NewConfig()
             .Map(dest => dest.ClientId, src => src.Client.ClientId) // Mapeando Clientes
             .Map(dest => dest.FullName, src => src.Client.FullName)

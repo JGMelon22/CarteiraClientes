@@ -6,10 +6,10 @@ namespace CarteiraClientes.Infrastructure.Repository;
 
 public class CompanyRepository : ICompanyRepository
 {
-    private static readonly Func<AppDbContext, int, Task<GetCompanyViewModel?>> GetCompany =
+    private static readonly Func<AppDbContext, int, Task<CompanyResultViewModel?>> GetCompany =
         EF.CompileAsyncQuery((AppDbContext context, int id) =>
             context.Companies
-                .Select(c => new GetCompanyViewModel
+                .Select(c => new CompanyResultViewModel
                 {
                     CompanyId = c.CompanyId,
                     CompanyName = c.CompanyName,
@@ -27,9 +27,9 @@ public class CompanyRepository : ICompanyRepository
         _dbConnection = dbConnection;
     }
 
-    public async Task<ServiceResponse<List<GetCompanyViewModel>>> GetAllCompaniesAsync()
+    public async Task<ServiceResponse<List<CompanyResultViewModel>>> GetAllCompaniesAsync()
     {
-        var serviceResponse = new ServiceResponse<List<GetCompanyViewModel>>();
+        var serviceResponse = new ServiceResponse<List<CompanyResultViewModel>>();
         var GetAllCompaniesAsyncQuery = """
                                         select company_id as CompanyId,
                                                company_name as CompanyName,
@@ -42,7 +42,7 @@ public class CompanyRepository : ICompanyRepository
 
         _dbConnection.Open();
 
-        var result = await _dbConnection.QueryAsync<GetCompanyViewModel>(GetAllCompaniesAsyncQuery);
+        var result = await _dbConnection.QueryAsync<CompanyResultViewModel>(GetAllCompaniesAsyncQuery);
         serviceResponse.Data = result.ToList();
 
         _dbConnection.Close();
@@ -50,9 +50,9 @@ public class CompanyRepository : ICompanyRepository
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<GetCompanyViewModel>> GetCompanyByIdCompiledEfCoreQueryAsync(int id)
+    public async Task<ServiceResponse<CompanyResultViewModel>> GetCompanyByIdCompiledEfCoreQueryAsync(int id)
     {
-        var serviceResponse = new ServiceResponse<GetCompanyViewModel>();
+        var serviceResponse = new ServiceResponse<CompanyResultViewModel>();
 
         try
         {
@@ -71,18 +71,18 @@ public class CompanyRepository : ICompanyRepository
         return serviceResponse;
     }
 
-    public async Task AddCompanyAsync(AddCompanyViewModel newCompany)
+    public async Task AddCompanyAsync(CompanyInputViewModel newCompanyInput)
     {
-        var company = newCompany.Adapt<Company>();
+        var company = newCompanyInput.Adapt<Company>();
 
         await _dbContext.AddAsync(company);
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<ServiceResponse<GetCompanyViewModel>> UpdateCompanyAsync(int id,
-        UpdateCompanyViewModel updatedCompany)
+    public async Task<ServiceResponse<CompanyResultViewModel>> UpdateCompanyAsync(int id,
+        CompanyInputViewModel updatedCompany)
     {
-        var serviceResponse = new ServiceResponse<GetCompanyViewModel>();
+        var serviceResponse = new ServiceResponse<CompanyResultViewModel>();
 
         try
         {
@@ -90,7 +90,7 @@ public class CompanyRepository : ICompanyRepository
 
             if (company == null) throw new Exception("Company not found!");
 
-            company.Adapt<UpdateCompanyViewModel>();
+            company.Adapt<CompanyInputViewModel>();
 
             company.CompanyName = updatedCompany.CompanyName;
             company.FoundedDate = updatedCompany.FoundedDate;
@@ -98,7 +98,7 @@ public class CompanyRepository : ICompanyRepository
 
             await _dbContext.SaveChangesAsync();
 
-            serviceResponse.Data = company.Adapt<GetCompanyViewModel>();
+            serviceResponse.Data = company.Adapt<CompanyResultViewModel>();
         }
         catch (Exception ex)
         {
@@ -111,7 +111,7 @@ public class CompanyRepository : ICompanyRepository
 
     public async Task RemoveCompanyAsync(int id)
     {
-        var serviceResponse = new ServiceResponse<GetCompanyViewModel>();
+        var serviceResponse = new ServiceResponse<CompanyResultViewModel>();
 
         try
         {

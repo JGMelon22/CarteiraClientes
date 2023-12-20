@@ -4,5 +4,5 @@ namespace CarteiraClientes.Interfaces;
 
 public interface IClientCompanyRepository
 {
-    Task<ServiceResponse<List<GetClientCompanyViewModel>>> GetAllClientsCompaniesAsync();
+    Task<ServiceResponse<List<ClientCompanyResultViewModel>>> GetAllClientsCompaniesAsync();
 }

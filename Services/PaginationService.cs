@@ -14,12 +14,12 @@ public class PaginationService : IPaginationService
         _dbContext = dbContext;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetClientViewModel>>> PagingClientsAsync(string searchString,
+    public async Task<ServiceResponse<PagedResult<ClientResultViewModel>>> PagingClientsAsync(string searchString,
         string sortOrder,
         int pageNumber = 1,
         int pageSize = 15)
     {
-        var serviceResponse = new ServiceResponse<PagedResult<GetClientViewModel>>();
+        var serviceResponse = new ServiceResponse<PagedResult<ClientResultViewModel>>();
 
         var excludeRecords = pageSize * pageNumber - pageSize;
         var clientsQuery = _dbContext.Clients
@@ -51,10 +51,10 @@ public class PaginationService : IPaginationService
 
         var totalItems = await clientsQuery.CountAsync();
 
-        // Use Mapster to adapt clientEntities to List<GetClientViewModel>
-        var clientViewModels = pagedClients.Adapt<List<GetClientViewModel>>();
+        // Use Mapster to adapt clientEntities to List<ClientResultViewModel>
+        var clientViewModels = pagedClients.Adapt<List<ClientResultViewModel>>();
 
-        var result = new PagedResult<GetClientViewModel> // cloudscribe.Pagination.Models to help at view
+        var result = new PagedResult<ClientResultViewModel> // cloudscribe.Pagination.Models to help at view
         {
             Data = clientViewModels,
             TotalItems = totalItems,
@@ -67,10 +67,10 @@ public class PaginationService : IPaginationService
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetCompanyViewModel>>> PagingCompanyAsync(int pageNumber = 1,
+    public async Task<ServiceResponse<PagedResult<CompanyResultViewModel>>> PagingCompanyAsync(int pageNumber = 1,
         int pageSize = 15)
     {
-        var serviceResponse = new ServiceResponse<PagedResult<GetCompanyViewModel>>();
+        var serviceResponse = new ServiceResponse<PagedResult<CompanyResultViewModel>>();
 
         var excludedRecords = pageSize * pageNumber - pageSize;
         var query = _dbContext.Companies
@@ -84,10 +84,10 @@ public class PaginationService : IPaginationService
 
         var totalItems = await query.CountAsync();
 
-        // Use Mapster to adapt clientEntities to List<GetClientViewModel>
-        var companyViewModel = pagedCompanies.Adapt<List<GetCompanyViewModel>>();
+        // Use Mapster to adapt clientEntities to List<ClientResultViewModel>
+        var companyViewModel = pagedCompanies.Adapt<List<CompanyResultViewModel>>();
 
-        var result = new PagedResult<GetCompanyViewModel> // cloudscribe.Pagination.Models to help at view
+        var result = new PagedResult<CompanyResultViewModel> // cloudscribe.Pagination.Models to help at view
         {
             Data = companyViewModel,
             TotalItems = totalItems,
@@ -100,10 +100,11 @@ public class PaginationService : IPaginationService
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<PagedResult<GetClientCompanyViewModel>>> PagingClientCompanyAsync(int pageNumber = 1,
+    public async Task<ServiceResponse<PagedResult<ClientCompanyResultViewModel>>> PagingClientCompanyAsync(
+        int pageNumber = 1,
         int pageSize = 15)
     {
-        var serviceResponse = new ServiceResponse<PagedResult<GetClientCompanyViewModel>>();
+        var serviceResponse = new ServiceResponse<PagedResult<ClientCompanyResultViewModel>>();
 
         var excludedRecords = pageSize * pageNumber - pageSize;
         var clientsCompaniesQuery = (from cl in _dbContext.Clients
@@ -128,10 +129,10 @@ public class PaginationService : IPaginationService
 
         var totalItems = await clientsCompaniesQuery.CountAsync();
 
-        // Use Mapster to adapt clientEntities to List<GetClientViewModel>
-        var clientCompanyModel = pagedClientsCompanies.Adapt<List<GetClientCompanyViewModel>>();
+        // Use Mapster to adapt clientEntities to List<ClientResultViewModel>
+        var clientCompanyModel = pagedClientsCompanies.Adapt<List<ClientCompanyResultViewModel>>();
 
-        var result = new PagedResult<GetClientCompanyViewModel> // cloudscribe.Pagination.Models to help at view
+        var result = new PagedResult<ClientCompanyResultViewModel> // cloudscribe.Pagination.Models to help at view
         {
             Data = clientCompanyModel,
             TotalItems = totalItems,

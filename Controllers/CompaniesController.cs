@@ -6,18 +6,16 @@ namespace CarteiraClientes.Controllers;
 
 public class CompaniesController : Controller
 {
-    private readonly IValidator<AddCompanyViewModel> _addCompanyValidator;
+    private readonly IValidator<CompanyInputViewModel> _companyInputValidator;
     private readonly ICompanyRepository _repository;
     private readonly IPaginationService _service;
-    private readonly IValidator<UpdateCompanyViewModel> _updateCompanyValidator;
 
     public CompaniesController(ICompanyRepository repository, IPaginationService service,
-        IValidator<AddCompanyViewModel> addCompanyValidator, IValidator<UpdateCompanyViewModel> updateCompanyValidator)
+        IValidator<CompanyInputViewModel> companyInputValidator)
     {
         _repository = repository;
         _service = service;
-        _addCompanyValidator = addCompanyValidator;
-        _updateCompanyValidator = updateCompanyValidator;
+        _companyInputValidator = companyInputValidator;
     }
 
     // View Listar top 100 empresas
@@ -63,16 +61,16 @@ public class CompaniesController : Controller
     // Action criar nova empresa
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(AddCompanyViewModel newCompany)
+    public async Task<IActionResult> Create(CompanyInputViewModel newCompanyInput)
     {
-        var result = await _addCompanyValidator.ValidateAsync(newCompany);
+        var result = await _companyInputValidator.ValidateAsync(newCompanyInput);
         if (!result.IsValid)
         {
             result.AddToModelState(ModelState);
             return View(nameof(Create));
         }
 
-        await _repository.AddCompanyAsync(newCompany);
+        await _repository.AddCompanyAsync(newCompanyInput);
         return RedirectToAction(nameof(Index));
     }
 
@@ -92,9 +90,9 @@ public class CompaniesController : Controller
     // Action Post Editar Company
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, UpdateCompanyViewModel updatedCompany)
+    public async Task<IActionResult> Edit(int id, CompanyInputViewModel updatedCompany)
     {
-        var result = await _updateCompanyValidator.ValidateAsync(updatedCompany);
+        var result = await _companyInputValidator.ValidateAsync(updatedCompany);
         if (!result.IsValid)
         {
             result.AddToModelState(ModelState);

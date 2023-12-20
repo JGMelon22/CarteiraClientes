@@ -1,5 +1,4 @@
 using CarteiraClientes.Infrastructure.Configuration;
-using CarteiraClientes.Infrastructure.Configuration.Seeding;
 
 namespace CarteiraClientes.Infrastructure.Data;
 

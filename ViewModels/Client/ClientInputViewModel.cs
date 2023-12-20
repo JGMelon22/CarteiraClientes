@@ -3,7 +3,7 @@ using CarteiraClientes.ViewModels.ClientCompany;
 
 namespace CarteiraClientes.ViewModels.Client;
 
-public record AddClientViewModel
+public record ClientInputViewModel
 {
     public required string FullName { get; init; }
     public byte Age { get; init; }

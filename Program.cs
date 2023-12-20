@@ -1,8 +1,7 @@
 using System.Data;
 using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.Infrastructure.Repository;
-using CarteiraClientes.Infrastructure.Validators.Client;
-using CarteiraClientes.Infrastructure.Validators.Company;
+using CarteiraClientes.Infrastructure.Validators;
 using CarteiraClientes.Services;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.Company;
@@ -30,10 +29,8 @@ builder.Services.AddScoped<IPaginationService, PaginationService>();
 builder.Services.AddCloudscribePagination();
 
 // Fluent Validator Service 
-builder.Services.AddTransient<IValidator<AddClientViewModel>, AddClientValidador>();
-builder.Services.AddTransient<IValidator<UpdateClientViewModel>, UpdateClientValidator>();
-builder.Services.AddTransient<IValidator<AddCompanyViewModel>, AddCompanyValidator>();
-builder.Services.AddTransient<IValidator<UpdateCompanyViewModel>, UpdateCompanyValidator>();
+builder.Services.AddTransient<IValidator<ClientInputViewModel>, ClientValidador>();
+builder.Services.AddTransient<IValidator<CompanyInputViewModel>, CompanyValidator>();
 
 // Interface & Repository register
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
