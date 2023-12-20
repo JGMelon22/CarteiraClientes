@@ -33,7 +33,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Run",
+    ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Debug",
     ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -146,7 +146,7 @@
       <workItem from="1702946440167" duration="1102000" />
       <workItem from="1702983810976" duration="112000" />
       <workItem from="1703008998175" duration="178000" />
-      <workItem from="1703089223126" duration="845000" />
+      <workItem from="1703089223126" duration="1387000" />
     </task>
     <servers />
   </component>
