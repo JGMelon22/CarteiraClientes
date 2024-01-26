@@ -4,7 +4,7 @@
 <span>Com este projeto, além do CRUD, é possível: </span>
 <ul>
   <li>Gerar relatórios em .xlsx referentes ao status do cliente</li>
-  <li>Listar a relação entre clientes e empresas atarvés de gráfico de barra</li>
+  <li>Listar a relação entre clientes e empresas através de gráfico de barra</li>
   <li>Gerar dados mocados de forma rápida e eficiente graças ao Bogus</li>
 </ul>  
 
