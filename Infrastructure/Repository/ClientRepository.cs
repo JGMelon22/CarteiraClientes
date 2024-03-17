@@ -82,13 +82,8 @@ public class ClientRepository : IClientRepository
             var client = await _dbContext.Clients.FindAsync(id);
 
             if (client == null) throw new Exception("Client not found!");
-
-            client.Adapt<ClientInputViewModel>();
-
-            client.FullName = updatedClient.FullName;
-            client.Age = updatedClient.Age;
-            client.Document = updatedClient.Document;
-            client.Gender = updatedClient.Gender;
+            
+            updatedClient.Adapt(client);
 
             await _dbContext.SaveChangesAsync();
 
