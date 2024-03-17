@@ -15,7 +15,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1bb10e1f35f4b88a719d9dcc0f401ba1dea00/7e/9594e37b/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7bbda411a441868115d350951a1dc66053664f4b/CompanyMapper.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a1379d81949756f32c6b5e8f2859fbc783fd71/CompanyMapper.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -38,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.029816514",
+    "XThreadsFramesViewSplitterKey": "0.78688526",
     "last_opened_file_path": "/home/joaog/Documents/TempCodes/MVC/Sinpass/Sinpass.sln",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -149,7 +151,8 @@
       <workItem from="1703089223126" duration="1738000" />
       <workItem from="1710684968141" duration="51000" />
       <workItem from="1710685031912" duration="53000" />
-      <workItem from="1710685401266" duration="3444000" />
+      <workItem from="1710685401266" duration="4235000" />
+      <workItem from="1710693886614" duration="2612000" />
     </task>
     <servers />
   </component>
