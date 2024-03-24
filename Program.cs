@@ -1,5 +1,4 @@
 using System.Data;
-using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.Infrastructure.Repository;
 using CarteiraClientes.Infrastructure.Validators;
 using CarteiraClientes.Services;
@@ -21,9 +20,6 @@ builder.Services.AddScoped<IDbConnection>(x =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
-// Mapster Service
-builder.Services.RegisterMapsterConfiguration();
-
 // Pagination Service
 builder.Services.AddScoped<IPaginationService, PaginationService>();
 builder.Services.AddCloudscribePagination();
@@ -36,8 +32,8 @@ builder.Services.AddTransient<IValidator<CompanyInputViewModel>, CompanyValidato
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IClientCompanyRepository, ClientCompanyRepository>();
-
 builder.Services.AddScoped<IReportRepository, ReportRepository>();
+
 builder.Services.AddScoped<IReportService, ReportService>();
 
 // Service Pattern DI

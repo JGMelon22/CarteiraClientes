@@ -1,8 +1,9 @@
 using CarteiraClientes.ViewModels.Client;
+using Riok.Mapperly.Abstractions;
 
 namespace CarteiraClientes.Infrastructure.Mappling;
 
-[Riok.Mapperly.Abstractions.Mapper]
+[Mapper]
 public static partial class ClientMapper
 {
     public static partial ClientResultViewModel ClientToClientResultViewModel(Client client);

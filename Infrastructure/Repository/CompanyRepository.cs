@@ -1,4 +1,5 @@
 using System.Data;
+using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.ViewModels.Company;
 using Dapper;
 
@@ -73,7 +74,7 @@ public class CompanyRepository : ICompanyRepository
 
     public async Task AddCompanyAsync(CompanyInputViewModel newCompanyInput)
     {
-        var company = newCompanyInput.Adapt<Company>();
+        var company = CompanyMapper.CompanyToCompanyInputViewModel(newCompanyInput);
 
         await _dbContext.Companies.AddAsync(company);
         await _dbContext.SaveChangesAsync();
@@ -89,11 +90,12 @@ public class CompanyRepository : ICompanyRepository
             var company = await _dbContext.Companies.FindAsync(id);
 
             if (company == null) throw new Exception("Company not found!");
-            updatedCompany.Adapt(company);
+
+            CompanyMapper.ApplyUpdate(updatedCompany, company);
 
             await _dbContext.SaveChangesAsync();
 
-            serviceResponse.Data = company.Adapt<CompanyResultViewModel>();
+            serviceResponse.Data = CompanyMapper.CompanyToCompanyResultViewModel(company);
         }
         catch (Exception ex)
         {
