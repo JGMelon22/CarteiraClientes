@@ -15,9 +15,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1bb10e1f35f4b88a719d9dcc0f401ba1dea00/7e/9594e37b/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7bbda411a441868115d350951a1dc66053664f4b/CompanyMapper.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a1379d81949756f32c6b5e8f2859fbc783fd71/CompanyMapper.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Migrations/20231218233306_ImprovedSeedDataManyToMany.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -36,7 +35,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.CarteiraClientes: http.executor": "Debug",
-    ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Run",
+    ".NET Launch Settings Profile.CarteiraClientes: https.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -61,7 +60,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.CarteiraClientes: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.CarteiraClientes: https">
     <configuration name="CarteiraClientes: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CarteiraClientes.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -153,6 +152,9 @@
       <workItem from="1710685031912" duration="53000" />
       <workItem from="1710685401266" duration="4235000" />
       <workItem from="1710693886614" duration="2612000" />
+      <workItem from="1711216577123" duration="1421000" />
+      <workItem from="1711227261036" duration="2044000" />
+      <workItem from="1711286777770" duration="1343000" />
     </task>
     <servers />
   </component>

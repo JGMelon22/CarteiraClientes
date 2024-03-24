@@ -1,4 +1,5 @@
 using System.Data;
+using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.ViewModels.Client;
 using Dapper;
 
@@ -53,7 +54,8 @@ public class ClientRepository : IClientRepository
             if (client == null)
                 throw new Exception("Cliente not found!");
 
-            serviceResponse.Data = client.Adapt<ClientResultViewModel>();
+            serviceResponse.Data =
+                ClientMapper.ClientToClientResultViewModel(client);
         }
         catch (Exception ex) // Por isso criamos uma service response. Facilita lidar com exceptions
         {
@@ -66,7 +68,7 @@ public class ClientRepository : IClientRepository
 
     public async Task AddClientAsync(ClientInputViewModel newClientInput)
     {
-        var client = newClientInput.Adapt<Client>();
+        var client = ClientMapper.ClientToClientInputViewModel(newClientInput);
 
         await _dbContext.Clients.AddAsync(client);
         await _dbContext.SaveChangesAsync();
@@ -82,12 +84,12 @@ public class ClientRepository : IClientRepository
             var client = await _dbContext.Clients.FindAsync(id);
 
             if (client == null) throw new Exception("Client not found!");
-            
-            updatedClient.Adapt(client);
+
+            ClientMapper.ApplyUpdate(updatedClient, client);
 
             await _dbContext.SaveChangesAsync();
 
-            serviceResponse.Data = client.Adapt<ClientResultViewModel>();
+            serviceResponse.Data = ClientMapper.ClientToClientResultViewModel(client);
         }
         catch (Exception ex)
         {

@@ -4022,7 +4022,7 @@
 
             if (typeof config.reference === 'object' && !isElement$1(config.reference) && typeof config.reference.getBoundingClientRect !== 'function') {
                 // Popper virtual elements require a getBoundingClientRect method
-                throw new TypeError(`${NAME$9.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`);
+                throw new TypeError(`${NAME$9.toUpperCase()}: Option "reference" provided type "object" without a  "getBoundingClientRect" method.`);
             }
 
             return config;

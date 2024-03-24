@@ -378,10 +378,10 @@
 
         setValidationValues(options, "equalTo", element);
     });
-    adapters.add("required", function (options) {
-        // jQuery Validate equates "required" with "mandatory" for checkbox elements
+    adapters.add("", function (options) {
+        // jQuery Validate equates "" with "mandatory" for checkbox elements
         if (options.element.tagName.toUpperCase() !== "INPUT" || options.element.type.toUpperCase() !== "CHECKBOX") {
-            setValidationValues(options, "required", true);
+            setValidationValues(options, "", true);
         }
     });
     adapters.add("remote", ["url", "type", "additionalfields"], function (options) {

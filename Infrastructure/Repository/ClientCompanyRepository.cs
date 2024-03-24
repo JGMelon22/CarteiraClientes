@@ -31,7 +31,17 @@ public class ClientCompanyRepository : IClientCompanyRepository
             .Take(100)
             .ToListAsync();
 
-        serviceResponse.Data = clientsCompanies.Adapt<List<ClientCompanyResultViewModel>>();
+        // Manually Mapping
+        serviceResponse.Data = clientsCompanies.Select(x => new ClientCompanyResultViewModel
+        {
+            ClientId = x.ClientId,
+            FullName = x.FullName,
+            Document = x.Document,
+            IsOverdue = x.IsOverdue,
+            CompanyId = x.CompanyId,
+            CompanyName = x.CompanyName
+        }).ToList();
+
         return serviceResponse;
     }
 }

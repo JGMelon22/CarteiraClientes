@@ -6,9 +6,9 @@ namespace CarteiraClientes.ViewModels.Client;
 public record ClientResultViewModel
 {
     public int ClientId { get; init; }
-    public required string FullName { get; init; }
+    public string FullName { get; init; }
     public byte Age { get; init; }
-    public required string Document { get; init; }
+    public string Document { get; init; }
 
     [EnumDataType(typeof(Gender))] public Gender Gender { get; init; }
 

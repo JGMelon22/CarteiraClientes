@@ -18,7 +18,6 @@
 - FluentValidation.AspNetCore <br/>
 - Microsoft.EntityFrameworkCore <br/>
 - Microsoft.EntityFrameworkCore.Design <br/>
-- Microsoft.EntityFrameworkCore.Tools <br/>
 - cloudscribe.Pagination.Models <br/>
 - cloudscribe.Web.Pagination <br/>
 - Dapper<br/>
@@ -26,7 +25,7 @@
 - Npgsql.EntityFrameworkCore.PostgreSQL <br/>
 - ClosedXML <br/>
 -  <a href="https://github.com/bchavez/Bogus">Bogus</a> <br/>
--  <a href="https://github.com/MapsterMapper/Mapster">Mapster</a> <br/><br/>
+-  <a href="https://github.com/riok/mapperly">Mapperly</a> <br/><br/>
 
 <h2>Tech demo</h2>
 

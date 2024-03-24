@@ -75,7 +75,7 @@
         return false;
     }, "Please enter a valid routing number.");
 
-// Accept a value from a file input based on a required mimetype
+// Accept a value from a file input based on a  mimetype
     $.validator.addMethod("accept", function (value, element, param) {
 
         // Split mime on commas in case we have multiple types we can accept
@@ -592,7 +592,7 @@
 
     /**
      * Validates currencies with any given symbols by @jameslouiz
-     * Symbols can be optional or required. Symbols required by default
+     * Symbols can be optional or . Symbols  by default
      *
      * Usage examples:
      *  currency: ["£", false] - Use false for soft currency validation
@@ -1305,7 +1305,7 @@
      * description: {require_from_group: [1,".productinfo"]}
      *
      * options[0]: number of fields that must be filled in the group
-     * options[1]: CSS selector that defines the group of conditionally required fields
+     * options[1]: CSS selector that defines the group of conditionally  fields
      */
     $.validator.addMethod("require_from_group", function (value, element, options) {
         var $fields = $(options[1], element.form),
@@ -1347,7 +1347,7 @@
      * color:		{skip_or_fill_minimum: [2,".productinfo"]}
      *
      * options[0]: number of fields that must be filled in the group
-     * options[1]: CSS selector that defines the group of conditionally required fields
+     * options[1]: CSS selector that defines the group of conditionally  fields
      *
      */
     $.validator.addMethod("skip_or_fill_minimum", function (value, element, options) {
@@ -1451,8 +1451,8 @@
      *
      * Works with all kind of text inputs.
      *
-     * @example <input type="text" size="20" name="VehicleID" class="{required:true,vinUS:true}" />
-     * @desc Declares a required input element whose value must be a valid vehicle identification number.
+     * @example <input type="text" size="20" name="VehicleID" class="{:true,vinUS:true}" />
+     * @desc Declares a  input element whose value must be a valid vehicle identification number.
      *
      * @name $.validator.methods.vinUS
      * @type Boolean

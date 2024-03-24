@@ -1,3 +1,4 @@
+using CarteiraClientes.Infrastructure.Mappling;
 using CarteiraClientes.ViewModels.Client;
 using CarteiraClientes.ViewModels.ClientCompany;
 using CarteiraClientes.ViewModels.Company;
@@ -51,8 +52,7 @@ public class PaginationService : IPaginationService
 
         var totalItems = await clientsQuery.CountAsync();
 
-        // Use Mapster to adapt clientEntities to List<ClientResultViewModel>
-        var clientViewModels = pagedClients.Adapt<List<ClientResultViewModel>>();
+        var clientViewModels = pagedClients.Select(x => ClientMapper.ClientToClientResultViewModel(x)).ToList();
 
         var result = new PagedResult<ClientResultViewModel> // cloudscribe.Pagination.Models to help at view
         {
@@ -84,8 +84,7 @@ public class PaginationService : IPaginationService
 
         var totalItems = await query.CountAsync();
 
-        // Use Mapster to adapt clientEntities to List<ClientResultViewModel>
-        var companyViewModel = pagedCompanies.Adapt<List<CompanyResultViewModel>>();
+        var companyViewModel = pagedCompanies.Select(x => CompanyMapper.CompanyToCompanyResultViewModel(x)).ToList();
 
         var result = new PagedResult<CompanyResultViewModel> // cloudscribe.Pagination.Models to help at view
         {
@@ -129,8 +128,15 @@ public class PaginationService : IPaginationService
 
         var totalItems = await clientsCompaniesQuery.CountAsync();
 
-        // Use Mapster to adapt clientEntities to List<ClientResultViewModel>
-        var clientCompanyModel = pagedClientsCompanies.Adapt<List<ClientCompanyResultViewModel>>();
+        var clientCompanyModel = pagedClientsCompanies.Select(x => new ClientCompanyResultViewModel
+        {
+            ClientId = x.ClientId,
+            FullName = x.FullName,
+            Document = x.Document,
+            IsOverdue = x.IsOverdue,
+            CompanyId = x.CompanyId,
+            CompanyName = x.CompanyName
+        }).ToList();
 
         var result = new PagedResult<ClientCompanyResultViewModel> // cloudscribe.Pagination.Models to help at view
         {
