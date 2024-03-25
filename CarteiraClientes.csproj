@@ -23,4 +23,25 @@
         <PackageReference Include="Riok.Mapperly" Version="3.4.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="CarteiraClientes.Tests\UnitTest1.cs">
+        <Link>CarteiraClienyes.Tests\UnitTest1.cs</Link>
+      </Compile>
+      <Compile Update="CarteiraClientes.Tests\GlobalUsings.cs">
+        <Link>CarteiraClienyes.Tests\GlobalUsings.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="FakeItEasy">
+        <HintPath>..\..\..\..\.nuget\packages\fakeiteasy\8.1.0\lib\net6.0\FakeItEasy.dll</HintPath>
+      </Reference>
+      <Reference Include="FluentAssertions">
+        <HintPath>..\..\..\..\.nuget\packages\fluentassertions\6.12.0\lib\net6.0\FluentAssertions.dll</HintPath>
+      </Reference>
+      <Reference Include="xunit.core">
+        <HintPath>..\..\..\..\.nuget\packages\xunit.extensibility.core\2.7.0\lib\netstandard1.1\xunit.core.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
