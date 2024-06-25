@@ -103,12 +103,14 @@ public class ClientRepositoryTests
 
     [Fact]
     [Trait("ClientRepository", "RemoveClientAsync")]
-    public void ClientRepository_RemoveClientAsync()
+    public async Task ClientRepository_RemoveClientAsync()
     {
-        var id = 1;
+        int id = 1;
 
-        var result = _repository.RemoveClientAsync(id);
+        var result = await _repository.RemoveClientAsync(id);
 
         result.Should().NotBeNull();
+        result.Success.Should().BeTrue();
+        result.Should().BeOfType<ServiceResponse<bool>>();
     }
 }

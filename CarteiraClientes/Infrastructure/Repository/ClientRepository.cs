@@ -100,9 +100,9 @@ public class ClientRepository : IClientRepository
         return serviceResponse;
     }
 
-    public async Task RemoveClientAsync(int id)
+    public async Task<ServiceResponse<bool>> RemoveClientAsync(int id)
     {
-        var serviceResponse = new ServiceResponse<ClientResultViewModel>();
+        var serviceResponse = new ServiceResponse<bool>();
 
         try
         {
@@ -120,5 +120,7 @@ public class ClientRepository : IClientRepository
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
+
+        return serviceResponse;
     }
 }

@@ -101,14 +101,20 @@ public class ClientsControllerTests
 
     [Fact]
     [Trait("ClientsController", "RemoveClientAsync")]
-    public void ClientsController_RemoveClientAsync_ReturnsClients()
+    public async Task ClientsController_RemoveClientAsync_ReturnsClients()
     {
+        // Arrange
         var id = 1;
-        A.CallTo(() => _repository.RemoveClientAsync(id)).Returns(Task.CompletedTask);
+        var serviceResponse = new ServiceResponse<bool>();
+        
+        A.CallTo(() => _repository.RemoveClientAsync(id)).Returns(Task.FromResult(serviceResponse));
+        
+        // Act
+        var result = await _controller.DeleteConfirmed(id);
 
-        var result = _controller.DeleteConfirmed(id);
-
+        // Assert
         result.Should().NotBeNull();
-        result.Should().BeOfType<Task<IActionResult>>();
+        result.Should().BeOfType<RedirectToActionResult>();
+        serviceResponse.Success.Should().BeTrue();
     }
 }

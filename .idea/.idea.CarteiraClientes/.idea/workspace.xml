@@ -19,8 +19,7 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Migrations/20231218233306_ImprovedSeedDataManyToMany.Designer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5f9bc6d1d54b416fb251b81fcb6dfe49c2d000/fe/ea238169/Task.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -207,7 +206,7 @@
       <workItem from="1717262536591" duration="293000" />
       <workItem from="1719320855971" duration="593000" />
       <workItem from="1719321532726" duration="423000" />
-      <workItem from="1719322137184" duration="70000" />
+      <workItem from="1719322137184" duration="1454000" />
     </task>
     <servers />
   </component>
