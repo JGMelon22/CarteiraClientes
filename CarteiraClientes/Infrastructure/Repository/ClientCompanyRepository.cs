@@ -18,29 +18,20 @@ public class ClientCompanyRepository : IClientCompanyRepository
         var clientsCompanies = await (from cl in _dbContext.Clients
                 join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
                 join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
-                select new
+                select new ClientCompanyResultViewModel()
                 {
-                    cl.ClientId,
-                    cl.FullName,
-                    cl.Document,
-                    cl.IsOverdue,
-                    co.CompanyId,
-                    co.CompanyName
+                    ClientId = cl.ClientId,
+                    FullName = cl.FullName,
+                    Document = cl.Document,
+                    IsOverdue = cl.IsOverdue,
+                    CompanyId = co.CompanyId,
+                    CompanyName = co.CompanyName
                 })
-            .AsNoTracking()
             .Take(100)
             .ToListAsync();
 
         // Manually Mapping
-        serviceResponse.Data = clientsCompanies.Select(x => new ClientCompanyResultViewModel
-        {
-            ClientId = x.ClientId,
-            FullName = x.FullName,
-            Document = x.Document,
-            IsOverdue = x.IsOverdue,
-            CompanyId = x.CompanyId,
-            CompanyName = x.CompanyName
-        }).ToList();
+        serviceResponse.Data = clientsCompanies;
 
         return serviceResponse;
     }
