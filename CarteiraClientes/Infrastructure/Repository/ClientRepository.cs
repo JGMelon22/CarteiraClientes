@@ -20,7 +20,7 @@ public class ClientRepository : IClientRepository
     public async Task<ServiceResponse<List<ClientResultViewModel>>> GetAllClientsAsync()
     {
         var serviceResponse = new ServiceResponse<List<ClientResultViewModel>>();
-        var GetAllClientsAsyncQuery = """
+        var getAllClientsAsyncQuery = """
                                       select client_id as ClientId,
                                              full_name as FullName,
                                              age as Age,
@@ -34,9 +34,9 @@ public class ClientRepository : IClientRepository
 
         _dbConnection.Open();
 
-        var result = await _dbConnection.QueryAsync<ClientResultViewModel>(GetAllClientsAsyncQuery);
+        var result = await _dbConnection.QueryAsync<Client>(getAllClientsAsyncQuery);
 
-        serviceResponse.Data = result.ToList();
+        serviceResponse.Data = result.Select(ClientMapper.ClientToClientResultViewModel).ToList();
 
         _dbConnection.Close();
 

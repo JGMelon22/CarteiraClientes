@@ -43,8 +43,9 @@ public class CompanyRepository : ICompanyRepository
 
         _dbConnection.Open();
 
-        var result = await _dbConnection.QueryAsync<CompanyResultViewModel>(GetAllCompaniesAsyncQuery);
-        serviceResponse.Data = result.ToList();
+        var result = await _dbConnection.QueryAsync<Company>(GetAllCompaniesAsyncQuery);
+
+        serviceResponse.Data = result.Select(CompanyMapper.CompanyToCompanyResultViewModel).ToList();
 
         _dbConnection.Close();
 
