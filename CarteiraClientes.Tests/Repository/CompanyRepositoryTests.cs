@@ -96,12 +96,17 @@ public class CompanyRepositoryTests
 
     [Fact]
     [Trait("CompanyRepository", "RemoveCompanyAsync")]
-    public void CompanyRepository_RemoveCompanyAsync()
+    public async Task CompanyRepository_RemoveCompanyAsync()
     {
+        // Arrange
         var id = 1;
 
-        var result = _repository.RemoveCompanyAsync(id);
+        // Act
+        var result = await _repository.RemoveCompanyAsync(id);
 
+        // Assert
         result.Should().NotBeNull();
+        result.Success.Should().BeTrue();
+        result.Should().BeOfType<ServiceResponse<bool>>();
     }
 }

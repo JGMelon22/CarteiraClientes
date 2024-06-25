@@ -107,9 +107,9 @@ public class CompanyRepository : ICompanyRepository
         return serviceResponse;
     }
 
-    public async Task RemoveCompanyAsync(int id)
+    public async Task<ServiceResponse<bool>> RemoveCompanyAsync(int id)
     {
-        var serviceResponse = new ServiceResponse<CompanyResultViewModel>();
+        var serviceResponse = new ServiceResponse<bool>();
 
         try
         {
@@ -125,5 +125,7 @@ public class CompanyRepository : ICompanyRepository
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
+
+        return serviceResponse;
     }
 }

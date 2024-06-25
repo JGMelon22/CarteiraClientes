@@ -105,7 +105,7 @@ public class ClientRepositoryTests
     [Trait("ClientRepository", "RemoveClientAsync")]
     public async Task ClientRepository_RemoveClientAsync()
     {
-        int id = 1;
+        var id = 1;
 
         var result = await _repository.RemoveClientAsync(id);
 

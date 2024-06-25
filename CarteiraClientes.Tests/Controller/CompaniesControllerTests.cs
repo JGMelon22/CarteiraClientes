@@ -87,13 +87,19 @@ public class CompaniesControllerTests
 
     [Fact]
     [Trait("CompaniesController", "RemoveCompanyAsync")]
-    public void CompaniesController_RemoveCompanyAsync_ReturnsCompanies()
+    public async Task CompaniesController_RemoveCompanyAsync_ReturnsCompanies()
     {
+        // Arrange
         var id = 1;
-        A.CallTo(() => _repository.RemoveCompanyAsync(id)).Returns(Task.CompletedTask);
+        var serviceResponse = new ServiceResponse<bool>();
+        A.CallTo(() => _repository.RemoveCompanyAsync(id)).Returns(Task.FromResult(serviceResponse));
 
-        var result = _controller.DeleteConfirmed(id);
+        // Act
+        var result = await _controller.DeleteConfirmed(id);
+
+        // Assert
         result.Should().NotBeNull();
-        result.Should().BeOfType<Task<IActionResult>>();
+        serviceResponse.Success.Should().BeTrue();
+        result.Should().BeOfType<RedirectToActionResult>();
     }
 }

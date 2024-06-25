@@ -8,5 +8,5 @@ public interface ICompanyRepository
     Task<ServiceResponse<CompanyResultViewModel>> GetCompanyByIdCompiledEfCoreQueryAsync(int id);
     Task AddCompanyAsync(CompanyInputViewModel newCompanyInput);
     Task<ServiceResponse<CompanyResultViewModel>> UpdateCompanyAsync(int id, CompanyInputViewModel updatedCompany);
-    Task RemoveCompanyAsync(int id);
+    Task<ServiceResponse<bool>> RemoveCompanyAsync(int id);
 }

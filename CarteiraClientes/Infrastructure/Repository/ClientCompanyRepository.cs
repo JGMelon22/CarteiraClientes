@@ -18,7 +18,7 @@ public class ClientCompanyRepository : IClientCompanyRepository
         var clientsCompanies = await (from cl in _dbContext.Clients
                 join cc in _dbContext.ClientsCompanies on cl.ClientId equals cc.ClientId
                 join co in _dbContext.Companies on cc.CompanyId equals co.CompanyId
-                select new ClientCompanyResultViewModel()
+                select new ClientCompanyResultViewModel
                 {
                     ClientId = cl.ClientId,
                     FullName = cl.FullName,

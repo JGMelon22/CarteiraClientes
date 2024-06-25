@@ -106,9 +106,9 @@ public class ClientsControllerTests
         // Arrange
         var id = 1;
         var serviceResponse = new ServiceResponse<bool>();
-        
+
         A.CallTo(() => _repository.RemoveClientAsync(id)).Returns(Task.FromResult(serviceResponse));
-        
+
         // Act
         var result = await _controller.DeleteConfirmed(id);
 
